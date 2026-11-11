@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 804 354" aria-label="打包階段由 Dockerfile 建出映像檔推上倉庫；上線階段由 Deployment 單子指名該映像檔，大腦據此開出三個 Pod" width="804" height="354">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="804" height="354" fill="#FFFFFF" stroke="none"/>
+        <text x="16" y="26" font-size="12" class="mono" opacity=".6">① 打包的時候</text>
+        <rect x="16" y="36" width="748" height="106" rx="5" fill="none" stroke="currentColor" stroke-opacity=".25"/>
+        <rect x="36" y="58" width="150" height="62" rx="5" fill="none" stroke="currentColor"/>
+        <text x="111" y="84" font-size="14" text-anchor="middle">Dockerfile</text>
+        <text x="111" y="105" font-size="11.5" text-anchor="middle" opacity=".65">食譜</text>
+        <line x1="194" y1="89" x2="252" y2="89" stroke="currentColor" stroke-width="2" marker-end="url(#k1)"/>
+        <text x="223" y="76" font-size="11" text-anchor="middle" class="mono">build</text>
+        <rect x="260" y="58" width="190" height="62" rx="5" fill="none" stroke="var(--gold)" stroke-width="2"/>
+        <text x="355" y="84" font-size="14" text-anchor="middle" fill="var(--gold)">映像檔</text>
+        <text x="355" y="105" font-size="12" text-anchor="middle" fill="var(--gold)" class="mono">order-svc:1.4</text>
+        <line x1="458" y1="89" x2="516" y2="89" stroke="currentColor" stroke-width="2" marker-end="url(#k1)"/>
+        <text x="487" y="76" font-size="11" text-anchor="middle" class="mono">push</text>
+        <rect x="524" y="58" width="220" height="62" rx="5" fill="none" stroke="currentColor" stroke-dasharray="6 4"/>
+        <text x="634" y="94" font-size="14" text-anchor="middle">映像檔倉庫</text>
+
+        <text x="16" y="182" font-size="12" class="mono" opacity=".6">② 上線的時候</text>
+        <rect x="16" y="192" width="748" height="120" rx="5" fill="none" stroke="currentColor" stroke-opacity=".25"/>
+        <rect x="36" y="214" width="220" height="78" rx="5" fill="none" stroke="var(--slate)" stroke-width="2"/>
+        <text x="146" y="238" font-size="14" text-anchor="middle" fill="var(--slate)">Deployment 單子</text>
+        <text x="146" y="260" font-size="11.5" text-anchor="middle" fill="var(--slate)" class="mono">映像檔：order-svc:1.4</text>
+        <text x="146" y="279" font-size="11.5" text-anchor="middle" fill="var(--slate)" class="mono">份數：3</text>
+        <path d="M355 126 L355 160 L146 160 L146 206" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#k2)"/>
+        <text x="368" y="152" font-size="11.5" fill="var(--gold)">單子上只寫映像檔的名字，不含內容</text>
+        <line x1="264" y1="253" x2="326" y2="253" stroke="currentColor" stroke-width="2" marker-end="url(#k1)"/>
+        <text x="295" y="240" font-size="11" text-anchor="middle" opacity=".7">交給</text>
+        <rect x="334" y="222" width="130" height="62" rx="5" fill="none" stroke="var(--slate)" stroke-width="2"/>
+        <text x="399" y="258" font-size="14" text-anchor="middle" fill="var(--slate)">大腦</text>
+        <line x1="472" y1="253" x2="530" y2="253" stroke="var(--gold)" stroke-width="2" marker-end="url(#k3)"/>
+        <text x="501" y="240" font-size="11" text-anchor="middle" fill="var(--gold)">開出</text>
+        <g fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="1.8">
+          <rect x="540" y="230" width="60" height="46" rx="4"/>
+          <rect x="608" y="230" width="60" height="46" rx="4"/>
+          <rect x="676" y="230" width="60" height="46" rx="4"/>
+        </g>
+        <g font-size="12" text-anchor="middle" fill="var(--gold)">
+          <text x="570" y="258">Pod</text><text x="638" y="258">Pod</text><text x="706" y="258">Pod</text>
+        </g>
+        <defs>
+          <marker id="k1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><polygon points="0,0 10,5 0,10" fill="currentColor"/></marker>
+          <marker id="k2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><polygon points="0,0 10,5 0,10" fill="var(--gold)"/></marker>
+          <marker id="k3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><polygon points="0,0 10,5 0,10" fill="var(--gold)"/></marker>
+        </defs>
+      </svg>

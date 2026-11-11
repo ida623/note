@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 254" aria-label="推測的強弱：一條確定程度的軸，左端很確定是，右端很確定不是。講現在：must be、may might could be、can't be；講過去：must have done、may might could have done、can't couldn't have done" width="784" height="254">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="254" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="md-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs>
+  <text x="380" y="22" font-size="13" text-anchor="middle" font-weight="700">確定程度</text>
+  <line x1="90" y1="40" x2="740" y2="40" stroke="currentColor" stroke-opacity=".6" stroke-width="1.5" marker-start="url(#md-arr)" marker-end="url(#md-arr)"/>
+  <text x="150" y="62" font-size="12" text-anchor="middle">很確定「是」</text>
+  <text x="400" y="62" font-size="12" text-anchor="middle">有可能，不確定</text>
+  <text x="645" y="62" font-size="12" text-anchor="middle">很確定「不是」</text>
+  <text x="20" y="108" font-size="12" opacity=".7">講現在</text>
+  <rect x="80" y="86" width="140" height="34" rx="17" fill="none" stroke="currentColor" stroke-opacity=".5"/>
+  <text x="150" y="108" font-size="13" text-anchor="middle" class="mono">must be</text>
+  <rect x="295" y="86" width="210" height="34" rx="17" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-dasharray="4 3"/>
+  <text x="400" y="108" font-size="13" text-anchor="middle" class="mono">may / might / could be</text>
+  <rect x="550" y="86" width="190" height="34" rx="17" fill="none" stroke="currentColor" stroke-opacity=".5"/>
+  <text x="645" y="108" font-size="13" text-anchor="middle" class="mono">can't be</text>
+  <text x="20" y="168" font-size="12" opacity=".7">講過去</text>
+  <rect x="80" y="146" width="140" height="34" rx="17" fill="none" stroke="currentColor" stroke-opacity=".5"/>
+  <text x="150" y="168" font-size="12" text-anchor="middle" class="mono">must have done</text>
+  <rect x="280" y="146" width="240" height="34" rx="17" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-dasharray="4 3"/>
+  <text x="400" y="168" font-size="12" text-anchor="middle" class="mono">may / might / could have done</text>
+  <rect x="532" y="146" width="222" height="34" rx="17" fill="none" stroke="currentColor" stroke-opacity=".5"/>
+  <text x="643" y="168" font-size="12" text-anchor="middle" class="mono">can't / couldn't have done</text>
+  <text x="400" y="212" font-size="12" text-anchor="middle" opacity=".7">講過去：助動詞後面加 have＋過去分詞（could have 在這裡比較少用）</text>
+</svg>

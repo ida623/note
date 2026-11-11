@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 174" aria-label="線上事故的處理順序：止血、保留現場、縮小範圍、找根因、修正並驗證、事後檢討。止血例如退回版本、擴容、限流；保留現場例如抓執行緒傾印與 heap dump；縮小範圍是從行程到執行緒、從服務到 API 到 SQL" width="784" height="174">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="174" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="pt-a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs>
+  <rect x="10" y="30" width="104" height="44" rx="8" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="62" y="57" font-size="14" text-anchor="middle">止血</text>
+  <rect x="135" y="30" width="104" height="44" rx="8" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="187" y="57" font-size="14" text-anchor="middle">保留現場</text>
+  <rect x="260" y="30" width="104" height="44" rx="8" fill="var(--surface)" stroke="currentColor"/><text x="312" y="57" font-size="14" text-anchor="middle">縮小範圍</text>
+  <rect x="385" y="30" width="104" height="44" rx="8" fill="var(--surface)" stroke="currentColor"/><text x="437" y="57" font-size="14" text-anchor="middle">找根因</text>
+  <rect x="510" y="30" width="104" height="44" rx="8" fill="var(--surface)" stroke="currentColor"/><text x="562" y="57" font-size="14" text-anchor="middle">修正並驗證</text>
+  <rect x="635" y="30" width="115" height="44" rx="8" fill="var(--slate-soft)" stroke="var(--slate)"/><text x="692" y="57" font-size="14" text-anchor="middle">事後檢討</text>
+  <line x1="115" y1="52" x2="132" y2="52" stroke="currentColor" stroke-width="1.5" marker-end="url(#pt-a1)"/>
+  <line x1="240" y1="52" x2="257" y2="52" stroke="currentColor" stroke-width="1.5" marker-end="url(#pt-a1)"/>
+  <line x1="365" y1="52" x2="382" y2="52" stroke="currentColor" stroke-width="1.5" marker-end="url(#pt-a1)"/>
+  <line x1="490" y1="52" x2="507" y2="52" stroke="currentColor" stroke-width="1.5" marker-end="url(#pt-a1)"/>
+  <line x1="615" y1="52" x2="632" y2="52" stroke="currentColor" stroke-width="1.5" marker-end="url(#pt-a1)"/>
+  <text x="62" y="96" font-size="11" text-anchor="middle" opacity=".7">退回、擴容</text><text x="62" y="112" font-size="11" text-anchor="middle" opacity=".7">限流、關功能</text>
+  <text x="187" y="96" font-size="11" text-anchor="middle" opacity=".7">重啟前先抓</text><text x="187" y="112" font-size="11" text-anchor="middle" opacity=".7">執行緒、heap</text>
+  <text x="312" y="96" font-size="11" text-anchor="middle" opacity=".7">行程→執行緒</text><text x="312" y="112" font-size="11" text-anchor="middle" opacity=".7">API→SQL</text>
+  <text x="437" y="96" font-size="11" text-anchor="middle" opacity=".7">找到程式行</text><text x="437" y="112" font-size="11" text-anchor="middle" opacity=".7">或設定</text>
+  <text x="562" y="96" font-size="11" text-anchor="middle" opacity=".7">重跑同樣負載</text><text x="562" y="112" font-size="11" text-anchor="middle" opacity=".7">看指標回來</text>
+  <text x="692" y="96" font-size="11" text-anchor="middle" opacity=".7">時間線、根因</text><text x="692" y="112" font-size="11" text-anchor="middle" opacity=".7">改善事項</text>
+  <text x="10" y="140" font-size="11" text-anchor="start" fill="var(--gold-deep)">古銅兩格要在幾分鐘內做完；後面四格可以等服務穩定再做</text>
+</svg>

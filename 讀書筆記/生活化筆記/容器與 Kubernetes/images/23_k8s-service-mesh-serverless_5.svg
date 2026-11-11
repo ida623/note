@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 254" aria-label="同時三個請求：Lambda 替每個同時進行的請求各準備一個執行環境，所以是三個環境；Cloud Run 一個執行個體可以同時處理多個請求，主控台建立時預設上限 80，所以三個請求可能由同一個執行個體處理" width="784" height="254">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="254" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="sm-05-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <text x="20" y="26" font-size="14" fill="var(--gold)">Lambda：一個環境同時只處理一個請求</text>
+  <rect x="20" y="40" width="80" height="40" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="60" y="65" font-size="13" text-anchor="middle">請求 1</text>
+  <line x1="100" y1="60" x2="178" y2="60" stroke="currentColor" stroke-width="1.6" marker-end="url(#sm-05-arrow)"/>
+  <rect x="180" y="40" width="150" height="40" rx="8" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="255" y="65" font-size="13" text-anchor="middle">執行環境 1</text>
+  <rect x="20" y="92" width="80" height="40" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="60" y="117" font-size="13" text-anchor="middle">請求 2</text>
+  <line x1="100" y1="112" x2="178" y2="112" stroke="currentColor" stroke-width="1.6" marker-end="url(#sm-05-arrow)"/>
+  <rect x="180" y="92" width="150" height="40" rx="8" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="255" y="117" font-size="13" text-anchor="middle">執行環境 2</text>
+  <rect x="20" y="144" width="80" height="40" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="60" y="169" font-size="13" text-anchor="middle">請求 3</text>
+  <line x1="100" y1="164" x2="178" y2="164" stroke="currentColor" stroke-width="1.6" marker-end="url(#sm-05-arrow)"/>
+  <rect x="180" y="144" width="150" height="40" rx="8" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="255" y="169" font-size="13" text-anchor="middle">執行環境 3</text>
+  <text x="400" y="26" font-size="14" fill="var(--slate)">Cloud Run：一個執行個體同時處理多個</text>
+  <rect x="400" y="40" width="80" height="40" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="440" y="65" font-size="13" text-anchor="middle">請求 1</text>
+  <line x1="480" y1="60" x2="578" y2="92" stroke="currentColor" stroke-width="1.6" marker-end="url(#sm-05-arrow)"/>
+  <rect x="400" y="92" width="80" height="40" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="440" y="117" font-size="13" text-anchor="middle">請求 2</text>
+  <line x1="480" y1="112" x2="578" y2="92" stroke="currentColor" stroke-width="1.6" marker-end="url(#sm-05-arrow)"/>
+  <rect x="400" y="144" width="80" height="40" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="440" y="169" font-size="13" text-anchor="middle">請求 3</text>
+  <line x1="480" y1="164" x2="578" y2="92" stroke="currentColor" stroke-width="1.6" marker-end="url(#sm-05-arrow)"/>
+  <rect x="580" y="62" width="160" height="60" rx="8" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="660" y="89" font-size="13.5" text-anchor="middle">執行個體 1</text>
+  <text x="660" y="107" font-size="11.5" text-anchor="middle" opacity=".75">主控台建立時預設上限 80</text>
+</svg>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 274" aria-label="90 比 10 流量切分：client 旁邊的 istio-proxy 讀 VirtualService 的權重，九成請求送到 subset v1、一成送到 subset v2；subset 由 DestinationRule 依 Pod 的 version 標籤定義；兩邊各只有 1 個 Pod，比例跟 Pod 數無關" width="784" height="274">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="274" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="sm-02-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <rect x="20" y="90" width="150" height="70" rx="8" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="95" y="122" font-size="13.5" text-anchor="middle">client 的 istio-proxy</text>
+  <text x="95" y="140" font-size="11.5" text-anchor="middle" opacity=".75">照 VirtualService 分</text>
+  <rect x="300" y="30" width="200" height="64" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="400" y="59" font-size="14" text-anchor="middle">subset v1</text>
+  <text x="400" y="77" font-size="11.5" text-anchor="middle" opacity=".75">version: v1 的 Pod × 1</text>
+  <rect x="300" y="156" width="200" height="64" rx="8" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="400" y="185" font-size="14" text-anchor="middle">subset v2</text>
+  <text x="400" y="203" font-size="11.5" text-anchor="middle" opacity=".75">version: v2 的 Pod × 1</text>
+  <line x1="170" y1="112" x2="298" y2="64" stroke="currentColor" stroke-width="1.6" marker-end="url(#sm-02-arrow)"/>
+  <line x1="170" y1="140" x2="298" y2="188" stroke="currentColor" stroke-width="1.6" marker-end="url(#sm-02-arrow)"/>
+  <text x="206" y="76" font-size="13" fill="var(--gold)">weight 90</text>
+  <text x="206" y="188" font-size="13" fill="var(--slate)">weight 10</text>
+  <text x="530" y="56" font-size="12.5">實測三輪：96、92、89 次</text>
+  <text x="530" y="186" font-size="12.5">實測三輪：4、8、11 次</text>
+  <text x="530" y="120" font-size="12.5" opacity=".85">比例寫在規則裡，</text>
+  <text x="530" y="140" font-size="12.5" opacity=".85">不是用 Pod 數湊</text>
+</svg>

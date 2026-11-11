@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 294" aria-label="前序走訪：先處理自己再左再右，順序是 50、30、20、40、70、60、80" width="784" height="294">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="294" fill="#FFFFFF" stroke="none"/>
+  <line x1="220" y1="115" x2="150" y2="185" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="360" y1="45" x2="220" y2="115" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="220" y1="115" x2="290" y2="185" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="500" y1="115" x2="430" y2="185" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="360" y1="45" x2="500" y2="115" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="500" y1="115" x2="570" y2="185" stroke="currentColor" stroke-opacity=".45"/>
+  <circle cx="150" cy="185" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="150" y="190" font-size="14" text-anchor="middle" class="mono">20</text>
+  <circle cx="172" cy="167" r="10" fill="var(--gold-deep)"/>
+  <text x="172" y="171" font-size="11" text-anchor="middle" fill="#FFFFFF" class="mono">3</text>
+  <circle cx="220" cy="115" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="220" y="120" font-size="14" text-anchor="middle" class="mono">30</text>
+  <circle cx="242" cy="97" r="10" fill="var(--gold-deep)"/>
+  <text x="242" y="101" font-size="11" text-anchor="middle" fill="#FFFFFF" class="mono">2</text>
+  <circle cx="290" cy="185" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="290" y="190" font-size="14" text-anchor="middle" class="mono">40</text>
+  <circle cx="312" cy="167" r="10" fill="var(--gold-deep)"/>
+  <text x="312" y="171" font-size="11" text-anchor="middle" fill="#FFFFFF" class="mono">4</text>
+  <circle cx="360" cy="45" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="360" y="50" font-size="14" text-anchor="middle" class="mono">50</text>
+  <circle cx="382" cy="27" r="10" fill="var(--gold-deep)"/>
+  <text x="382" y="31" font-size="11" text-anchor="middle" fill="#FFFFFF" class="mono">1</text>
+  <circle cx="430" cy="185" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="430" y="190" font-size="14" text-anchor="middle" class="mono">60</text>
+  <circle cx="452" cy="167" r="10" fill="var(--gold-deep)"/>
+  <text x="452" y="171" font-size="11" text-anchor="middle" fill="#FFFFFF" class="mono">6</text>
+  <circle cx="500" cy="115" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="500" y="120" font-size="14" text-anchor="middle" class="mono">70</text>
+  <circle cx="522" cy="97" r="10" fill="var(--gold-deep)"/>
+  <text x="522" y="101" font-size="11" text-anchor="middle" fill="#FFFFFF" class="mono">5</text>
+  <circle cx="570" cy="185" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="570" y="190" font-size="14" text-anchor="middle" class="mono">80</text>
+  <circle cx="592" cy="167" r="10" fill="var(--gold-deep)"/>
+  <text x="592" y="171" font-size="11" text-anchor="middle" fill="#FFFFFF" class="mono">7</text>
+  <text x="620" y="60" font-size="15" text-anchor="middle" fill="var(--gold-deep)">前序：自己 → 左 → 右</text>
+  <text x="380" y="248" font-size="14" text-anchor="middle" class="mono">走訪順序：50 30 20 40 70 60 80</text>
+</svg>

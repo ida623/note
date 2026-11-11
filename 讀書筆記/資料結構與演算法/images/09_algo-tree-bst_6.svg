@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 354" aria-label="在二元搜尋樹裡找 65：50 → 往右到 70 → 往左到 60 → 往右到 65，比較 4 次；插入 35 時走 50 → 30 → 40，在 40 的左邊空位掛上新節點" width="784" height="354">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="354" fill="#FFFFFF" stroke="none"/>
+  <line x1="108" y1="120" x2="50" y2="195" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="282" y1="45" x2="108" y2="120" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="224" y1="195" x2="166" y2="270" stroke="currentColor" stroke-dasharray="5 4" stroke-opacity=".6"/>
+  <line x1="108" y1="120" x2="224" y2="195" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="456" y1="120" x2="340" y2="195" stroke="var(--gold)" stroke-width="3"/>
+  <line x1="340" y1="195" x2="398" y2="270" stroke="var(--gold)" stroke-width="3"/>
+  <line x1="282" y1="45" x2="456" y2="120" stroke="var(--gold)" stroke-width="3"/>
+  <line x1="456" y1="120" x2="514" y2="195" stroke="currentColor" stroke-opacity=".45"/>
+  <circle cx="50" cy="195" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="50" y="200" font-size="14" text-anchor="middle" class="mono">20</text>
+  <circle cx="108" cy="120" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="108" y="125" font-size="14" text-anchor="middle" class="mono">30</text>
+  <circle cx="166" cy="270" r="20" fill="var(--surface)" stroke="var(--gold)" stroke-dasharray="4 3" stroke-width="2"/>
+  <text x="166" y="275" font-size="14" text-anchor="middle" class="mono">35</text>
+  <circle cx="224" cy="195" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="224" y="200" font-size="14" text-anchor="middle" class="mono">40</text>
+  <circle cx="282" cy="45" r="20" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="282" y="50" font-size="14" text-anchor="middle" class="mono">50</text>
+  <circle cx="340" cy="195" r="20" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="340" y="200" font-size="14" text-anchor="middle" class="mono">60</text>
+  <circle cx="398" cy="270" r="20" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="398" y="275" font-size="14" text-anchor="middle" class="mono">65</text>
+  <circle cx="456" cy="120" r="20" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="456" y="125" font-size="14" text-anchor="middle" class="mono">70</text>
+  <circle cx="514" cy="195" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="514" y="200" font-size="14" text-anchor="middle" class="mono">80</text>
+  <text x="600" y="60" font-size="13" fill="var(--gold-deep)">找 65（古銅）</text>
+  <text x="600" y="82" font-size="12.5">65 &gt; 50 往右</text>
+  <text x="600" y="102" font-size="12.5">65 &lt; 70 往左</text>
+  <text x="600" y="122" font-size="12.5">65 &gt; 60 往右</text>
+  <text x="600" y="142" font-size="12.5">等於 65：找到</text>
+  <text x="600" y="190" font-size="13" fill="var(--gold-deep)">插入 35（虛線）</text>
+  <text x="600" y="212" font-size="12.5">50 → 30 → 40</text>
+  <text x="600" y="232" font-size="12.5">40 的左邊是空的</text>
+  <text x="600" y="252" font-size="12.5">就掛在那裡</text>
+</svg>

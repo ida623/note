@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>多益閱讀</title>
+<style>
+/* 俐方體 11 號（Cubic 11）：開源的繁體中文像素字體 */
+@font-face {
+  font-family: "Cubic11";
+  src: url("https://cdn.jsdelivr.net/gh/ACh-K/Cubic-11@main/fonts/web/Cubic_11.woff2") format("woff2");
+  font-display: swap;
+}
+/* 固定淺色：楓之谷的天空、木頭與奶油色視窗 */
+:root {
+  color-scheme: light;
+  --sky-top: #8fd3ff; --sky-bottom: #e6f6ff; --cloud: #ffffff;
+  --grass: #7ccf4a; --grass-dark: #4f9a2c; --dirt: #c8915a;
+  --ink: #4a3424; --muted: #8a7260;
+  --wood: #b5763a; --wood-dark: #7a4a20; --wood-light: #f1c98d;
+  --panel: #fffaf0; --panel-2: #fff3dc; --line: #e2c9a4;
+  --orange: #ff9a1f; --orange-2: #ffc154; --orange-dark: #c4600a;
+  --blue: #3b8fd9; --blue-soft: #e4f2ff;
+  --ok: #2f9a3c; --ok-soft: #e4f7dc; --bad: #d8442c; --bad-soft: #ffe6df;
+  --hp: #f04848; --hp-2: #ff8a7a; --exp: #f6c818; --exp-2: #fff07a; --bar-bg: #5a4a3c;
+  --mark: #fff09a; --mark-ink: #8a5a00; --sel: #fff2c4;
+}
+* { box-sizing: border-box; }
+html { background: var(--sky-bottom); }
+body {
+  margin: 0; color: var(--ink); font: 16px/1.75 "Cubic11", "PingFang TC", "Noto Sans TC", sans-serif;
+  min-height: 100vh;
+  /* 天空漸層 + 幾朵像素感的白雲 */
+  background:
+    radial-gradient(ellipse 70px 26px at 12% 180px, var(--cloud) 98%, transparent 100%),
+    radial-gradient(ellipse 46px 22px at calc(12% + 50px) 166px, var(--cloud) 98%, transparent 100%),
+    radial-gradient(ellipse 90px 30px at 82% 260px, var(--cloud) 98%, transparent 100%),
+    radial-gradient(ellipse 54px 24px at calc(82% - 60px) 246px, var(--cloud) 98%, transparent 100%),
+    radial-gradient(ellipse 60px 22px at 48% 520px, rgba(255,255,255,.85) 98%, transparent 100%),
+    linear-gradient(var(--sky-top), var(--sky-bottom) 700px);
+  background-attachment: fixed;
+}
+/* 畫面底部的一條草地 */
+body::after {
+  content: ""; position: fixed; left: 0; right: 0; bottom: 0; height: 18px; z-index: 1; pointer-events: none;
+  background: linear-gradient(var(--grass) 0 8px, var(--dirt) 8px);
+  border-top: 3px solid var(--grass-dark);
+}
+/* 題目區（文章、題目、選項、解析）用一般字體，比較好讀 */
+main {
+  font-family: -apple-system, "PingFang TC", "Noto Sans TC", sans-serif;
+}
+/* 標題列、按鈕、LEVEL UP / MISS 這些裝飾維持像素字 */
+main .win-title, main .go, main .verdict .big { font-family: "Cubic11", "PingFang TC", sans-serif; }
+button { font: inherit; color: inherit; }
+
+/* 楓之谷視窗：木頭色外框、奶油色內容 */
+.win {
+  background: var(--panel); border: 3px solid var(--wood-dark); border-radius: 10px;
+  box-shadow: inset 0 0 0 2px var(--wood-light), 0 4px 0 rgba(122, 74, 32, .25);
+}
+
+header {
+  background: linear-gradient(#ffe9b8, #ffd27a); border-bottom: 4px solid var(--wood-dark);
+  box-shadow: inset 0 -3px 0 var(--wood), 0 3px 0 rgba(122, 74, 32, .2); z-index: 20;
+}
+@media (min-width: 760px) { header { position: sticky; top: 0; } }
+.bar { max-width: 1240px; margin: 0 auto; padding: 10px 16px; display: flex; gap: 10px 14px; align-items: center; flex-wrap: wrap; }
+.logo { display: flex; align-items: center; gap: 10px; margin-right: auto; }
+.logo h1 { margin: 0; font-size: 22px; font-weight: normal; color: var(--orange-dark); letter-spacing: 1px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 2px 2px #fff, 3px 3px 0 var(--wood); }
+.logo small { display: block; font-size: 12px; color: var(--wood-dark); }
+svg.leaf { width: 32px; height: 32px; shape-rendering: crispEdges; flex: none; }
+.lf { display: inline-block; width: 16px; height: 16px; flex: none; background: var(--leaf) center / contain no-repeat; image-rendering: pixelated; vertical-align: -2px; }
+.lf.off { filter: grayscale(1); opacity: .35; }
+
+/* 狀態列：等級、HP（答對率）、EXP（進度） */
+.status { display: flex; align-items: center; gap: 8px; background: #fffaf0; border: 2px solid var(--wood-dark); border-radius: 8px; padding: 4px 10px; }
+.lv { color: var(--orange-dark); font-size: 15px; white-space: nowrap; }
+.gauge { display: flex; align-items: center; gap: 4px; }
+.gauge b { font-weight: normal; font-size: 12px; color: #fff; background: var(--bar-bg); border-radius: 4px; padding: 0 4px; line-height: 16px; }
+.track { width: 110px; height: 14px; background: var(--bar-bg); border-radius: 7px; padding: 2px; position: relative; }
+.fill { height: 100%; border-radius: 5px; transition: width .4s; }
+.fill.hp { background: linear-gradient(var(--hp-2), var(--hp)); }
+.fill.exp { background: linear-gradient(var(--exp-2), var(--exp)); }
+.track span { position: absolute; inset: 0; text-align: center; font-size: 11px; line-height: 14px; color: #fff; text-shadow: 1px 1px 0 #000; }
+.tool { border: 2px solid var(--wood-dark); border-radius: 8px; background: linear-gradient(#ffffff, #e8eef6); color: var(--ink);
+  padding: 2px 10px; cursor: pointer; font-size: 14px; box-shadow: inset 0 -3px 0 rgba(0,0,0,.08); }
+.tool:active, .go:active:not(:disabled) { transform: translateY(2px); }
+
+
+/* 視窗標題列 */
+.win-title { margin: -3px -3px 0; padding: 4px 14px; border-radius: 9px 9px 0 0; color: #fff; font-size: 15px;
+  background: linear-gradient(#e0a060, var(--wood)); border: 3px solid var(--wood-dark); border-bottom-width: 2px;
+  text-shadow: 1px 1px 0 var(--wood-dark); display: flex; align-items: center; gap: 6px; }
+.win-title .lf { width: 18px; height: 18px; filter: drop-shadow(1px 0 #fff) drop-shadow(-1px 0 #fff) drop-shadow(0 1px #fff) drop-shadow(0 -1px #fff); }
+.win-body { padding: 14px 20px 16px; }
+
+/* 側邊欄：任務清單（考卷 → Part） */
+.layout { max-width: 1440px; margin: 0 auto; padding: 22px 16px 100px; display: flex; gap: 22px; align-items: flex-start; position: relative; z-index: 2; }
+main { overflow-anchor: none; flex: 1; min-width: 0; overflow-wrap: anywhere; container-type: inline-size; }
+.side { width: 260px; flex: none; position: sticky; top: calc(var(--hh, 0px) + 22px);
+  max-height: calc(100vh - var(--hh, 0px) - 60px); display: flex; flex-direction: column; }
+.side .win-title { justify-content: space-between; }
+.side-close { border: 0; background: transparent; color: #fff; cursor: pointer; font-size: 15px; padding: 0 2px; text-shadow: 1px 1px 0 var(--wood-dark); }
+.side-body { overflow-y: auto; padding: 8px 8px 10px; }
+.group + .group { border-top: 1px dashed var(--line); }
+.exam { width: 100%; white-space: nowrap; display: flex; align-items: center; gap: 6px; border: 0; border-radius: 8px;
+  background: transparent; text-align: left; padding: 6px 8px; cursor: pointer; }
+.exam:hover { background: var(--panel-2); }
+.exam .lf { width: 18px; height: 18px; }
+.exam small { margin-left: auto; color: var(--muted); font-size: 12px; }
+.exam .caret { width: 12px; color: var(--wood); font-size: 11px; transition: transform .15s; }
+.group.open .exam .caret { transform: rotate(90deg); }
+.group.current > .exam { color: var(--orange-dark); }
+.parts { display: none; padding: 0 0 6px 22px; }
+.group.open .parts { display: block; }
+.part { width: 100%; display: flex; align-items: center; gap: 6px; border: 2px solid transparent; border-radius: 8px;
+  background: transparent; text-align: left; padding: 3px 8px; cursor: pointer; font-size: 14px; }
+.part:hover { background: var(--panel-2); }
+.part .pn { color: var(--blue); white-space: nowrap; }
+.part .pname { color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.part small { margin-left: auto; color: var(--muted); font-size: 12px; white-space: nowrap; }
+.part.done small { color: var(--ok); }
+.part.active { background: var(--sel); border-color: var(--orange); }
+.part.active .pname { color: var(--ink); }
+.menu-btn { border: 2px solid var(--wood-dark); border-radius: 8px; background: linear-gradient(var(--orange-2), var(--orange));
+  color: #fff; text-shadow: 1px 1px 0 var(--orange-dark); padding: 2px 10px; cursor: pointer; font-size: 15px; }
+.menu-btn:active { transform: translateY(2px); }
+.fab { display: none; position: fixed; left: 16px; bottom: 30px; z-index: 5; }
+.backdrop { display: none; }
+body.side-closed .side { display: none; }
+/* 手機／窄螢幕：側邊欄改成從左邊滑出的抽屜 */
+@media (max-width: 899px) {
+  .layout { display: block; z-index: auto; position: static; }
+  main { position: relative; z-index: 2; }
+  body.side-open .fab { display: none; }
+  .side { position: fixed; top: 0; left: 0; bottom: 0; max-height: none; width: min(290px, 85vw); z-index: 40; border-radius: 0 10px 10px 0;
+    transform: translateX(-110%); transition: transform .2s ease-out; }
+  body.side-closed .side { display: flex; }
+  body.side-open .side { transform: none; }
+  body.side-open .backdrop { display: block; position: fixed; inset: 0; z-index: 30; background: rgba(60, 40, 20, .35); }
+  .fab { display: inline-block; }
+}
+.pager { display: flex; justify-content: flex-end; margin-top: 4px; }
+
+.intro { margin-bottom: 24px; font-size: 14px; color: var(--muted); }
+.intro .win-body { padding: 10px 20px 12px; }
+
+.card { margin-bottom: 28px; }
+.set-title { margin: 0; }
+.set-sub { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+.set-body { display: grid; gap: 22px; grid-template-columns: minmax(0, 1fr); }
+.set-body > * { min-width: 0; }
+@container (min-width: 820px) {
+  .set-body.two { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: start; }
+  .set-body.two .passages { position: sticky; top: calc(var(--hh, 0px) + 20px); max-height: calc(100vh - var(--hh, 0px) - 50px); overflow: auto; }
+}
+.passages { background: #ffffff; padding: 14px 18px; font-size: 15px; border: 2px solid var(--line); border-radius: 8px; }
+.passages blockquote { margin: 0; padding: 0; border: 0; }
+.plabel { display: inline-block; font-size: 13px; color: #fff; background: var(--blue); border-radius: 6px; padding: 0 8px; margin: 6px 0 4px; }
+.passage + .plabel { margin-top: 18px; }
+.q { padding: 4px 0 16px; }
+.q + .q { border-top: 2px dashed var(--line); padding-top: 16px; }
+.qnum { color: var(--orange-dark); margin-right: 6px; }
+.qtext { margin: 0 0 10px; }
+.new { font-size: 12px; background: var(--blue); color: #fff; border-radius: 6px; padding: 0 6px; margin-left: 4px; }
+
+.opts { display: grid; gap: 8px; }
+.opt { display: flex; gap: 8px; align-items: center; text-align: left; width: 100%;
+  border: 2px solid var(--line); border-radius: 8px; background: #fff; padding: 6px 12px 6px 8px; cursor: pointer; }
+.opt .cur { width: 16px; height: 16px; flex: none; opacity: 0; }
+.opt .cur .lf { display: block; }
+.opt:hover:not(:disabled) { border-color: var(--orange-2); }
+.opt:hover:not(:disabled) .cur { opacity: .35; }
+.opt .l { min-width: 28px; color: var(--blue); }
+.opt.sel { background: var(--sel); border-color: var(--orange); }
+.opt.sel .cur { opacity: 1; animation: sway 1.2s ease-in-out infinite; }
+.opt:disabled { cursor: default; }
+.opt.right { background: var(--ok-soft); border-color: var(--ok); }
+.opt.wrong { background: var(--bad-soft); border-color: var(--bad); }
+.opt .tag { margin-left: auto; font-size: 13px; white-space: nowrap; padding-left: 8px; }
+.opt.right .tag { color: var(--ok); } .opt.wrong .tag { color: var(--bad); }
+@keyframes sway { 0%, 100% { transform: rotate(-12deg); } 50% { transform: rotate(12deg); } }
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes pop { 0% { transform: translateY(6px) scale(.8); opacity: 0; } 60% { transform: translateY(-3px) scale(1.08); opacity: 1; } 100% { transform: none; } }
+
+.actions { display: flex; gap: 12px; align-items: center; margin-top: 18px; flex-wrap: wrap; }
+/* 楓之谷風的橘色按鈕 */
+.go { border: 2px solid var(--orange-dark); border-radius: 10px; background: linear-gradient(#ffd27a, var(--orange) 55%, #f07c00);
+  color: #fff; padding: 5px 20px; cursor: pointer; text-shadow: 1px 1px 0 var(--orange-dark);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.6), 0 3px 0 var(--orange-dark); }
+.go:disabled { filter: grayscale(1); opacity: .5; cursor: not-allowed; }
+.go.plain { border-color: #6a88a8; background: linear-gradient(#ffffff, #d6e4f2); color: var(--ink); text-shadow: none;
+  box-shadow: inset 0 2px 0 #fff, 0 3px 0 #6a88a8; }
+.hint { font-size: 13px; color: var(--muted); }
+
+/* 送出後的大字：答對 LEVEL UP、答錯 MISS */
+.verdict { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin: 12px 0 4px; font-size: 14px; color: var(--muted); }
+.verdict .big { font-size: 20px; animation: pop .45s ease-out; display: inline-block; }
+.verdict.ok .big { color: #ffae00; text-shadow: 2px 2px 0 var(--orange-dark); }
+.verdict.bad .big { color: #8c7bd8; text-shadow: 2px 2px 0 #3e3080; }
+/* 解析：像 NPC 對話框，右下角有閃爍的 ▼ */
+.explain { position: relative; margin-top: 8px; padding: 12px 16px 22px; font-size: 15px; background: #fff;
+  border: 2px solid var(--wood); border-radius: 10px; box-shadow: inset 0 0 0 2px var(--panel-2); }
+.explain::after { content: "▼"; position: absolute; right: 12px; bottom: 4px; font-size: 11px; color: var(--orange); animation: blink 1s steps(2) infinite; }
+.explain blockquote, .reveal blockquote { margin: 6px 0; padding: 2px 12px; border-left: 3px solid var(--orange-2); color: var(--muted); }
+.explain p, .reveal p, .passages p { margin: 6px 0; }
+.explain ul, .reveal ul { margin: 4px 0; padding-left: 22px; }
+strong { font-weight: normal; color: var(--orange-dark); }
+.passages strong { color: inherit; text-decoration: underline; text-decoration-color: var(--orange-2); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+details.reveal { margin-top: 22px; padding: 10px 16px; font-size: 15px; border: 2px solid var(--line); border-radius: 10px; background: var(--panel-2); }
+details.reveal summary { cursor: pointer; color: var(--wood-dark); }
+.result { color: var(--ink); }
+.result.perfect { color: var(--orange-dark); }
+table { border-collapse: collapse; margin: 8px 0; font-size: 14px; display: block; overflow-x: auto; max-width: 100%; }
+th, td { border: 1px solid var(--line); padding: 3px 8px; text-align: left; vertical-align: top; }
+th { background: var(--panel-2); font-weight: normal; }
+.mk { background: var(--mark); color: var(--mark-ink); font-size: 12px; border-radius: 4px; padding: 0 4px; margin-right: 2px; }
+.topbtn { position: fixed; right: 16px; bottom: 30px; z-index: 5; }
+@media (max-width: 600px) {
+  .win-body { padding: 12px 14px 14px; }
+  .track { width: 76px; }
+  .logo h1 { font-size: 19px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <button class="menu-btn" id="menuBtn" title="開合任務清單">☰</button>
+    <div class="logo"><span id="logoLeaf"></span><div><h1>多益閱讀</h1><small id="subtitle"></small></div></div>
+    <div class="status">
+      <span class="lv" id="lv">Lv.1</span>
+      <div class="gauge" title="答對率"><b>HP</b><div class="track"><div class="fill hp" id="hpFill"></div><span id="hpText"></span></div></div>
+      <div class="gauge" title="這份考卷的作答進度"><b>EXP</b><div class="track"><div class="fill exp" id="expFill"></div><span id="expText"></span></div></div>
+    </div>
+    <button class="tool" id="resetAll" title="清除這份考卷的作答紀錄">重來</button>
+  </div>
+</header>
+<div class="layout">
+  <aside class="side win" id="side">
+    <div class="win-title"><span>任務清單</span><button class="side-close" id="sideClose" title="收起">✕</button></div>
+    <nav class="side-body" id="exams"></nav>
+  </aside>
+  <main id="main"></main>
+</div>
+<div class="backdrop" id="backdrop"></div>
+<button class="menu-btn fab" id="fab">☰ 任務</button>
+<button class="tool topbtn" onclick="scrollTo({top:0,behavior:'smooth'})">▲ TOP</button>
+
+<script>
+const SOURCES = __SOURCES__;
+
+/* ---------- 迷你 Markdown 轉 HTML ---------- */
+// 答案線索標記，例如 [147]、[149-D]、[162/163]、[159-B/160-A/D]
+const MARK = /\[(\d{3}(?:-[A-D](?:\/[A-D])*)?(?:\/\d{3}(?:-[A-D](?:\/[A-D])*)?)*)\]\s?/g;
+function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+function inline(s) {
+  s = esc(s).replace(/\\\*/g, "\u0001");
+  s = s.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>");
+  s = s.replace(/\u0001/g, "*").replace(/\\([\[\]_#-])/g, "$1");
+  return s.replace(MARK, (_, m) => `<span class="mk">${m}</span>`);
+}
+function md(text) {
+  const lines = text.split("\n");
+  let out = "", i = 0;
+  while (i < lines.length) {
+    const l = lines[i];
+    if (!l.trim()) { i++; continue; }
+    if (l.startsWith(">")) {
+      const buf = [];
+      while (i < lines.length && lines[i].startsWith(">")) { buf.push(lines[i].replace(/^> ?/, "")); i++; }
+      out += "<blockquote>" + md(buf.join("\n")) + "</blockquote>"; continue;
+    }
+    if (l.trim().startsWith("|")) {
+      const rows = [];
+      while (i < lines.length && lines[i].trim().startsWith("|")) { rows.push(lines[i].trim()); i++; }
+      const cells = r => r.replace(/^\||\|$/g, "").split("|").map(c => c.trim());
+      let html = "<table>";
+      rows.forEach((r, k) => {
+        if (/^\|[\s\-:|]+\|$/.test(r)) return;
+        const cs = cells(r);
+        if (k === 0 && cs.every(c => !c)) return;
+        const tag = k === 0 && rows[1] && /^\|[\s\-:|]+\|$/.test(rows[1]) ? "th" : "td";
+        html += "<tr>" + cs.map(c => `<${tag}>${inline(c)}</${tag}>`).join("") + "</tr>";
+      });
+      out += html + "</table>"; continue;
+    }
+    if (/^- /.test(l)) {
+      out += "<ul>";
+      while (i < lines.length && /^- /.test(lines[i])) { out += "<li>" + inline(lines[i].slice(2)) + "</li>"; i++; }
+      out += "</ul>"; continue;
+    }
+    const buf = [];
+    while (i < lines.length && lines[i].trim() && !lines[i].startsWith(">") && !/^- /.test(lines[i]) && !lines[i].trim().startsWith("|")) { buf.push(inline(lines[i])); i++; }
+    out += "<p>" + buf.join("<br>") + "</p>";
+  }
+  return out;
+}
+// 作答時把文章裡提示答案位置的 [147]、[149-D] 標記藏起來
+const stripMarks = s => s.replace(MARK, "");
+
+/* ---------- 解析題本 ---------- */
+const Q_HEAD = /^\*\*(\d{3})\.\*\*\s*(🆕)?\s*(?:答案 \(([A-D])\)(?:｜難度：([^\s🆕]+))?)?\s*(🆕)?/;
+function parseQBlock(lines) {
+  const m = lines[0].match(Q_HEAD);
+  const q = { num: m[1], isNew: !!(m[2] || m[5]), answer: m[3] || null, level: m[4] || "", text: [], options: [], rest: [] };
+  let stage = "text";
+  for (const l of lines.slice(1)) {
+    const o = l.match(/^- \(([A-D])\)\s?(.*)$/);
+    if (stage !== "rest" && o) { stage = "opts"; q.options.push({ key: o[1], text: o[2] }); continue; }
+    if (stage === "opts") stage = "rest";
+    (stage === "text" ? q.text : q.rest).push(l);
+  }
+  q.body = lines.slice(1).join("\n").trim();
+  q.text = q.text.join("\n").trim();
+  q.rest = q.rest.join("\n").trim();
+  return q;
+}
+function splitBlocks(lines) {
+  const pre = [], blocks = [];
+  for (const l of lines) {
+    if (Q_HEAD.test(l)) blocks.push([l]);
+    else if (blocks.length) blocks[blocks.length - 1].push(l);
+    else pre.push(l);
+  }
+  return { pre, blocks: blocks.map(parseQBlock) };
+}
+function parsePreamble(pre, expected) {
+  const sub = pre.length && !pre[0].startsWith(">") ? pre.shift() : "";
+  // 判斷是不是中文翻譯：看中文字佔的比例（原文偶爾夾少量中文註記）
+  const isTrans = t => {
+    const cjk = (t.match(/[一-鿿]/g) || []).length, latin = (t.match(/[A-Za-z]/g) || []).length;
+    return cjk > 0 && cjk / (cjk + latin) > 0.2;
+  };
+  // 第一步：切成一塊一塊（文章標籤 / 原文 / 翻譯）
+  const chunks = [], vocab = [];
+  let quote = null, afterTransLabel = false, inVocab = false;
+  const flush = () => {
+    if (!quote) return;
+    const text = quote.join("\n");
+    chunks.push({ type: afterTransLabel || isTrans(stripMarks(text)) ? "trans" : "en", text });
+    quote = null; afterTransLabel = false;
+  };
+  for (const l of pre) {
+    if (inVocab) { vocab.push(l); continue; }
+    if (l.startsWith(">") || l.trim().startsWith("|")) { (quote || (quote = [])).push(l); continue; }
+    flush();
+    const lab = l.match(/^\*{0,2}文章\s*(\d+)\*{0,2}\s*$/);
+    if (lab) chunks.push({ type: "label", text: "文章 " + lab[1] });
+    else if (l.startsWith("**單字**")) { inVocab = true; vocab.push(l); }
+    else if (l.trim() === "**翻譯**") afterTransLabel = true;
+  }
+  flush();
+  // 第二步：沒標「文章 N」的地方，從「翻譯之後又出現的英文」裡挑最長的幾段當作新文章的開頭
+  const labels = chunks.filter(c => c.type === "label").length;
+  const lastLabel = chunks.map(c => c.type).lastIndexOf("label");
+  const cands = chunks.map((c, k) => ({ c, k }))
+    .filter(({ c, k }) => c.type === "en" && k > lastLabel && k > 0 && chunks[k - 1].type === "trans" && chunks.slice(0, k).some(x => x.type === "en"));
+  const need = expected - Math.max(labels, 1);
+  if (need > 0) cands.sort((a, b) => b.c.text.length - a.c.text.length).slice(0, need).forEach(({ c }) => c.split = true);
+  // 第三步：組合
+  const passages = [], trans = [];
+  let cur = null;
+  for (const c of chunks) {
+    if (c.type === "label") { cur = { label: c.text, lines: [] }; passages.push(cur); trans.push(`**${c.text}**`); }
+    else if (c.type === "trans") trans.push(c.text);
+    else {
+      if (!cur || c.split) { cur = { label: "", lines: [] }; passages.push(cur); }
+      cur.lines.push(c.text);
+    }
+  }
+  if (passages.length > 1) passages.forEach((p, k) => { if (!p.label) p.label = "文章 " + (k + 1); });
+  return { sub, passages: passages.filter(p => p.lines.length), trans: trans.join("\n\n"), vocab: vocab.join("\n") };
+}
+
+
+/* ---------- 把一份 md 解析成題組 ---------- */
+function parseExam(src) {
+  const raw = src.split("\n").filter(l => !/^<!-- page/.test(l.trim()));
+  const startIdx = raw.findIndex(l => /^# TEST/.test(l));
+  const title = (raw[startIdx] || "# TOEIC").replace(/^#\s*/, "");
+  const intros = {};
+  src.split("\n").forEach((l, k, arr) => {
+    const m = l.match(/\[PART (\d)：(.+?)\]/);
+    if (m) intros[m[1]] = { name: m[2], text: (arr[k + 1] || "").replace(/^\s*概念：/, "") };
+  });
+
+  const parts = {};
+  let part = null, section = null;
+  for (const l of raw.slice(startIdx)) {
+    const pm = l.match(/^## PART (\d)/);
+    if (pm) { part = pm[1]; parts[part] = []; section = null; continue; }
+    if (!part) continue;
+    const sm = l.match(/^### (.+)$/);
+    if (sm) { section = { heading: sm[1].replace(/\s*🆕\s*$/, ""), isNew: /🆕/.test(sm[1]), lines: [] }; parts[part].push(section); continue; }
+    if (!section) { section = { heading: null, lines: [] }; parts[part].push(section); }
+    section.lines.push(l);
+  }
+
+  // 統一成「題組」：Part 5 每題一組，Part 6/7 每篇文章一組
+  const sets = [];
+  for (const p of Object.keys(parts)) {
+    for (const sec of parts[p]) {
+      const { pre, blocks } = splitBlocks(sec.lines);
+      if (!sec.heading) {
+        blocks.forEach(q => sets.push({ id: "q" + q.num, part: p, heading: null, questions: [q] }));
+        continue;
+      }
+      const first = +(blocks[0] && blocks[0].num);
+      const info = parsePreamble(pre, first >= 186 ? 3 : first >= 176 ? 2 : 1); // 多益 176-185 雙篇、186-200 三篇
+      const byNum = {};
+      for (const b of blocks) {
+        const q = byNum[b.num] || (byNum[b.num] = { num: b.num, isNew: false, options: [], text: "", rest: "" });
+        q.isNew = q.isNew || b.isNew;
+        if (b.answer && q.options.length) { q.answer = b.answer; q.level = b.level; q.rest = b.body; } // Part 6：選項在前面，這塊全是解析
+        else if (b.answer) { q.answer = b.answer; q.level = b.level; q.rest = b.rest; q.text = b.text; q.options = b.options; }
+        else { if (b.options.length) q.options = b.options; if (b.rest) info.vocab += (info.vocab ? "\n\n" : "") + b.rest; }
+      }
+      const questions = Object.values(byNum).sort((a, b) => a.num - b.num);
+      sets.push({ id: "s" + questions[0].num, part: p, heading: sec.heading, isNew: sec.isNew, ...info, questions });
+    }
+  }
+  return { title, intros, sets, partKeys: Object.keys(parts) };
+}
+
+/* ---------- 像素楓葉（11x11 點陣） ---------- */
+const LEAF = [".....O.....", "....OOO....", ".O..OVO..O.", ".OO.OVO.OO.", "..OOOVOOO..", "OOOOOVOOOOO",
+              ".OOOOVOOOO.", "..OOOVOOO..", "...OOVOO...", ".....S.....", ".....S....."];
+function leafSVG(cls = "") {
+  const color = { O: "#f5821f", V: "#d0500e", S: "#8a4a1a" };
+  let rects = "";
+  LEAF.forEach((row, y) => [...row].forEach((c, x) => { if (color[c]) rects += `<rect x="${x}" y="${y}" width="1" height="1" fill="${color[c]}"/>`; }));
+  return `<svg class="leaf ${cls}" viewBox="0 0 11 11" aria-hidden="true">${rects}</svg>`;
+}
+// 小楓葉只產生一次，轉成圖片給 CSS 重複使用（.lf），避免每個選項都塞一份 SVG
+const LEAF_URI = "data:image/svg+xml," + encodeURIComponent(leafSVG().replace("<svg", '<svg xmlns="http://www.w3.org/2000/svg"'));
+document.documentElement.style.setProperty("--leaf", `url("${LEAF_URI}")`);
+const LEAF_SM = '<i class="lf"></i>';
+
+/* ---------- 作答紀錄（每份考卷各自存） ---------- */
+const PREFIX = "toeic-quiz-";
+const load = k => { try { const v = localStorage.getItem(k); return v === null ? null : JSON.parse(v); } catch (e) { return null; } };
+const store = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
+
+const EXAMS = Object.keys(SOURCES);
+const cache = {};
+const getExam = id => cache[id] || (cache[id] = parseExam(SOURCES[id]));
+
+function stats(id, st) {
+  const ex = getExam(id);
+  st = st || load(PREFIX + id) || {};
+  const blank = () => ({ right: 0, done: 0, total: 0 });
+  const all = blank(), parts = {};
+  for (const s of ex.sets) {
+    const p = parts[s.part] || (parts[s.part] = blank());
+    const x = st[s.id];
+    for (const q of s.questions) {
+      all.total++; p.total++;
+      if (x && x.done) { all.done++; p.done++; if (x.picks[q.num] === q.answer) { all.right++; p.right++; } }
+    }
+  }
+  return { ...all, parts };
+}
+
+/* ---------- 畫面 ---------- */
+const $ = s => document.querySelector(s);
+let examId, exam, state, curPart;
+const opened = new Set(); // 側邊欄裡展開中的考卷
+const st = id => state[id] || (state[id] = { picks: {}, done: false });
+const save = () => store(PREFIX + examId, state);
+
+function go(id, part) {
+  if (id !== examId) {
+    examId = id; exam = getExam(id); state = load(PREFIX + id) || {};
+    store(PREFIX + "current", id);
+    document.title = "多益閱讀";
+  }
+  if (!part) { const saved = String(load(PREFIX + id + "-tab")); part = exam.partKeys.includes(saved) ? saved : exam.partKeys[0]; }
+  curPart = part; store(PREFIX + id + "-tab", part);
+  opened.add(id);
+  $("#subtitle").textContent = `${exam.title}・PART ${curPart}`;
+  renderMain();
+  if (isNarrow()) setSide(false);
+  scrollTo({ top: 0 });
+}
+
+function renderSide() {
+  const box = $("#exams"), keep = box.scrollTop;
+  box.innerHTML = EXAMS.map(id => {
+    const ex = getExam(id), s = id === examId ? stats(id, state) : stats(id);
+    const parts = ex.partKeys.map(p => {
+      const ps = s.parts[p] || { done: 0, total: 0 };
+      const active = id === examId && p === curPart;
+      return `<button class="part ${active ? "active" : ""} ${ps.done === ps.total ? "done" : ""}" data-exam="${id}" data-p="${p}">
+        <span class="pn">PART ${p}</span><span class="pname">${esc((ex.intros[p] || {}).name || "")}</span><small>${ps.done === ps.total ? "✔ " : ""}${ps.done}/${ps.total}</small></button>`;
+    }).join("");
+    return `<div class="group ${opened.has(id) ? "open" : ""} ${id === examId ? "current" : ""}">
+      <button class="exam" data-toggle="${id}"><span class="caret">▶</span><i class="lf ${s.done === s.total ? "" : "off"}"></i><span>${esc(ex.title)}</span><small>${s.done}/${s.total}</small></button>
+      <div class="parts">${parts}</div></div>`;
+  }).join("");
+  box.scrollTop = keep;
+}
+
+function renderScore() {
+  const { right, done, total } = stats(examId, state);
+  const pct = done ? Math.round(right / done * 100) : 100;
+  $("#hpFill").style.width = pct + "%";
+  $("#hpText").textContent = done ? pct + "%" : "—";
+  $("#expFill").style.width = (done / total * 100) + "%";
+  $("#expText").textContent = `${done}/${total}`;
+  // 等級：10 份考卷累計答對題數，每 20 題升 1 級
+  const allRight = EXAMS.reduce((n, id) => n + (id === examId ? right : stats(id).right), 0);
+  $("#lv").textContent = "Lv." + (1 + Math.floor(allRight / 20));
+  renderSide();
+}
+
+function questionHTML(set, q) {
+  const x = st(set.id), pick = x.picks[q.num];
+  const opts = q.options.map(o => {
+    let cls = "opt", tag = "";
+    if (x.done) {
+      if (o.key === q.answer) { cls += " right"; tag = o.key === pick ? "🍁 答對" : "正解"; }
+      else if (o.key === pick) { cls += " wrong"; tag = "你的答案"; }
+    } else if (o.key === pick) cls += " sel";
+    return `<button class="${cls}" data-set="${set.id}" data-q="${q.num}" data-k="${o.key}" ${x.done ? "disabled" : ""}>
+      <span class="cur">${LEAF_SM}</span><span class="l">(${o.key})</span><span class="txt">${inline(o.text)}</span>${tag ? `<span class="tag">${tag}</span>` : ""}</button>`;
+  }).join("");
+  let after = "";
+  if (x.done) {
+    const ok = pick === q.answer;
+    const msg = ok ? "答對了！" : pick ? `答錯了，你選了 (${pick})` : "沒有作答";
+    after = `<div class="verdict ${ok ? "ok" : "bad"}"><span class="big">${ok ? "LEVEL UP!" : "MISS"}</span><span>${msg}・正確答案 (${q.answer})${q.level && q.level !== "?" ? `・難度：${q.level}` : ""}</span></div>
+      <div class="explain">${md(q.rest)}</div>`;
+  }
+  return `<div class="q"><div class="qtext"><span class="qnum">${q.num}.</span>${q.isNew ? '<span class="new">新題型</span> ' : ""}${q.text ? md(q.text).replace(/^<p>|<\/p>$/g, "") : ""}</div>
+    <div class="opts">${opts}</div>${after}</div>`;
+}
+
+function setHTML(set) {
+  const x = st(set.id);
+  const unanswered = set.questions.filter(q => !x.picks[q.num]).length;
+  let passages = "";
+  if (set.passages && set.passages.length) {
+    passages = `<div class="passages">` + set.passages.map(p => {
+      const body = p.lines.join("\n\n");
+      return (p.label ? `<div class="plabel">${p.label}</div>` : "") + `<div class="passage">${md(x.done ? body : stripMarks(body))}</div>`;
+    }).join("") + `</div>`;
+  }
+  const reveal = x.done && (set.trans || set.vocab)
+    ? `<details class="reveal" open><summary>文章翻譯與單字</summary>${md(set.trans)}${md(set.vocab)}</details>` : "";
+  const nums = set.questions.map(q => q.num);
+  const title = `${LEAF_SM}${nums.length > 1 ? `第 ${nums[0]}–${nums[nums.length - 1]} 題` : `第 ${nums[0]} 題`}${x.done ? "・已完成" : ""}`;
+  const head = set.heading
+    ? `<p class="set-title">${esc(set.heading)}${set.isNew ? ' <span class="new">新題型</span>' : ""}</p><p class="set-sub">${esc(set.sub || "")}</p>` : "";
+  const right = set.questions.filter(q => x.picks[q.num] === q.answer).length;
+  const perfect = right === set.questions.length;
+  const actions = x.done
+    ? `<div class="actions"><span class="result ${perfect ? "perfect" : ""}">${perfect ? "🍁 全部答對！" : "本組答對"} ${right} / ${set.questions.length}</span>
+       <button class="go plain" data-redo="${set.id}">重做這組</button></div>`
+    : `<div class="actions"><button class="go" data-submit="${set.id}" ${unanswered ? "disabled" : ""}>${set.heading ? "送出本題組" : "送出"}</button>
+       ${unanswered && set.questions.length > 1 ? `<span class="hint">還有 ${unanswered} 題沒選</span>` : ""}</div>`;
+  return `<section class="card win" id="${set.id}"><div class="win-title">${title}</div><div class="win-body">${head}
+    <div class="set-body ${passages ? "two" : ""}">${passages}<div>${set.questions.map(q => questionHTML(set, q)).join("")}${actions}</div></div>
+    ${reveal}</div></section>`;
+}
+
+// 重畫一個題組（送出、重做時用）：先記住題組在畫面上的位置，畫完捲回原處，避免手機上畫面亂跳
+function renderSet(id) {
+  const top = document.getElementById(id).getBoundingClientRect().top;
+  document.getElementById(id).outerHTML = setHTML(exam.sets.find(s => s.id === id));
+  scrollBy(0, document.getElementById(id).getBoundingClientRect().top - top);
+  renderScore();
+}
+
+// 點選項：只更新這一題的選取狀態和送出按鈕，不重畫整個題組
+function pickOption(setId, num, key) {
+  st(setId).picks[num] = key; save();
+  const sec = document.getElementById(setId);
+  sec.querySelectorAll(`.opt[data-q="${num}"]`).forEach(b => b.classList.toggle("sel", b.dataset.k === key));
+  const html = setHTML(exam.sets.find(s => s.id === setId));
+  const fresh = document.createElement("div");
+  fresh.innerHTML = html;
+  sec.querySelector(".actions").replaceWith(fresh.querySelector(".actions"));
+}
+
+// 每個 Part 最下面的「下一步」按鈕：下一個 Part，或下一份考卷
+function pagerHTML() {
+  const i = exam.partKeys.indexOf(curPart), j = EXAMS.indexOf(examId);
+  if (i < exam.partKeys.length - 1) return `<div class="pager"><button class="go" data-go="${examId}" data-p="${exam.partKeys[i + 1]}">前往 PART ${exam.partKeys[i + 1]} →</button></div>`;
+  if (j < EXAMS.length - 1) return `<div class="pager"><button class="go" data-go="${EXAMS[j + 1]}">前往 ${esc(getExam(EXAMS[j + 1]).title)} →</button></div>`;
+  return "";
+}
+
+function renderMain() {
+  const intro = exam.intros[curPart];
+  $("#main").innerHTML = (intro ? `<section class="intro win"><div class="win-title">${LEAF_SM}${esc(exam.title)}・PART ${curPart}・${esc(intro.name)}</div><div class="win-body">${esc(intro.text)}</div></section>` : "")
+    + exam.sets.filter(s => s.part === curPart).map(setHTML).join("") + pagerHTML();
+  renderScore();
+}
+
+/* ---------- 互動 ---------- */
+$("#exams").addEventListener("click", e => {
+  const t = e.target.closest("[data-toggle]");
+  if (t) { const id = t.dataset.toggle; opened.has(id) ? opened.delete(id) : opened.add(id); renderSide(); return; }
+  const b = e.target.closest("[data-p]");
+  if (b) go(b.dataset.exam, b.dataset.p);
+});
+$("#main").addEventListener("click", e => {
+  const opt = e.target.closest(".opt");
+  if (opt && !opt.disabled) { pickOption(opt.dataset.set, opt.dataset.q, opt.dataset.k); return; }
+  const sub = e.target.closest("[data-submit]");
+  if (sub && !sub.disabled) { st(sub.dataset.submit).done = true; save(); renderSet(sub.dataset.submit); return; }
+  const nx = e.target.closest("[data-go]");
+  if (nx) { go(nx.dataset.go, nx.dataset.p); return; }
+  const redo = e.target.closest("[data-redo]");
+  if (redo) { state[redo.dataset.redo] = { picks: {}, done: false }; save(); renderSet(redo.dataset.redo); }
+});
+$("#resetAll").onclick = () => {
+  if (!confirm(`確定要清除 ${exam.title} 的所有作答紀錄？`)) return;
+  state = {}; save(); renderMain();
+};
+
+// 側邊欄開合：寬螢幕記住上次的狀態；窄螢幕是抽屜，預設收起
+const isNarrow = () => matchMedia("(max-width: 899px)").matches;
+function setSide(open) {
+  if (isNarrow()) document.body.classList.toggle("side-open", open);
+  else { document.body.classList.toggle("side-closed", !open); store(PREFIX + "side", open); }
+}
+const sideIsOpen = () => isNarrow() ? document.body.classList.contains("side-open") : !document.body.classList.contains("side-closed");
+$("#menuBtn").onclick = $("#fab").onclick = () => setSide(!sideIsOpen());
+$("#sideClose").onclick = $("#backdrop").onclick = () => setSide(false);
+document.body.classList.toggle("side-closed", load(PREFIX + "side") === false);
+
+// 記下標題列高度，讓左側文章黏在標題列下方
+const measure = () => {
+  const h = getComputedStyle($("header")).position === "sticky" ? $("header").offsetHeight : 0;
+  document.documentElement.style.setProperty("--hh", h + "px");
+};
+addEventListener("resize", measure);
+
+$("#logoLeaf").innerHTML = leafSVG();
+go(EXAMS.includes(load(PREFIX + "current")) ? load(PREFIX + "current") : EXAMS[0]);
+measure();
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 274" aria-label="交易式 Outbox：左邊虛線框是同一筆資料庫交易，裡面有更新 account 與插入 outbox 兩步；中間的轉送器每 0.5 秒撈 outbox 裡還沒送的，送到 Kafka 主題 transfer-events，送成功再標記已送；右邊下游服務從 Kafka 讀" width="784" height="274">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="274" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="mq-5-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+  <rect x="20" y="30" width="250" height="170" rx="10" fill="none" stroke="var(--gold)" stroke-dasharray="6 4"/>
+  <text x="32" y="52" font-size="13" fill="var(--gold-deep)">同一筆資料庫交易（@Transactional）</text>
+  <rect x="40" y="66" width="210" height="44" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="145" y="93" font-size="13" text-anchor="middle">① UPDATE account（扣款）</text>
+  <rect x="40" y="124" width="210" height="44" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="145" y="151" font-size="13" text-anchor="middle">② INSERT INTO outbox</text>
+  <text x="145" y="190" font-size="12" text-anchor="middle" opacity=".75">要嘛兩步都成功，要嘛都沒發生</text>
+  <rect x="320" y="110" width="170" height="80" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="405" y="138" font-size="13" text-anchor="middle">③ 轉送器</text>
+  <text x="405" y="158" font-size="12" text-anchor="middle">每 0.5 秒撈還沒送的</text>
+  <text x="405" y="176" font-size="12" text-anchor="middle">送成功才標記</text>
+  <line x1="250" y1="146" x2="318" y2="150" stroke="currentColor" marker-end="url(#mq-5-arrow)"/>
+  <text x="284" y="138" font-size="12" text-anchor="middle">讀</text>
+  <rect x="530" y="110" width="110" height="80" rx="8" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="585" y="146" font-size="13" text-anchor="middle">Kafka</text>
+  <text x="585" y="166" font-size="11" text-anchor="middle" class="mono">transfer-events</text>
+  <line x1="490" y1="150" x2="528" y2="150" stroke="currentColor" marker-end="url(#mq-5-arrow)"/>
+  <rect x="660" y="110" width="90" height="80" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="705" y="146" font-size="13" text-anchor="middle">下游</text>
+  <text x="705" y="166" font-size="13" text-anchor="middle">服務</text>
+  <line x1="640" y1="150" x2="658" y2="150" stroke="currentColor" marker-end="url(#mq-5-arrow)"/>
+  <text x="320" y="236" font-size="12.5" opacity=".75">轉送器在「送出」和「標記」之間當機，下次會再送一次 → 下游要冪等</text>
+</svg>

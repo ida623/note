@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 324" aria-label="複合索引的排序：先依帳號、帳號相同再依日期。帳號 0000001234 的所有記錄是連續的一段，用灰藍標出；其中 2026 年 3 月的又是連續的一小段，用古銅標出。只給日期時，符合的記錄散在每個帳號裡，不是連續的一段" width="784" height="324">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="324" fill="#FFFFFF" stroke="none"/>
+  <defs></defs>
+  <text x="130" y="28" font-size="12" text-anchor="middle" font-weight="700" class="mono">account_no</text>
+  <text x="265" y="28" font-size="12" text-anchor="middle" font-weight="700" class="mono">tx_date</text>
+  <rect x="60" y="40" width="270" height="28" fill="var(--surface)" stroke="currentColor"/>
+  <text x="130" y="59" font-size="12" text-anchor="middle" class="mono">0000001233</text>
+  <text x="265" y="59" font-size="12" text-anchor="middle" class="mono">2026-08-31</text>
+  <rect x="60" y="68" width="270" height="28" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="130" y="87" font-size="12" text-anchor="middle" class="mono">0000001234</text>
+  <text x="265" y="87" font-size="12" text-anchor="middle" class="mono">2025-02-16</text>
+  <rect x="60" y="96" width="270" height="28" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="130" y="115" font-size="12" text-anchor="middle" class="mono">0000001234</text>
+  <text x="265" y="115" font-size="12" text-anchor="middle" class="mono">2025-02-16</text>
+  <rect x="60" y="124" width="270" height="28" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="130" y="143" font-size="12" text-anchor="middle" class="mono">0000001234</text>
+  <text x="265" y="143" font-size="12" text-anchor="middle" class="mono">…</text>
+  <rect x="60" y="152" width="270" height="28" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="130" y="171" font-size="12" text-anchor="middle" class="mono">0000001234</text>
+  <text x="265" y="171" font-size="12" text-anchor="middle" class="mono">2026-03-23</text>
+  <rect x="60" y="180" width="270" height="28" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="130" y="199" font-size="12" text-anchor="middle" class="mono">0000001234</text>
+  <text x="265" y="199" font-size="12" text-anchor="middle" class="mono">2026-03-23</text>
+  <rect x="60" y="208" width="270" height="28" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="130" y="227" font-size="12" text-anchor="middle" class="mono">0000001234</text>
+  <text x="265" y="227" font-size="12" text-anchor="middle" class="mono">…</text>
+  <rect x="60" y="236" width="270" height="28" fill="var(--surface)" stroke="currentColor"/>
+  <text x="130" y="255" font-size="12" text-anchor="middle" class="mono">0000001235</text>
+  <text x="265" y="255" font-size="12" text-anchor="middle" class="mono">2025-02-15</text>
+  <rect x="60" y="264" width="270" height="28" fill="var(--surface)" stroke="currentColor"/>
+  <text x="130" y="283" font-size="12" text-anchor="middle" class="mono">0000001235</text>
+  <text x="265" y="283" font-size="12" text-anchor="middle" class="mono">…</text>
+  <text x="360" y="70" font-size="13" text-anchor="start" font-weight="700">先依帳號排，帳號相同再依日期排</text>
+  <text x="360" y="104" font-size="12" text-anchor="start" fill="var(--slate-deep)">灰藍：account_no = '0000001234' 是連續的一段 → 用得到</text>
+  <text x="360" y="128" font-size="12" text-anchor="start" fill="var(--gold-deep)">古銅：再加 tx_date 在 3 月 → 在那一段裡又是連續的</text>
+  <text x="360" y="162" font-size="12" text-anchor="start">只給 tx_date = '2026-03-23'：</text>
+  <text x="360" y="182" font-size="12" text-anchor="start">散在每個帳號裡，不是連續的一段 → 用不到</text>
+  <text x="360" y="216" font-size="12" text-anchor="start">就像電話簿先依姓、再依名排：</text>
+  <text x="360" y="236" font-size="12" text-anchor="start">知道姓才翻得到，只知道名就得整本翻</text>
+</svg>

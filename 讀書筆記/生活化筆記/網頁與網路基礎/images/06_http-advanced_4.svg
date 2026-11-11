@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 342" aria-label="Vary 讓快取鍵變大：同一個網址 /notes-platform/，帶 Accept-Encoding: gzip 的請求對到快取裡的 gzip 壓縮版，3358 位元組；沒帶 Accept-Encoding 的請求對到原文版，7903 位元組。回應帶 Vary: Accept-Encoding，快取才知道要分開存" width="784" height="342">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="342" fill="#FFFFFF" stroke="none"/>
+<defs><marker id="ha-4a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs><rect x="20" y="60" width="200" height="56" rx="8" fill="var(--surface)" stroke="var(--gold)"/><text x="120" y="82" font-size="11.5" text-anchor="middle" class="mono">GET /notes-platform/</text><text x="120" y="102" font-size="11" text-anchor="middle" fill="var(--gold-deep)" class="mono">Accept-Encoding: gzip</text><rect x="20" y="170" width="200" height="56" rx="8" fill="var(--surface)" stroke="var(--slate)"/><text x="120" y="192" font-size="11.5" text-anchor="middle" class="mono">GET /notes-platform/</text><text x="120" y="212" font-size="11" text-anchor="middle" fill="var(--slate-deep)" class="mono">沒有 Accept-Encoding</text><rect x="300" y="40" width="440" height="210" rx="10" fill="none" stroke="currentColor" stroke-dasharray="5 4"/><text x="520" y="30" font-size="12.5" text-anchor="middle" fill="var(--gold-deep)">共用快取（CDN）：回應帶 Vary: Accept-Encoding</text><rect x="320" y="70" width="400" height="64" rx="8" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="520" y="96" font-size="12" text-anchor="middle">快取鍵：網址 ＋ Accept-Encoding=gzip</text><text x="520" y="118" font-size="12" text-anchor="middle">存的回應：gzip 壓縮版，3358 位元組</text><rect x="320" y="165" width="400" height="64" rx="8" fill="var(--slate-soft)" stroke="var(--slate)"/><text x="520" y="191" font-size="12" text-anchor="middle">快取鍵：網址 ＋ 沒有 Accept-Encoding</text><text x="520" y="213" font-size="12" text-anchor="middle">存的回應：原文，7903 位元組</text><line x1="222" y1="88" x2="318" y2="100" stroke="var(--gold)" stroke-width="1.5" marker-end="url(#ha-4a)"/><line x1="222" y1="198" x2="318" y2="196" stroke="var(--slate)" stroke-width="1.5" marker-end="url(#ha-4a)"/><text x="380" y="282" font-size="12.5" text-anchor="middle">同一個網址存兩份。沒有 Vary 的話，快取可能把 gzip 版交給不會解壓縮的用戶端</text><text x="380" y="304" font-size="11.5" text-anchor="middle" opacity=".75">（位元組數為 2026-10-02 對本站首頁實測）</text>
+</svg>

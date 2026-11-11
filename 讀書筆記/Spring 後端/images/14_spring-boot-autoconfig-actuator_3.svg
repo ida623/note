@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 424" aria-label="外部化設定的優先順序，由上而下越來越低：命令列參數、Java 系統屬性、作業系統環境變數、jar 外的 profile 設定檔、jar 外的設定檔、jar 內的 profile 設定檔、jar 內的設定檔，最底是 @PropertySource 與預設屬性；同一個鍵出現在好幾處時，上面的蓋過下面的" width="784" height="424">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="424" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="sb-03-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <rect x="140" y="20" width="330" height="36" rx="8" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="305" y="43" font-size="13.5" text-anchor="middle">命令列參數</text>
+  <text x="490" y="43" font-size="12.5" class="mono" fill="var(--slate-deep)">--bank.greeting=…</text>
+  <rect x="140" y="64" width="330" height="36" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="305" y="87" font-size="13.5" text-anchor="middle">Java 系統屬性</text>
+  <text x="490" y="87" font-size="12.5" class="mono" fill="var(--slate-deep)">-Dbank.greeting=…</text>
+  <rect x="140" y="108" width="330" height="36" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="305" y="131" font-size="13.5" text-anchor="middle">作業系統環境變數</text>
+  <text x="490" y="131" font-size="12.5" class="mono" fill="var(--slate-deep)">BANK_GREETING=…</text>
+  <rect x="140" y="152" width="330" height="36" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="305" y="175" font-size="13.5" text-anchor="middle">jar 外的 application-{profile}</text>
+  <rect x="140" y="196" width="330" height="36" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="305" y="219" font-size="13.5" text-anchor="middle">jar 外的 application</text>
+  <rect x="140" y="240" width="330" height="36" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="305" y="263" font-size="13.5" text-anchor="middle">jar 內的 application-{profile}</text>
+  <text x="490" y="263" font-size="12.5" class="mono" fill="var(--slate-deep)">application-uat.yaml</text>
+  <rect x="140" y="284" width="330" height="36" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="305" y="307" font-size="13.5" text-anchor="middle">jar 內的 application</text>
+  <text x="490" y="307" font-size="12.5" class="mono" fill="var(--slate-deep)">application.yaml</text>
+  <rect x="140" y="328" width="330" height="36" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="305" y="351" font-size="13.5" text-anchor="middle">@PropertySource、預設屬性</text>
+  <line x1="100" y1="370" x2="100" y2="24" stroke="currentColor" stroke-width="1.6" marker-end="url(#sb-03-arrow)"/>
+  <text x="90" y="200" font-size="13" text-anchor="end">越上面</text>
+  <text x="90" y="220" font-size="13" text-anchor="end">越優先</text>
+  <text x="140" y="390" font-size="12" opacity=".75">節錄常用的幾層；完整清單（含 SPRING_APPLICATION_JSON、測試用屬性等）見官方文件</text>
+</svg>

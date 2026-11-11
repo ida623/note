@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 289" aria-label="三台實體伺服器各跑一個服務，每台的效能都只用到一成" width="784" height="289">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="289" fill="#FFFFFF" stroke="none"/>
+        <text x="380" y="22" font-size="13" text-anchor="middle" opacity=".7">一台機器 = 一個服務</text>
+        <g fill="none" stroke="currentColor">
+          <rect x="42" y="38" width="200" height="150" rx="5"/>
+          <rect x="280" y="38" width="200" height="150" rx="5"/>
+          <rect x="518" y="38" width="200" height="150" rx="5"/>
+        </g>
+        <g stroke="currentColor" stroke-opacity=".3">
+          <line x1="42" y1="86" x2="242" y2="86"/><line x1="42" y1="132" x2="242" y2="132"/>
+          <line x1="280" y1="86" x2="480" y2="86"/><line x1="280" y1="132" x2="480" y2="132"/>
+          <line x1="518" y1="86" x2="718" y2="86"/><line x1="518" y1="132" x2="718" y2="132"/>
+        </g>
+        <g font-size="15" text-anchor="middle">
+          <text x="142" y="68">訂單系統</text><text x="380" y="68">報表系統</text><text x="618" y="68">內部網站</text>
+        </g>
+        <g font-size="13" text-anchor="middle" opacity=".75">
+          <text x="142" y="114">作業系統</text><text x="380" y="114">作業系統</text><text x="618" y="114">作業系統</text>
+          <text x="142" y="160">實體機器</text><text x="380" y="160">實體機器</text><text x="618" y="160">實體機器</text>
+        </g>
+        <g fill="none" stroke="currentColor" stroke-opacity=".45">
+          <rect x="72" y="206" width="140" height="12" rx="2"/>
+          <rect x="310" y="206" width="140" height="12" rx="2"/>
+          <rect x="548" y="206" width="140" height="12" rx="2"/>
+        </g>
+        <g fill="var(--slate)">
+          <rect x="72" y="206" width="16" height="12" rx="2"/>
+          <rect x="310" y="206" width="20" height="12" rx="2"/>
+          <rect x="548" y="206" width="13" height="12" rx="2"/>
+        </g>
+        <g font-size="12" text-anchor="middle" fill="var(--slate)">
+          <text x="142" y="236">效能只用了一成</text><text x="380" y="236">效能只用了一成</text><text x="618" y="236">效能只用了一成</text>
+        </g>
+        <text x="380" y="259" font-size="13" text-anchor="middle" fill="var(--danger)">要多一個服務，就要再買一台，再等兩個月</text>
+      </svg>

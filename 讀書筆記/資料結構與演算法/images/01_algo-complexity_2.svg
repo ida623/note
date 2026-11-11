@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 424" aria-label="在 8 個排好序的數字裡用二分搜尋找 68：每看一次中間那格就丟掉一半，要找的範圍從 8 格變 4 格、2 格、1 格，總共看 4 次" width="784" height="424">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="424" fill="#FFFFFF" stroke="none"/>
+  <text x="20" y="65" font-size="14">第 1 次：剩 8 格</text>
+  <rect x="150" y="40" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="178" y="65" font-size="14" text-anchor="middle" class="mono">3</text>
+  <text x="178" y="94" font-size="12" text-anchor="middle" class="mono" opacity=".6">0</text>
+  <rect x="206" y="40" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="234" y="65" font-size="14" text-anchor="middle" class="mono">8</text>
+  <text x="234" y="94" font-size="12" text-anchor="middle" class="mono" opacity=".6">1</text>
+  <rect x="262" y="40" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="290" y="65" font-size="14" text-anchor="middle" class="mono">15</text>
+  <text x="290" y="94" font-size="12" text-anchor="middle" class="mono" opacity=".6">2</text>
+  <rect x="318" y="40" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="346" y="65" font-size="14" text-anchor="middle" class="mono">21</text>
+  <text x="346" y="94" font-size="12" text-anchor="middle" class="mono" opacity=".6">3</text>
+  <rect x="374" y="40" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="402" y="65" font-size="14" text-anchor="middle" class="mono">34</text>
+  <text x="402" y="94" font-size="12" text-anchor="middle" class="mono" opacity=".6">4</text>
+  <rect x="430" y="40" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="458" y="65" font-size="14" text-anchor="middle" class="mono">47</text>
+  <text x="458" y="94" font-size="12" text-anchor="middle" class="mono" opacity=".6">5</text>
+  <rect x="486" y="40" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="514" y="65" font-size="14" text-anchor="middle" class="mono">52</text>
+  <text x="514" y="94" font-size="12" text-anchor="middle" class="mono" opacity=".6">6</text>
+  <rect x="542" y="40" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="570" y="65" font-size="14" text-anchor="middle" class="mono">68</text>
+  <text x="570" y="94" font-size="12" text-anchor="middle" class="mono" opacity=".6">7</text>
+  <path d="M340 26 L352 26 L346 36 z" fill="var(--gold-deep)"/>
+  <text x="356" y="34" font-size="12" class="mono" fill="var(--gold-deep)">mid</text>
+  <text x="612" y="65" font-size="13" fill="var(--gold-deep)">21 太小，往右找</text>
+  <text x="20" y="155" font-size="14">第 2 次：剩 4 格</text>
+  <rect x="150" y="130" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="178" y="155" font-size="14" text-anchor="middle" class="mono" opacity=".3">3</text>
+  <text x="178" y="184" font-size="12" text-anchor="middle" class="mono" opacity=".6">0</text>
+  <rect x="206" y="130" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="234" y="155" font-size="14" text-anchor="middle" class="mono" opacity=".3">8</text>
+  <text x="234" y="184" font-size="12" text-anchor="middle" class="mono" opacity=".6">1</text>
+  <rect x="262" y="130" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="290" y="155" font-size="14" text-anchor="middle" class="mono" opacity=".3">15</text>
+  <text x="290" y="184" font-size="12" text-anchor="middle" class="mono" opacity=".6">2</text>
+  <rect x="318" y="130" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="346" y="155" font-size="14" text-anchor="middle" class="mono" opacity=".3">21</text>
+  <text x="346" y="184" font-size="12" text-anchor="middle" class="mono" opacity=".6">3</text>
+  <rect x="374" y="130" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="402" y="155" font-size="14" text-anchor="middle" class="mono">34</text>
+  <text x="402" y="184" font-size="12" text-anchor="middle" class="mono" opacity=".6">4</text>
+  <rect x="430" y="130" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="458" y="155" font-size="14" text-anchor="middle" class="mono">47</text>
+  <text x="458" y="184" font-size="12" text-anchor="middle" class="mono" opacity=".6">5</text>
+  <rect x="486" y="130" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="514" y="155" font-size="14" text-anchor="middle" class="mono">52</text>
+  <text x="514" y="184" font-size="12" text-anchor="middle" class="mono" opacity=".6">6</text>
+  <rect x="542" y="130" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="570" y="155" font-size="14" text-anchor="middle" class="mono">68</text>
+  <text x="570" y="184" font-size="12" text-anchor="middle" class="mono" opacity=".6">7</text>
+  <path d="M452 116 L464 116 L458 126 z" fill="var(--gold-deep)"/>
+  <text x="468" y="124" font-size="12" class="mono" fill="var(--gold-deep)">mid</text>
+  <text x="612" y="155" font-size="13" fill="var(--gold-deep)">47 太小，往右找</text>
+  <text x="20" y="245" font-size="14">第 3 次：剩 2 格</text>
+  <rect x="150" y="220" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="178" y="245" font-size="14" text-anchor="middle" class="mono" opacity=".3">3</text>
+  <text x="178" y="274" font-size="12" text-anchor="middle" class="mono" opacity=".6">0</text>
+  <rect x="206" y="220" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="234" y="245" font-size="14" text-anchor="middle" class="mono" opacity=".3">8</text>
+  <text x="234" y="274" font-size="12" text-anchor="middle" class="mono" opacity=".6">1</text>
+  <rect x="262" y="220" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="290" y="245" font-size="14" text-anchor="middle" class="mono" opacity=".3">15</text>
+  <text x="290" y="274" font-size="12" text-anchor="middle" class="mono" opacity=".6">2</text>
+  <rect x="318" y="220" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="346" y="245" font-size="14" text-anchor="middle" class="mono" opacity=".3">21</text>
+  <text x="346" y="274" font-size="12" text-anchor="middle" class="mono" opacity=".6">3</text>
+  <rect x="374" y="220" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="402" y="245" font-size="14" text-anchor="middle" class="mono" opacity=".3">34</text>
+  <text x="402" y="274" font-size="12" text-anchor="middle" class="mono" opacity=".6">4</text>
+  <rect x="430" y="220" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="458" y="245" font-size="14" text-anchor="middle" class="mono" opacity=".3">47</text>
+  <text x="458" y="274" font-size="12" text-anchor="middle" class="mono" opacity=".6">5</text>
+  <rect x="486" y="220" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="514" y="245" font-size="14" text-anchor="middle" class="mono">52</text>
+  <text x="514" y="274" font-size="12" text-anchor="middle" class="mono" opacity=".6">6</text>
+  <rect x="542" y="220" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="570" y="245" font-size="14" text-anchor="middle" class="mono">68</text>
+  <text x="570" y="274" font-size="12" text-anchor="middle" class="mono" opacity=".6">7</text>
+  <path d="M508 206 L520 206 L514 216 z" fill="var(--gold-deep)"/>
+  <text x="524" y="214" font-size="12" class="mono" fill="var(--gold-deep)">mid</text>
+  <text x="612" y="245" font-size="13" fill="var(--gold-deep)">52 太小，往右找</text>
+  <text x="20" y="335" font-size="14">第 4 次：剩 1 格</text>
+  <rect x="150" y="310" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="178" y="335" font-size="14" text-anchor="middle" class="mono" opacity=".3">3</text>
+  <text x="178" y="364" font-size="12" text-anchor="middle" class="mono" opacity=".6">0</text>
+  <rect x="206" y="310" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="234" y="335" font-size="14" text-anchor="middle" class="mono" opacity=".3">8</text>
+  <text x="234" y="364" font-size="12" text-anchor="middle" class="mono" opacity=".6">1</text>
+  <rect x="262" y="310" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="290" y="335" font-size="14" text-anchor="middle" class="mono" opacity=".3">15</text>
+  <text x="290" y="364" font-size="12" text-anchor="middle" class="mono" opacity=".6">2</text>
+  <rect x="318" y="310" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="346" y="335" font-size="14" text-anchor="middle" class="mono" opacity=".3">21</text>
+  <text x="346" y="364" font-size="12" text-anchor="middle" class="mono" opacity=".6">3</text>
+  <rect x="374" y="310" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="402" y="335" font-size="14" text-anchor="middle" class="mono" opacity=".3">34</text>
+  <text x="402" y="364" font-size="12" text-anchor="middle" class="mono" opacity=".6">4</text>
+  <rect x="430" y="310" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="458" y="335" font-size="14" text-anchor="middle" class="mono" opacity=".3">47</text>
+  <text x="458" y="364" font-size="12" text-anchor="middle" class="mono" opacity=".6">5</text>
+  <rect x="486" y="310" width="56" height="40" fill="var(--surface)" stroke="currentColor" opacity=".3"/>
+  <text x="514" y="335" font-size="14" text-anchor="middle" class="mono" opacity=".3">52</text>
+  <text x="514" y="364" font-size="12" text-anchor="middle" class="mono" opacity=".6">6</text>
+  <rect x="542" y="310" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="570" y="335" font-size="14" text-anchor="middle" class="mono">68</text>
+  <text x="570" y="364" font-size="12" text-anchor="middle" class="mono" opacity=".6">7</text>
+  <path d="M564 296 L576 296 L570 306 z" fill="var(--gold-deep)"/>
+  <text x="580" y="304" font-size="12" class="mono" fill="var(--gold-deep)">mid</text>
+  <text x="612" y="335" font-size="13" fill="var(--gold-deep)">等於 68，找到了</text>
+</svg>

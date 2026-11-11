@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 354" aria-label="冪等鍵的流程：App 送 POST /v2/transfers 帶冪等鍵 K；伺服器第一次看到 K，扣款並把 K 對應的結果存起來；201 回應在路上遺失；App 逾時後帶同一個 K 重送；伺服器查到 K 已經處理過，不再扣款，直接回同一個結果 T-1" width="784" height="354">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="354" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="ad-idem-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <text x="90" y="28" font-size="14" text-anchor="middle" font-weight="bold">App</text>
+  <text x="400" y="28" font-size="14" text-anchor="middle" font-weight="bold">伺服器</text>
+  <text x="660" y="28" font-size="14" text-anchor="middle" font-weight="bold">冪等鍵紀錄</text>
+  <line x1="90" y1="40" x2="90" y2="315" stroke="currentColor" opacity=".4"/>
+  <line x1="400" y1="40" x2="400" y2="315" stroke="currentColor" opacity=".4"/>
+  <line x1="660" y1="40" x2="660" y2="315" stroke="currentColor" opacity=".4"/>
+  <line x1="92" y1="68" x2="396" y2="68" stroke="currentColor" stroke-width="1.6" marker-end="url(#ad-idem-arrow)"/>
+  <text x="244" y="60" font-size="12" text-anchor="middle">POST 轉帳 3000，冪等鍵 K</text>
+  <line x1="402" y1="104" x2="656" y2="104" stroke="currentColor" stroke-width="1.6" marker-end="url(#ad-idem-arrow)"/>
+  <text x="530" y="96" font-size="12" text-anchor="middle">第一次看到 K：扣款，存 K → T-1</text>
+  <line x1="398" y1="140" x2="250" y2="140" stroke="currentColor" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="244" y="132" font-size="12" text-anchor="middle">201 T-1（在路上遺失）</text>
+  <text x="236" y="158" font-size="18" text-anchor="middle" fill="var(--gold)">✕</text>
+  <text x="100" y="180" font-size="12" opacity=".85">逾時，重送</text>
+  <line x1="92" y1="206" x2="396" y2="206" stroke="currentColor" stroke-width="1.6" marker-end="url(#ad-idem-arrow)"/>
+  <text x="244" y="198" font-size="12" text-anchor="middle">同樣內容，同一個冪等鍵 K</text>
+  <line x1="402" y1="242" x2="656" y2="242" stroke="currentColor" stroke-width="1.6" marker-end="url(#ad-idem-arrow)"/>
+  <text x="530" y="234" font-size="12" text-anchor="middle">查到 K 已處理過：不再扣款</text>
+  <line x1="398" y1="282" x2="94" y2="282" stroke="var(--gold)" stroke-width="2" marker-end="url(#ad-idem-arrow)"/>
+  <text x="244" y="274" font-size="12" text-anchor="middle">201 T-1（跟第一次一樣）</text>
+</svg>

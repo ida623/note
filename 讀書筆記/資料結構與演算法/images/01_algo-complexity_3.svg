@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 384" aria-label="ArrayList 連續 add 40 次，每次的成本長條圖：大部分是 1，第 11、16、23、34 次因為擴容要搬 10、15、22、33 個元素，長條特別高；虛線是平均成本，約 3" width="784" height="384">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="384" fill="#FFFFFF" stroke="none"/>
+  <line x1="64" y1="300" x2="680" y2="300" stroke="currentColor"/>
+  <rect x="72" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="87" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="102" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="117" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="132" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="147" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="162" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="177" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="192" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="207" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="222" y="228.8" width="11" height="71.2" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="227.5" y="220.8" font-size="12" text-anchor="middle" fill="var(--gold-deep)">第 11 次</text>
+  <text x="227.5" y="204.8" font-size="12" text-anchor="middle" fill="var(--gold-deep)">搬 10 個</text>
+  <rect x="237" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="252" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="267" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="282" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="297" y="196.5" width="11" height="103.5" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="302.5" y="188.5" font-size="12" text-anchor="middle" fill="var(--gold-deep)">第 16 次</text>
+  <text x="302.5" y="172.5" font-size="12" text-anchor="middle" fill="var(--gold-deep)">搬 15 個</text>
+  <rect x="312" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="327" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="342" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="357" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="372" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="387" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="402" y="151.2" width="11" height="148.8" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="407.5" y="143.2" font-size="12" text-anchor="middle" fill="var(--gold-deep)">第 23 次</text>
+  <text x="407.5" y="127.2" font-size="12" text-anchor="middle" fill="var(--gold-deep)">搬 22 個</text>
+  <rect x="417" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="432" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="447" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="462" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="477" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="492" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="507" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="522" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="537" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="552" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="567" y="80.0" width="11" height="220.0" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="572.5" y="72.0" font-size="12" text-anchor="middle" fill="var(--gold-deep)">第 34 次</text>
+  <text x="572.5" y="56.0" font-size="12" text-anchor="middle" fill="var(--gold-deep)">搬 33 個</text>
+  <rect x="582" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="597" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="612" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="627" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="642" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <rect x="657" y="293.5" width="11" height="6.5" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="77.5" y="318" font-size="12" text-anchor="middle" class="mono" opacity=".6">1</text>
+  <text x="212.5" y="318" font-size="12" text-anchor="middle" class="mono" opacity=".6">10</text>
+  <text x="362.5" y="318" font-size="12" text-anchor="middle" class="mono" opacity=".6">20</text>
+  <text x="512.5" y="318" font-size="12" text-anchor="middle" class="mono" opacity=".6">30</text>
+  <text x="662.5" y="318" font-size="12" text-anchor="middle" class="mono" opacity=".6">40</text>
+  <line x1="70" y1="280.6" x2="670" y2="280.6" stroke="var(--slate-deep)" stroke-dasharray="6 4"/>
+  <text x="684" y="284.6" font-size="13" fill="var(--slate-deep)">平均約 3.0</text>
+  <text x="684" y="318" font-size="13">第幾次 add</text>
+  <text x="64" y="40" font-size="13">這次 add 的成本（放 1 個＋搬幾個）</text>
+</svg>

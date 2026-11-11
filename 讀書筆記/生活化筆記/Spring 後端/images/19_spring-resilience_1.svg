@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 274" aria-label="連鎖故障：核心帳務變慢，餘額服務的執行緒都卡在等它回覆；網銀前台呼叫餘額服務也跟著等，最後三層一起變慢或逾時" width="784" height="274">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="274" fill="#FFFFFF" stroke="none"/>
+<defs><marker id="rs-m1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs>
+<rect x="30" y="60" width="180" height="70" rx="8" fill="var(--surface)" stroke="currentColor"/><text x="120" y="90" font-size="14" text-anchor="middle">網銀前台</text><text x="120" y="112" font-size="12" text-anchor="middle" opacity=".7">等餘額服務回覆</text>
+<rect x="290" y="60" width="180" height="70" rx="8" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="380" y="90" font-size="14" text-anchor="middle">餘額服務</text><text x="380" y="112" font-size="12" text-anchor="middle" opacity=".7">執行緒全卡在等下游</text>
+<rect x="550" y="60" width="180" height="70" rx="8" fill="var(--slate-soft)" stroke="var(--slate)"/><text x="640" y="90" font-size="14" text-anchor="middle">核心帳務</text><text x="640" y="112" font-size="12" text-anchor="middle" fill="var(--danger)">變慢：每筆 10 秒</text>
+<line x1="212" y1="95" x2="286" y2="95" stroke="currentColor" stroke-opacity=".6" stroke-width="1.5" marker-end="url(#rs-m1)"/><line x1="472" y1="95" x2="546" y2="95" stroke="currentColor" stroke-opacity=".6" stroke-width="1.5" marker-end="url(#rs-m1)"/>
+<text x="380" y="170" font-size="12.5" text-anchor="middle">③ 卡住的請求越積越多，餘額服務自己也回不了</text><text x="640" y="170" font-size="12.5" text-anchor="middle">① 源頭只有一個</text><text x="120" y="170" font-size="12.5" text-anchor="middle">④ 前台跟著卡住</text>
+<text x="30" y="215" font-size="12.5" fill="var(--gold-deep)">斷路器：下游一直失敗就先別呼叫；逾時：每次呼叫有終點；隔艙：卡住的只占自己那一格名額</text>
+<text x="30" y="238" font-size="12" opacity=".6">② 呼叫端沒有逾時、沒有斷路器時，下游的慢會原封不動傳上來</text>
+</svg>

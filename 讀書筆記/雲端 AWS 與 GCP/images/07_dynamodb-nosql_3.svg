@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 286" aria-label="樂觀鎖時間軸。櫃員甲與櫃員乙都讀到 A001 餘額 12000、版本 1。甲要扣 1000，用條件版本等於 1 寫入 11000 與版本 2，成功。乙要扣 500，也用條件版本等於 1 寫入 11500，失敗，因為版本已經是 2。乙重讀拿到 11000、版本 2，再用條件版本等於 2 寫入 10500 與版本 3，成功" width="784" height="286">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="286" fill="#FFFFFF" stroke="none"/>
+<defs><marker id="dy-m3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs><text x="40" y="58" font-size="13" text-anchor="start" fill="var(--gold-deep)">櫃員甲</text><text x="40" y="168" font-size="13" text-anchor="start" fill="var(--slate-deep)">櫃員乙</text><line x1="100" y1="54" x2="730" y2="54" stroke="currentColor" stroke-opacity=".3" stroke-width="1.5" marker-end="url(#dy-m3)"/><line x1="100" y1="164" x2="730" y2="164" stroke="currentColor" stroke-opacity=".3" stroke-width="1.5" marker-end="url(#dy-m3)"/><circle cx="150" cy="54" r="6" fill="var(--gold)"/><text x="150" y="36" font-size="11.5" text-anchor="middle">讀：12000、版本 1</text><circle cx="300" cy="54" r="6" fill="var(--gold)"/><text x="300" y="36" font-size="11.5" text-anchor="middle">寫 11000，條件版本＝1</text><text x="300" y="80" font-size="11.5" text-anchor="middle" fill="var(--gold-deep)">成功 → 版本 2</text><circle cx="190" cy="164" r="6" fill="var(--slate)"/><text x="190" y="146" font-size="11.5" text-anchor="middle">讀：12000、版本 1</text><circle cx="400" cy="164" r="6" fill="var(--slate)"/><text x="400" y="188" font-size="11.5" text-anchor="middle">寫 11500，條件版本＝1</text><text x="400" y="206" font-size="11.5" text-anchor="middle" fill="var(--slate-deep)">失敗：版本已經是 2</text><circle cx="530" cy="164" r="6" fill="var(--slate)"/><text x="530" y="146" font-size="11.5" text-anchor="middle">重讀：11000、版本 2</text><circle cx="660" cy="164" r="6" fill="var(--slate)"/><text x="660" y="146" font-size="11.5" text-anchor="middle">寫 10500，條件版本＝2</text><text x="660" y="190" font-size="11.5" text-anchor="middle" fill="var(--slate-deep)">成功 → 版本 3</text><line x1="306" y1="90" x2="394" y2="156" stroke="var(--gold)" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#dy-m3)"/><text x="380" y="112" font-size="11" text-anchor="middle" opacity=".7">版本變了，乙的條件不成立</text><text x="380" y="244" font-size="12" text-anchor="middle" opacity=".65">甲扣 1000、乙扣 500，最後 10500，兩筆都算到；沒有版本號的話乙會把甲那筆蓋掉，剩 11500</text>
+</svg>

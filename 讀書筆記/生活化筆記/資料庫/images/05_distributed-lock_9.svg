@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 274" aria-label="遞增號碼：A 拿到 33 號、B 拿到 34 號，資料庫只接受比看過的最大號碼更大的請求" width="784" height="274">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="274" fill="#FFFFFF" stroke="none"/>
+        <rect x="20" y="88" width="140" height="70" rx="5" fill="none" stroke="var(--gold)" stroke-width="2"/>
+        <text x="90" y="118" font-size="14" text-anchor="middle" fill="var(--gold)">鎖服務</text>
+        <text x="90" y="138" font-size="12" text-anchor="middle" fill="var(--gold)">發鎖 + 發號碼</text>
+
+        <line x1="168" y1="108" x2="240" y2="72" stroke="currentColor" stroke-opacity=".55" marker-end="url(#d1)"/>
+        <line x1="168" y1="140" x2="240" y2="176" stroke="currentColor" stroke-opacity=".55" marker-end="url(#d1)"/>
+
+        <rect x="248" y="46" width="170" height="52" rx="5" fill="none" stroke="currentColor"/>
+        <text x="333" y="70" font-size="14" text-anchor="middle">A 先拿到</text>
+        <text x="333" y="88" font-size="13" text-anchor="middle" class="mono">號碼 33</text>
+
+        <rect x="248" y="150" width="170" height="52" rx="5" fill="none" stroke="currentColor"/>
+        <text x="333" y="174" font-size="14" text-anchor="middle">A 卡住後，B 拿到</text>
+        <text x="333" y="192" font-size="13" text-anchor="middle" class="mono">號碼 34</text>
+
+        <line x1="426" y1="82" x2="562" y2="112" stroke="var(--danger)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#d2)"/>
+        <text x="494" y="84" font-size="12" text-anchor="middle" fill="var(--danger)">遲到的 33 → 擋掉</text>
+
+        <line x1="426" y1="170" x2="562" y2="142" stroke="var(--ok)" stroke-width="2" marker-end="url(#d3)"/>
+        <text x="494" y="188" font-size="12" text-anchor="middle" fill="var(--ok)">34 → 接受</text>
+
+        <rect x="572" y="90" width="168" height="74" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <text x="656" y="120" font-size="14" text-anchor="middle">資料庫</text>
+        <text x="656" y="142" font-size="12" text-anchor="middle" opacity=".75">只收比 34 大的</text>
+
+        <defs>
+          <marker id="d1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <polygon points="0,0 10,5 0,10" fill="currentColor" fill-opacity=".55"/>
+          </marker>
+          <marker id="d2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <polygon points="0,0 10,5 0,10" fill="var(--danger)"/>
+          </marker>
+          <marker id="d3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <polygon points="0,0 10,5 0,10" fill="var(--ok)"/>
+          </marker>
+        </defs>
+      </svg>

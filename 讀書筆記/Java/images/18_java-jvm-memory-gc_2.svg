@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 264" aria-label="新物件配置在 Eden；年輕代回收時活物件複製到空的那塊 Survivor，在兩塊 Survivor 之間來回，被複製夠多次就晉升到老年代" width="784" height="264">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="264" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="jg-2-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor" fill-opacity=".6"/></marker><marker id="jg-2-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="var(--gold-deep)"/></marker></defs>
+  <text x="225" y="30" font-size="13" text-anchor="middle" font-weight="700">年輕代（young generation）</text>
+  <text x="600" y="30" font-size="13" text-anchor="middle" font-weight="700">老年代（old generation）</text>
+  <rect x="30" y="45" width="230" height="80" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="145" y="80" font-size="14" text-anchor="middle" font-weight="700">Eden</text>
+  <text x="145" y="102" font-size="11.5" text-anchor="middle">新物件大多配在這裡</text>
+  <rect x="290" y="45" width="140" height="36" rx="6" fill="var(--surface)" stroke="currentColor"/>
+  <text x="360" y="68" font-size="12.5" text-anchor="middle">Survivor 甲</text>
+  <rect x="290" y="89" width="140" height="36" rx="6" fill="var(--surface)" stroke="currentColor" stroke-dasharray="5 4"/>
+  <text x="360" y="112" font-size="12.5" text-anchor="middle">Survivor 乙（空）</text>
+  <rect x="480" y="45" width="250" height="80" rx="6" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="605" y="80" font-size="14" text-anchor="middle" font-weight="700">老年代</text>
+  <text x="605" y="102" font-size="11.5" text-anchor="middle">活得久的物件</text>
+  <line x1="260" y1="100" x2="286" y2="105" stroke="currentColor" stroke-opacity=".6" stroke-width="1.5" marker-end="url(#jg-2-arrow)"/>
+  <line x1="372" y1="81" x2="372" y2="86" stroke="currentColor" stroke-opacity=".6" stroke-width="1.5" marker-end="url(#jg-2-arrow)"/>
+  <line x1="430" y1="85" x2="476" y2="85" stroke="var(--gold-deep)" stroke-width="2" marker-end="url(#jg-2-gold)"/>
+  <text x="453" y="140" font-size="11.5" text-anchor="middle" fill="var(--gold-deep)">複製夠多次</text>
+  <text x="453" y="155" font-size="11.5" text-anchor="middle" fill="var(--gold-deep)">→ 晉升</text>
+  <text x="145" y="155" font-size="11.5" text-anchor="middle" opacity=".8">年輕代回收（minor）：</text>
+  <text x="145" y="171" font-size="11.5" text-anchor="middle" opacity=".8">活的搬到空的 Survivor，</text>
+  <text x="145" y="187" font-size="11.5" text-anchor="middle" opacity=".8">Eden 與來源 Survivor 清空</text>
+  <text x="605" y="155" font-size="11.5" text-anchor="middle" opacity=".8">老年代也滿了：主要回收（major），</text>
+  <text x="605" y="171" font-size="11.5" text-anchor="middle" opacity=".8">整個堆都要處理，通常久得多</text>
+  <text x="380" y="222" font-size="12.5" text-anchor="middle" fill="var(--slate-deep)">兩塊 Survivor 每次回收後交換角色，物件在中間來回幾輪才晉升</text>
+</svg>

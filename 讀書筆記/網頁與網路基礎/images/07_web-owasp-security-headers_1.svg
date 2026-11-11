@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 324" aria-label="SQL 注入：上半是把輸入拼進字串，輸入 alice 單引號 OR 單引號 1 單引號等於單引號 1 之後，SQL 變成 where owner 等於 alice 或 1 等於 1，條件永遠成立，三個帳戶全部被查出來；下半是 PreparedStatement，SQL 結構先固定成 where owner 等於問號，整段輸入只被當成一個要比對的值，查不到任何帳戶" width="784" height="324">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="324" fill="#FFFFFF" stroke="none"/>
+  <text x="20" y="34" font-size="14" fill="var(--danger)">拼字串：輸入變成 SQL 的一部分</text>
+  <rect x="20" y="48" width="720" height="52" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="36" y="80" font-size="14" class="mono">select … where owner = 'alice<tspan fill="var(--danger)" font-weight="700">' OR '1'='1</tspan>'</text>
+  <text x="36" y="124" font-size="12.5" opacity=".85">紅色是使用者輸入的一部分，卻被資料庫當成條件：OR '1'='1' 永遠成立 → 回傳全部 3 個帳戶</text>
+  <text x="20" y="174" font-size="14" fill="var(--slate-deep)">PreparedStatement：結構先固定，輸入只是值</text>
+  <rect x="20" y="188" width="330" height="52" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="36" y="220" font-size="14" class="mono">select … where owner = ?</text>
+  <rect x="390" y="188" width="350" height="52" rx="8" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="406" y="211" font-size="12" opacity=".8">參數 1（一整段文字）</text>
+  <text x="406" y="230" font-size="14" class="mono">alice' OR '1'='1</text>
+  <text x="36" y="268" font-size="12.5" opacity=".85">資料庫找「名字剛好叫這一整串」的帳戶 → 0 筆；輸入再怎麼寫都改不了 SQL 的結構</text>
+</svg>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 804 368" aria-label="對外入口拆成三層：雲端負載平衡器給一個對外 IP、Ingress 是一張存在檔案室的規則表、真正在轉發的是一個 Ingress Controller Pod" width="804" height="368">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="804" height="368" fill="#FFFFFF" stroke="none"/>
+        <rect x="16" y="118" width="94" height="54" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <text x="63" y="150" font-size="13" text-anchor="middle">使用者</text>
+        <line x1="118" y1="145" x2="140" y2="145" stroke="currentColor" stroke-width="2" marker-end="url(#s1)"/>
+
+        <rect x="148" y="112" width="150" height="66" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <text x="223" y="136" font-size="12.5" text-anchor="middle">雲端負載平衡器</text>
+        <text x="223" y="155" font-size="10.5" text-anchor="middle" opacity=".65">給一個對外 IP</text>
+        <text x="223" y="171" font-size="10.5" text-anchor="middle" opacity=".65">只認 IP，看不懂網址</text>
+        <line x1="306" y1="145" x2="328" y2="145" stroke="currentColor" stroke-width="2" marker-end="url(#s1)"/>
+
+        <rect x="336" y="112" width="158" height="66" rx="5" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+        <text x="415" y="134" font-size="12.5" text-anchor="middle" fill="var(--gold)">Ingress Controller</text>
+        <text x="415" y="153" font-size="10.5" text-anchor="middle" fill="var(--gold)">一個 Pod，真正在轉發的就是它</text>
+        <text x="415" y="169" font-size="10" text-anchor="middle" fill="var(--gold)">跟你的服務一樣是個容器</text>
+
+        <rect x="330" y="228" width="170" height="86" rx="5" fill="none" stroke="var(--slate)" stroke-width="2" stroke-dasharray="6 4"/>
+        <text x="415" y="252" font-size="12.5" text-anchor="middle" fill="var(--slate)">Ingress 規則表</text>
+        <text x="415" y="272" font-size="10" text-anchor="middle" fill="var(--slate)">（存在檔案室，不會跑）</text>
+        <text x="415" y="292" font-size="10.5" text-anchor="middle" fill="var(--slate)" class="mono">/api → backend</text>
+        <text x="415" y="308" font-size="10.5" text-anchor="middle" fill="var(--slate)" class="mono">其他 → frontend</text>
+        <line x1="415" y1="222" x2="415" y2="186" stroke="var(--slate)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#s2)"/>
+        <text x="428" y="207" font-size="11" fill="var(--slate)">它讀這張表，改自己的設定</text>
+
+        <path d="M502 130 C528 130 530 84 556 84" fill="none" stroke="var(--gold)" stroke-width="2" marker-end="url(#s1)"/>
+        <path d="M502 160 C528 160 530 200 556 200" fill="none" stroke="var(--gold)" stroke-width="2" marker-end="url(#s1)"/>
+
+        <rect x="562" y="58" width="130" height="52" rx="5" fill="none" stroke="var(--gold)" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="627" y="80" font-size="12" text-anchor="middle" fill="var(--gold)">Service</text>
+        <text x="627" y="98" font-size="10.5" text-anchor="middle" fill="var(--gold)" class="mono">frontend</text>
+        <line x1="696" y1="84" x2="712" y2="84" stroke="var(--gold)" stroke-width="2" marker-end="url(#s1)"/>
+        <text x="742" y="80" font-size="11.5" text-anchor="middle" fill="var(--gold)">前端</text>
+        <text x="742" y="96" font-size="11.5" text-anchor="middle" fill="var(--gold)">Pod</text>
+
+        <rect x="562" y="174" width="130" height="52" rx="5" fill="none" stroke="var(--gold)" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="627" y="196" font-size="12" text-anchor="middle" fill="var(--gold)">Service</text>
+        <text x="627" y="214" font-size="10.5" text-anchor="middle" fill="var(--gold)" class="mono">backend</text>
+        <line x1="696" y1="200" x2="712" y2="200" stroke="var(--gold)" stroke-width="2" marker-end="url(#s1)"/>
+        <text x="742" y="196" font-size="11.5" text-anchor="middle" fill="var(--gold)">後端</text>
+        <text x="742" y="212" font-size="11.5" text-anchor="middle" fill="var(--gold)">Pod</text>
+
+        <text x="16" y="336" font-size="12.5" opacity=".75">上面那條線是「請求走的路」；下面那個虛線框只是一張規則表，請求不會經過它。</text>
+        <defs>
+          <marker id="s1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><polygon points="0,0 10,5 0,10" fill="var(--gold)"/></marker>
+          <marker id="s2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><polygon points="0,0 10,5 0,10" fill="var(--slate)"/></marker>
+        </defs>
+      </svg>

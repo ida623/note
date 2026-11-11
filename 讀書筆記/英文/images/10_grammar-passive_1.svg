@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 224" aria-label="主動改被動：受詞 the budget 搬到句首當主詞，動詞改成 was approved，原本的主詞 the manager 放到 by 後面，也可以省略" width="784" height="224">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="224" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="pv-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor" fill-opacity=".6"/></marker><marker id="pv-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="var(--slate)"/></marker></defs>
+  <text x="30" y="55" font-size="13" opacity=".7">主動</text>
+  <rect x="110" y="35" width="170" height="30" rx="4" fill="none" stroke="currentColor" stroke-opacity=".35"/>
+  <text x="195" y="55" font-size="13" text-anchor="middle" class="mono">The manager</text>
+  <rect x="320" y="35" width="130" height="30" rx="4" fill="none" stroke="currentColor" stroke-opacity=".35"/>
+  <text x="385" y="55" font-size="13" text-anchor="middle" class="mono">approved</text>
+  <rect x="490" y="35" width="150" height="30" rx="4" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="565" y="55" font-size="13" text-anchor="middle" class="mono">the budget.</text>
+  <text x="30" y="155" font-size="13" opacity=".7">被動</text>
+  <rect x="110" y="135" width="170" height="30" rx="4" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="195" y="155" font-size="13" text-anchor="middle" class="mono">The budget</text>
+  <rect x="320" y="135" width="130" height="30" rx="4" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
+  <text x="385" y="155" font-size="13" text-anchor="middle" class="mono" fill="var(--gold-deep)">was approved</text>
+  <rect x="490" y="135" width="190" height="30" rx="4" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="5 4"/>
+  <text x="585" y="155" font-size="13" text-anchor="middle" class="mono">(by the manager).</text>
+  <line x1="560" y1="67" x2="200" y2="133" stroke="var(--slate)" stroke-width="2" marker-end="url(#pv-slate)"/>
+  <line x1="200" y1="67" x2="580" y2="133" stroke="currentColor" stroke-opacity=".5" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#pv-gray)"/>
+  <text x="40" y="112" font-size="12" fill="var(--slate-deep)">① 受詞搬到句首</text>
+  <text x="740" y="100" font-size="12" text-anchor="end" opacity=".75">③ 原主詞放 by 後面，可省略</text>
+  <text x="385" y="188" font-size="12" text-anchor="middle" fill="var(--gold-deep)">② be＋過去分詞，時態跟原句一樣</text>
+</svg>

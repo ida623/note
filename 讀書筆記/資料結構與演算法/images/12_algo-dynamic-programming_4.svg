@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 264" aria-label="最長共同子序列的表：列是 ABCDE 的前綴，欄是 ACE 的前綴，第 0 列與第 0 欄是空字串都是 0。A 對 A、C 對 C、E 對 E 三格用古銅標出，各由左上角那格加 1 而來，右下角答案是 3" width="784" height="264">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="264" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="dp-a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="var(--gold)"/></marker></defs>
+  <text x="286" y="38" font-size="11" text-anchor="middle">a＼b</text>
+  <text x="326.0" y="38" font-size="13" text-anchor="middle" font-weight="700" class="mono">空</text>
+  <text x="378.0" y="38" font-size="13" text-anchor="middle" font-weight="700" class="mono">A</text>
+  <text x="430.0" y="38" font-size="13" text-anchor="middle" font-weight="700" class="mono">C</text>
+  <text x="482.0" y="38" font-size="13" text-anchor="middle" font-weight="700" class="mono">E</text>
+  <text x="286" y="66" font-size="13" text-anchor="middle" font-weight="700" class="mono">空</text>
+  <rect x="300" y="46" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="326.0" y="66.0" font-size="14" text-anchor="middle" class="mono">0</text>
+  <rect x="352" y="46" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="378.0" y="66.0" font-size="14" text-anchor="middle" class="mono">0</text>
+  <rect x="404" y="46" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="430.0" y="66.0" font-size="14" text-anchor="middle" class="mono">0</text>
+  <rect x="456" y="46" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="482.0" y="66.0" font-size="14" text-anchor="middle" class="mono">0</text>
+  <text x="286" y="96" font-size="13" text-anchor="middle" font-weight="700" class="mono">A</text>
+  <rect x="300" y="76" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="326.0" y="96.0" font-size="14" text-anchor="middle" class="mono">0</text>
+  <rect x="352" y="76" width="52" height="30" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="378.0" y="96.0" font-size="14" text-anchor="middle" class="mono">1</text>
+  <rect x="404" y="76" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="430.0" y="96.0" font-size="14" text-anchor="middle" class="mono">1</text>
+  <rect x="456" y="76" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="482.0" y="96.0" font-size="14" text-anchor="middle" class="mono">1</text>
+  <text x="286" y="126" font-size="13" text-anchor="middle" font-weight="700" class="mono">B</text>
+  <rect x="300" y="106" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="326.0" y="126.0" font-size="14" text-anchor="middle" class="mono">0</text>
+  <rect x="352" y="106" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="378.0" y="126.0" font-size="14" text-anchor="middle" class="mono">1</text>
+  <rect x="404" y="106" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="430.0" y="126.0" font-size="14" text-anchor="middle" class="mono">1</text>
+  <rect x="456" y="106" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="482.0" y="126.0" font-size="14" text-anchor="middle" class="mono">1</text>
+  <text x="286" y="156" font-size="13" text-anchor="middle" font-weight="700" class="mono">C</text>
+  <rect x="300" y="136" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="326.0" y="156.0" font-size="14" text-anchor="middle" class="mono">0</text>
+  <rect x="352" y="136" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="378.0" y="156.0" font-size="14" text-anchor="middle" class="mono">1</text>
+  <rect x="404" y="136" width="52" height="30" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="430.0" y="156.0" font-size="14" text-anchor="middle" class="mono">2</text>
+  <rect x="456" y="136" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="482.0" y="156.0" font-size="14" text-anchor="middle" class="mono">2</text>
+  <text x="286" y="186" font-size="13" text-anchor="middle" font-weight="700" class="mono">D</text>
+  <rect x="300" y="166" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="326.0" y="186.0" font-size="14" text-anchor="middle" class="mono">0</text>
+  <rect x="352" y="166" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="378.0" y="186.0" font-size="14" text-anchor="middle" class="mono">1</text>
+  <rect x="404" y="166" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="430.0" y="186.0" font-size="14" text-anchor="middle" class="mono">2</text>
+  <rect x="456" y="166" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="482.0" y="186.0" font-size="14" text-anchor="middle" class="mono">2</text>
+  <text x="286" y="216" font-size="13" text-anchor="middle" font-weight="700" class="mono">E</text>
+  <rect x="300" y="196" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="326.0" y="216.0" font-size="14" text-anchor="middle" class="mono">0</text>
+  <rect x="352" y="196" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="378.0" y="216.0" font-size="14" text-anchor="middle" class="mono">1</text>
+  <rect x="404" y="196" width="52" height="30" fill="var(--surface)" stroke="currentColor"/><text x="430.0" y="216.0" font-size="14" text-anchor="middle" class="mono">2</text>
+  <rect x="456" y="196" width="52" height="30" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="482.0" y="216.0" font-size="14" text-anchor="middle" class="mono">3</text>
+  <line x1="450" y1="192" x2="466" y2="204" stroke="var(--gold)" stroke-width="1.8" marker-end="url(#dp-a4)"/>
+  <line x1="346" y1="72" x2="362" y2="84" stroke="var(--gold)" stroke-width="1.8" marker-end="url(#dp-a4)"/>
+  <line x1="398" y1="132" x2="414" y2="144" stroke="var(--gold)" stroke-width="1.8" marker-end="url(#dp-a4)"/>
+  <text x="560" y="90" font-size="12" text-anchor="start" fill="var(--gold-deep)">字母相同（古銅）：左上那格 + 1</text>
+  <text x="560" y="114" font-size="12" text-anchor="start">字母不同：上面與左邊取大的</text>
+  <text x="560" y="150" font-size="12" text-anchor="start" fill="var(--slate-deep)">答案在右下角：3</text>
+  <text x="560" y="170" font-size="12" text-anchor="start" fill="var(--slate-deep)">（A、C、E）</text>
+</svg>

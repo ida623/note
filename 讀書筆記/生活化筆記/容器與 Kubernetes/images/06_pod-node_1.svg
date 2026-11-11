@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 804 428" aria-label="一層包一層：實體機上跑 Hypervisor，切出兩台虛擬機，每台虛擬機裝了容器執行環境和 kubelet 而成為一個 Node，Node 上面跑 Pod，Pod 裡面才是容器" width="804" height="428">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="804" height="428" fill="#FFFFFF" stroke="none"/>
+        <text x="390" y="24" font-size="13" text-anchor="middle" opacity=".7">一層包一層，由外往內看</text>
+        <rect x="14" y="36" width="752" height="342" rx="6" fill="none" stroke="currentColor" stroke-opacity=".55"/>
+        <text x="26" y="54" font-size="11.5" opacity=".6">一台實體機</text>
+        <rect x="26" y="336" width="728" height="30" rx="4" fill="none" stroke="currentColor" stroke-opacity=".7"/>
+        <text x="390" y="356" font-size="13" text-anchor="middle" opacity=".8">Hypervisor（把一台切成兩台虛擬機）</text>
+
+        <rect x="26" y="62" width="358" height="266" rx="5" fill="none" stroke="var(--gold)" stroke-width="2"/>
+        <text x="38" y="80" font-size="12" fill="var(--gold)" font-weight="700">虛擬機 ＝ Node 1</text>
+        <rect x="38" y="88" width="334" height="82" rx="4" fill="none" stroke="currentColor" stroke-dasharray="5 4"/>
+        <text x="46" y="104" font-size="11" opacity=".65">Pod</text>
+        <rect x="46" y="110" width="153" height="52" rx="3" fill="var(--gold-soft)" stroke="var(--gold)"/>
+        <text x="122" y="141" font-size="12.5" text-anchor="middle" fill="var(--gold)">你的後端程式</text>
+        <rect x="211" y="110" width="153" height="52" rx="3" fill="none" stroke="currentColor" stroke-opacity=".4" stroke-dasharray="4 4"/>
+        <text x="287" y="134" font-size="11.5" text-anchor="middle" opacity=".55">偶爾多一個</text>
+        <text x="287" y="152" font-size="11.5" text-anchor="middle" opacity=".55">收日誌的小幫手</text>
+        <rect x="38" y="178" width="334" height="82" rx="4" fill="none" stroke="currentColor" stroke-dasharray="5 4"/>
+        <text x="46" y="194" font-size="11" opacity=".65">Pod</text>
+        <rect x="46" y="200" width="153" height="52" rx="3" fill="var(--gold-soft)" stroke="var(--gold)"/>
+        <text x="122" y="231" font-size="12.5" text-anchor="middle" fill="var(--gold)">另一支服務</text>
+        <rect x="38" y="268" width="161" height="26" rx="3" fill="none" stroke="currentColor" stroke-opacity=".7"/>
+        <text x="118" y="286" font-size="11.5" text-anchor="middle" opacity=".8">容器執行環境</text>
+        <rect x="211" y="268" width="161" height="26" rx="3" fill="var(--slate-soft)" stroke="var(--slate)"/>
+        <text x="291" y="286" font-size="11.5" text-anchor="middle" fill="var(--slate)" class="mono">kubelet</text>
+        <rect x="38" y="298" width="334" height="24" rx="3" fill="none" stroke="currentColor" stroke-opacity=".55"/>
+        <text x="205" y="315" font-size="11.5" text-anchor="middle" opacity=".7">這台虛擬機自己的作業系統</text>
+
+        <rect x="396" y="62" width="358" height="266" rx="5" fill="none" stroke="var(--gold)" stroke-width="2"/>
+        <text x="408" y="80" font-size="12" fill="var(--gold)" font-weight="700">虛擬機 ＝ Node 2</text>
+        <rect x="408" y="88" width="334" height="82" rx="4" fill="none" stroke="currentColor" stroke-dasharray="5 4"/>
+        <text x="416" y="104" font-size="11" opacity=".65">Pod</text>
+        <rect x="416" y="110" width="153" height="52" rx="3" fill="var(--gold-soft)" stroke="var(--gold)"/>
+        <text x="492" y="141" font-size="12.5" text-anchor="middle" fill="var(--gold)">前端那一包</text>
+        <rect x="408" y="178" width="334" height="82" rx="4" fill="none" stroke="currentColor" stroke-opacity=".25" stroke-dasharray="5 4"/>
+        <text x="575" y="224" font-size="12" text-anchor="middle" opacity=".45">還有空位，大腦想放什麼就放什麼</text>
+        <rect x="408" y="268" width="161" height="26" rx="3" fill="none" stroke="currentColor" stroke-opacity=".7"/>
+        <text x="488" y="286" font-size="11.5" text-anchor="middle" opacity=".8">容器執行環境</text>
+        <rect x="581" y="268" width="161" height="26" rx="3" fill="var(--slate-soft)" stroke="var(--slate)"/>
+        <text x="661" y="286" font-size="11.5" text-anchor="middle" fill="var(--slate)" class="mono">kubelet</text>
+        <rect x="408" y="298" width="334" height="24" rx="3" fill="none" stroke="currentColor" stroke-opacity=".55"/>
+        <text x="575" y="315" font-size="11.5" text-anchor="middle" opacity=".7">這台虛擬機自己的作業系統</text>
+        <text x="390" y="396" font-size="13" text-anchor="middle" fill="var(--slate)">黃色那塊就是差別：多了它，這台機器才叫 Node</text>
+      </svg>

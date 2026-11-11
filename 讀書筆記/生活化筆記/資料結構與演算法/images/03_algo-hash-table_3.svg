@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 244" aria-label="線性探測示意：8 格的陣列，apple 算到 1 號格直接放入；cherry 也算到 1 號，被佔了就往下放進 2 號；kiwi 算到 2 號，被佔了就往下放進 3 號" width="784" height="244">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="244" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="ht-a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="var(--gold-deep)"/></marker></defs>
+  <text x="40" y="26" font-size="13">apple：算到 1 號，空的，直接放</text>
+  <text x="40" y="48" font-size="13">cherry：算到 1 號，被 apple 佔了，往下看 2 號，空的，放進去</text>
+  <text x="40" y="70" font-size="13">kiwi：算到 2 號，被 cherry 佔了，往下看 3 號，空的，放進去</text>
+  <path d="M244 116 C 254 92, 282 92, 292 114" fill="none" stroke="var(--gold-deep)" stroke-width="1.5" marker-end="url(#ht-a3)"/>
+  <path d="M300 116 C 310 92, 338 92, 348 114" fill="none" stroke="var(--gold-deep)" stroke-width="1.5" marker-end="url(#ht-a3)"/>
+  <rect x="156" y="120" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="212" y="120" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="268" y="120" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <rect x="324" y="120" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <rect x="380" y="120" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="436" y="120" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="492" y="120" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="548" y="120" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="240" y="145" font-size="12" text-anchor="middle" class="mono">apple</text>
+  <text x="296" y="145" font-size="12" text-anchor="middle" class="mono">cherry</text>
+  <text x="352" y="145" font-size="12" text-anchor="middle" class="mono">kiwi</text>
+  <g font-size="12" text-anchor="middle" opacity=".6"><text x="184" y="176">0</text><text x="240" y="176">1</text><text x="296" y="176">2</text><text x="352" y="176">3</text><text x="408" y="176">4</text><text x="464" y="176">5</text><text x="520" y="176">6</text><text x="576" y="176">7</text></g>
+  <text x="616" y="145" font-size="12" fill="var(--slate-deep)">古銅格＝被擠到</text>
+  <text x="616" y="163" font-size="12" fill="var(--slate-deep)">別的位置</text>
+</svg>

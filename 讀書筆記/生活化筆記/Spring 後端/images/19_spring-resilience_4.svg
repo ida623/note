@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 260" aria-label="註解的預設套用順序：最外層 Retry，裡面依序是 CircuitBreaker、RateLimiter、TimeLimiter、Bulkhead，最內層是你的方法" width="784" height="260">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="260" fill="#FFFFFF" stroke="none"/>
+<rect x="20" y="20" width="720" height="190" rx="10" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="36" y="42" font-size="13" class="mono">Retry</text>
+<rect x="60" y="54" width="660" height="146" rx="10" fill="var(--surface)" stroke="currentColor"/><text x="76" y="76" font-size="13" class="mono">CircuitBreaker</text>
+<rect x="100" y="88" width="600" height="104" rx="10" fill="var(--surface)" stroke="currentColor" stroke-opacity=".7"/><text x="116" y="110" font-size="13" class="mono">RateLimiter</text>
+<rect x="140" y="120" width="540" height="64" rx="10" fill="var(--surface)" stroke="currentColor" stroke-opacity=".55"/><text x="156" y="142" font-size="13" class="mono">TimeLimiter</text>
+<rect x="290" y="128" width="370" height="48" rx="8" fill="var(--slate-soft)" stroke="var(--slate)"/><text x="306" y="157" font-size="13" class="mono">Bulkhead</text><rect x="420" y="136" width="220" height="32" rx="6" fill="var(--surface)" stroke="currentColor"/><text x="530" y="157" font-size="13" text-anchor="middle">你的方法</text>
+<text x="20" y="228" font-size="12" opacity=".6">外層的每一次重試，都會再穿過裡面每一層一次；斷路器記到的是「每一次嘗試」，不是「每一次使用者呼叫」</text>
+</svg>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 354" aria-label="主題 transfers 有三個分區：分區 0 放 D 的兩筆，分區 1 放 A 的兩筆，分區 2 放 F 的兩筆，每個分區的位移各自從 0 開始。群組 ledger 的消費者 0 讀分區 0 和 1、消費者 1 讀分區 2；群組 audit 只有一個消費者，三個分區都讀" width="784" height="354">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="354" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="mq-2-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+  <text x="150" y="28" font-size="13" fill="var(--slate-deep)">主題 transfers（3 個分區）</text>
+  <text x="40" y="74" font-size="13">分區 0</text>
+  <rect x="100" y="50" width="96" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="148" y="75" font-size="13" text-anchor="middle" class="mono">D 200</text>
+  <rect x="196" y="50" width="96" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="244" y="75" font-size="13" text-anchor="middle" class="mono">D 500</text>
+  <text x="148" y="104" font-size="12" text-anchor="middle" class="mono" opacity=".6">位移 0</text>
+  <text x="244" y="104" font-size="12" text-anchor="middle" class="mono" opacity=".6">位移 1</text>
+  <text x="40" y="154" font-size="13">分區 1</text>
+  <rect x="100" y="130" width="96" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="148" y="155" font-size="13" text-anchor="middle" class="mono">A 100</text>
+  <rect x="196" y="130" width="96" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="244" y="155" font-size="13" text-anchor="middle" class="mono">A 400</text>
+  <text x="148" y="184" font-size="12" text-anchor="middle" class="mono" opacity=".6">位移 0</text>
+  <text x="244" y="184" font-size="12" text-anchor="middle" class="mono" opacity=".6">位移 1</text>
+  <text x="40" y="234" font-size="13">分區 2</text>
+  <rect x="100" y="210" width="96" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="148" y="235" font-size="13" text-anchor="middle" class="mono">F 300</text>
+  <rect x="196" y="210" width="96" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="244" y="235" font-size="13" text-anchor="middle" class="mono">F 600</text>
+  <text x="148" y="264" font-size="12" text-anchor="middle" class="mono" opacity=".6">位移 0</text>
+  <text x="244" y="264" font-size="12" text-anchor="middle" class="mono" opacity=".6">位移 1</text>
+  <text x="300" y="300" font-size="12.5" opacity=".75">新事件一律寫在分區的最右邊；同一個 key 一定進同一個分區</text>
+  <rect x="470" y="40" width="270" height="130" rx="10" fill="none" stroke="var(--gold)" stroke-dasharray="6 4"/>
+  <text x="480" y="60" font-size="13" fill="var(--gold-deep)">群組 ledger（兩個消費者）</text>
+  <rect x="490" y="72" width="230" height="36" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="605" y="95" font-size="13" text-anchor="middle">消費者 0：分區 0、1</text>
+  <rect x="490" y="118" width="230" height="36" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="605" y="141" font-size="13" text-anchor="middle">消費者 1：分區 2</text>
+  <rect x="470" y="190" width="270" height="86" rx="10" fill="none" stroke="var(--slate)" stroke-dasharray="6 4"/>
+  <text x="480" y="210" font-size="13" fill="var(--slate-deep)">群組 audit（一個消費者）</text>
+  <rect x="490" y="222" width="230" height="36" rx="6" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="605" y="245" font-size="13" text-anchor="middle">消費者 0：分區 0、1、2</text>
+  <line x1="300" y1="70" x2="488" y2="90" stroke="var(--gold)" marker-end="url(#mq-2-arrow)"/>
+  <line x1="300" y1="150" x2="488" y2="95" stroke="var(--gold)" marker-end="url(#mq-2-arrow)"/>
+  <line x1="300" y1="230" x2="488" y2="136" stroke="var(--gold)" marker-end="url(#mq-2-arrow)"/>
+  <line x1="300" y1="76" x2="488" y2="234" stroke="var(--slate)" marker-end="url(#mq-2-arrow)"/>
+  <line x1="300" y1="156" x2="488" y2="237" stroke="var(--slate)" marker-end="url(#mq-2-arrow)"/>
+  <line x1="300" y1="236" x2="488" y2="240" stroke="var(--slate)" marker-end="url(#mq-2-arrow)"/>
+</svg>

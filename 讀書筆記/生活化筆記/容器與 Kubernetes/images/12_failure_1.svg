@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 804 330" aria-label="master node 掛掉的連鎖：三台死一台剩兩台仍可運作但已無餘裕，再死一台剩一台就過不了半數，整個叢集凍結；補回第三台是人的工作" width="804" height="330">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="804" height="330" fill="#FFFFFF" stroke="none"/>
+        <g font-size="12.5" text-anchor="middle" opacity=".8">
+          <text x="128" y="30">一開始：3 台</text>
+          <text x="390" y="30">死 1 台 → 剩 2 台</text>
+          <text x="652" y="30">再死 1 台 → 剩 1 台</text>
+        </g>
+
+        <g fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2">
+          <rect x="44" y="48" width="52" height="44" rx="4"/>
+          <rect x="102" y="48" width="52" height="44" rx="4"/>
+          <rect x="160" y="48" width="52" height="44" rx="4"/>
+        </g>
+
+        <g fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2">
+          <rect x="306" y="48" width="52" height="44" rx="4"/>
+          <rect x="364" y="48" width="52" height="44" rx="4"/>
+        </g>
+        <rect x="422" y="48" width="52" height="44" rx="4" fill="none" stroke="var(--danger)" stroke-width="2" stroke-dasharray="5 4"/>
+        <line x1="432" y1="58" x2="464" y2="82" stroke="var(--danger)" stroke-width="2.5"/>
+        <line x1="464" y1="58" x2="432" y2="82" stroke="var(--danger)" stroke-width="2.5"/>
+
+        <rect x="568" y="48" width="52" height="44" rx="4" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+        <g fill="none" stroke="var(--danger)" stroke-width="2" stroke-dasharray="5 4">
+          <rect x="626" y="48" width="52" height="44" rx="4"/>
+          <rect x="684" y="48" width="52" height="44" rx="4"/>
+        </g>
+        <g stroke="var(--danger)" stroke-width="2.5">
+          <line x1="636" y1="58" x2="668" y2="82"/><line x1="668" y1="58" x2="636" y2="82"/>
+          <line x1="694" y1="58" x2="726" y2="82"/><line x1="726" y1="58" x2="694" y2="82"/>
+        </g>
+
+        <line x1="232" y1="70" x2="288" y2="70" stroke="currentColor" stroke-opacity=".4" stroke-width="2" marker-end="url(#u1)"/>
+        <line x1="494" y1="70" x2="550" y2="70" stroke="currentColor" stroke-opacity=".4" stroke-width="2" marker-end="url(#u1)"/>
+
+        <g font-size="12" text-anchor="middle">
+          <text x="128" y="118" fill="var(--gold)">正常運作</text>
+          <text x="128" y="138" opacity=".7">可以再死 1 台</text>
+          <text x="390" y="118" fill="var(--gold)">選出新的主，還在運作</text>
+          <text x="390" y="138" fill="var(--danger)">但已經沒有餘裕了</text>
+          <text x="652" y="118" fill="var(--danger)">1 票 &lt; 需要的 2 票</text>
+          <text x="652" y="138" fill="var(--danger)">檔案室只能讀不能寫</text>
+        </g>
+
+        <rect x="556" y="152" width="192" height="46" rx="5" fill="none" stroke="var(--danger)" stroke-width="2"/>
+        <text x="652" y="180" font-size="13.5" text-anchor="middle" fill="var(--danger)">整個叢集凍結</text>
+
+        <path d="M390 224 L390 250 L128 250 L128 224" fill="none" stroke="var(--slate)" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#u2)"/>
+        <text x="259" y="272" font-size="13" text-anchor="middle" fill="var(--slate)">補回第 3 台，是人（或維運工具）的工作</text>
+        <text x="259" y="292" font-size="12" text-anchor="middle" fill="var(--slate)">大腦不會自己長出新的 master</text>
+
+        <defs>
+          <marker id="u1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><polygon points="0,0 10,5 0,10" fill="currentColor" fill-opacity=".4"/></marker>
+          <marker id="u2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><polygon points="0,0 10,5 0,10" fill="var(--slate)"/></marker>
+        </defs>
+      </svg>

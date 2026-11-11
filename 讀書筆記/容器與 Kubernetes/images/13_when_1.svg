@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 804 368" aria-label="三個問題的判斷流程：不需要跨機器就用 Docker Compose；可以接受手動重開就繼續用 Docker；沒有專人顧就用託管服務；三個都成立才輪到 Kubernetes" width="804" height="368">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="804" height="368" fill="#FFFFFF" stroke="none"/>
+        <g fill="none" stroke="currentColor">
+          <rect x="16" y="20" width="352" height="58" rx="5"/>
+          <rect x="16" y="104" width="352" height="58" rx="5"/>
+          <rect x="16" y="188" width="352" height="58" rx="5"/>
+        </g>
+        <g font-size="14">
+          <text x="34" y="46">要跑在 2 台以上機器嗎？</text>
+          <text x="34" y="130">不能停機，要自動修復、</text>
+          <text x="34" y="214">有人真的會顧它嗎？</text>
+        </g>
+        <text x="34" y="150" font-size="14">不斷線換版本嗎？</text>
+        <g stroke="var(--danger)" stroke-width="1.8">
+          <line x1="376" y1="49" x2="424" y2="49" marker-end="url(#m1)"/>
+          <line x1="376" y1="133" x2="424" y2="133" marker-end="url(#m1)"/>
+          <line x1="376" y1="217" x2="424" y2="217" marker-end="url(#m1)"/>
+        </g>
+        <g font-size="11" fill="var(--danger)" text-anchor="middle">
+          <text x="400" y="40">否</text><text x="400" y="124">否</text><text x="400" y="208">否</text>
+        </g>
+        <g fill="none" stroke="var(--danger)" stroke-dasharray="5 4">
+          <rect x="432" y="20" width="332" height="58" rx="5"/>
+          <rect x="432" y="104" width="332" height="58" rx="5"/>
+          <rect x="432" y="188" width="332" height="58" rx="5"/>
+        </g>
+        <g font-size="13.5" fill="var(--danger)">
+          <text x="450" y="45">一台機器 + Docker Compose 就夠</text>
+          <text x="450" y="64" font-size="11.5" opacity=".85">再加 restart 設定，掛了會自己重開</text>
+          <text x="450" y="129">繼續用 Docker</text>
+          <text x="450" y="148" font-size="11.5" opacity=".85">換版本停個幾分鐘可以接受的話</text>
+          <text x="450" y="213">用託管的：Cloud Run、ECS Fargate</text>
+          <text x="450" y="232" font-size="11.5" opacity=".85">別人幫你顧那一層</text>
+        </g>
+        <g stroke="var(--gold)" stroke-width="2">
+          <line x1="192" y1="86" x2="192" y2="96" marker-end="url(#m2)"/>
+          <line x1="192" y1="170" x2="192" y2="180" marker-end="url(#m2)"/>
+          <line x1="192" y1="254" x2="192" y2="268" marker-end="url(#m2)"/>
+        </g>
+        <g font-size="11" fill="var(--gold)" text-anchor="middle">
+          <text x="210" y="94">是</text><text x="210" y="178">是</text><text x="210" y="264">是</text>
+        </g>
+        <rect x="16" y="274" width="748" height="52" rx="5" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+        <text x="390" y="306" font-size="15" text-anchor="middle" fill="var(--gold)">三個都是 → 這時候才輪到 Kubernetes</text>
+        <defs>
+          <marker id="m1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><polygon points="0,0 10,5 0,10" fill="var(--danger)"/></marker>
+          <marker id="m2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><polygon points="0,0 10,5 0,10" fill="var(--gold)"/></marker>
+        </defs>
+      </svg>

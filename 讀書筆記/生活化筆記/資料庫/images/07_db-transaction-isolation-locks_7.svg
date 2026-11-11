@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 404" aria-label="遺失更新的時間軸：交易 A 與 B 都在一開始讀到餘額 10000；A 在 2 秒寫回 7000 並提交；B 在 3 秒寫回 6000 並提交；最後餘額是 6000，A 扣的 3000 不見了" width="784" height="404">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="404" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="tx-4-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs>
+  <line x1="120.0" y1="292" x2="740.0" y2="292" stroke="currentColor" stroke-opacity=".5" marker-end="url(#tx-4-a)"/>
+  <line x1="120.0" y1="288" x2="120.0" y2="296" stroke="currentColor" stroke-opacity=".5"/>
+  <text opacity=".6" x="120.0" y="312" font-size="11" text-anchor="middle">0 秒</text>
+  <line x1="320.0" y1="288" x2="320.0" y2="296" stroke="currentColor" stroke-opacity=".5"/>
+  <text opacity=".6" x="320.0" y="312" font-size="11" text-anchor="middle">1 秒</text>
+  <line x1="520.0" y1="288" x2="520.0" y2="296" stroke="currentColor" stroke-opacity=".5"/>
+  <text opacity=".6" x="520.0" y="312" font-size="11" text-anchor="middle">2 秒</text>
+  <line x1="720.0" y1="288" x2="720.0" y2="296" stroke="currentColor" stroke-opacity=".5"/>
+  <text opacity=".6" x="720.0" y="312" font-size="11" text-anchor="middle">3 秒</text>
+  <text x="40" y="114" font-size="13" text-anchor="middle" font-weight="700">交易 A</text>
+  <text x="40" y="214" font-size="13" text-anchor="middle" font-weight="700">交易 B</text>
+  <line x1="120.0" y1="110" x2="720.0" y2="110" stroke="currentColor" stroke-opacity=".2" stroke-width="6"/>
+  <line x1="120.0" y1="210" x2="720.0" y2="210" stroke="currentColor" stroke-opacity=".2" stroke-width="6"/>
+  <line x1="120.0" y1="110" x2="120.0" y2="76" stroke="currentColor" stroke-opacity=".5"/>
+  <circle cx="120.0" cy="110" r="4" fill="currentColor"/>
+  <rect x="80" y="48" width="117" height="28" rx="5" fill="var(--surface)" stroke="currentColor"/>
+  <text x="138.4" y="67" font-size="11.5" text-anchor="middle" class="mono">SELECT balance</text>
+  <text x="138.4" y="42" font-size="11.5" text-anchor="middle" fill="var(--gold-deep)" font-weight="700">10000</text>
+  <line x1="320.0" y1="210" x2="320.0" y2="224" stroke="currentColor" stroke-opacity=".5"/>
+  <circle cx="320.0" cy="210" r="4" fill="currentColor"/>
+  <rect x="262" y="224" width="117" height="28" rx="5" fill="var(--surface)" stroke="currentColor"/>
+  <text x="320.0" y="243" font-size="11.5" text-anchor="middle" class="mono">SELECT balance</text>
+  <text x="320.0" y="267" font-size="11.5" text-anchor="middle" fill="var(--gold-deep)" font-weight="700">10000</text>
+  <line x1="520.0" y1="110" x2="520.0" y2="76" stroke="currentColor" stroke-opacity=".5"/>
+  <circle cx="520.0" cy="110" r="4" fill="var(--gold)"/>
+  <rect x="447" y="30" width="146" height="46" rx="5" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="520.0" y="49" font-size="11.5" text-anchor="middle" class="mono">SET balance = 7000</text>
+  <text x="520.0" y="67" font-size="11.5" text-anchor="middle" class="mono">COMMIT</text>
+  <line x1="720.0" y1="210" x2="720.0" y2="224" stroke="currentColor" stroke-opacity=".5"/>
+  <circle cx="720.0" cy="210" r="4" fill="var(--danger)"/>
+  <rect x="604" y="224" width="146" height="46" rx="5" fill="var(--sunk)" stroke="var(--danger)"/>
+  <text x="677.1999999999999" y="243" font-size="11.5" text-anchor="middle" class="mono">SET balance = 6000</text>
+  <text x="677.1999999999999" y="261" font-size="11.5" text-anchor="middle" class="mono">COMMIT</text>
+  <text x="677.1999999999999" y="285" font-size="11.5" text-anchor="middle" fill="var(--gold-deep)" font-weight="700">最後 6000</text>
+  <text x="380" y="340" font-size="12" text-anchor="middle" fill="var(--slate-deep)">兩筆轉帳都用「讀出來、程式算好、寫回去」：A 扣 3000、B 扣 4000，正確應是 3000</text>
+  <text x="380" y="360" font-size="12" text-anchor="middle" fill="var(--slate-deep)">後寫的蓋掉先寫的，A 那筆不見了</text>
+</svg>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 804 274" aria-label="舊做法只搬程式碼，因為兩邊環境不同而失敗；容器做法連環境一起搬，兩邊完全一樣" width="804" height="274">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="804" height="274" fill="#FFFFFF" stroke="none"/>
+        <text x="14" y="30" font-size="12" class="mono" opacity=".6">舊做法</text>
+        <g fill="none" stroke="currentColor" stroke-opacity=".8">
+          <rect x="14" y="42" width="210" height="66" rx="5"/>
+          <rect x="392" y="42" width="210" height="66" rx="5"/>
+        </g>
+        <text x="119" y="68" font-size="14" text-anchor="middle">我的電腦</text>
+        <text x="119" y="92" font-size="12" text-anchor="middle" opacity=".7">Java 21・套件 1.2</text>
+        <text x="497" y="68" font-size="14" text-anchor="middle">測試機</text>
+        <text x="497" y="92" font-size="12" text-anchor="middle" opacity=".7">Java 17・套件 0.9</text>
+        <line x1="232" y1="75" x2="384" y2="75" stroke="currentColor" stroke-opacity=".6" stroke-width="2" marker-end="url(#f1)"/>
+        <text x="308" y="62" font-size="12" text-anchor="middle" opacity=".7">只搬程式碼</text>
+        <line x1="632" y1="58" x2="662" y2="90" stroke="var(--danger)" stroke-width="3"/>
+        <line x1="662" y1="58" x2="632" y2="90" stroke="var(--danger)" stroke-width="3"/>
+        <text x="722" y="80" font-size="13" text-anchor="middle" fill="var(--danger)">炸了</text>
+        <line x1="14" y1="132" x2="766" y2="132" stroke="currentColor" stroke-opacity=".18"/>
+        <text x="14" y="158" font-size="12" class="mono" fill="var(--gold)">用容器</text>
+        <g fill="none" stroke="var(--gold)" stroke-width="2">
+          <rect x="14" y="170" width="210" height="66" rx="5"/>
+          <rect x="392" y="170" width="210" height="66" rx="5"/>
+        </g>
+        <text x="119" y="196" font-size="14" text-anchor="middle" fill="var(--gold)">我的電腦</text>
+        <text x="119" y="220" font-size="12" text-anchor="middle" fill="var(--gold)">容器內：Java 21・套件 1.2</text>
+        <text x="497" y="196" font-size="14" text-anchor="middle" fill="var(--gold)">測試機</text>
+        <text x="497" y="220" font-size="12" text-anchor="middle" fill="var(--gold)">容器內：Java 21・套件 1.2</text>
+        <line x1="232" y1="203" x2="384" y2="203" stroke="var(--gold)" stroke-width="2" marker-end="url(#f2)"/>
+        <text x="308" y="190" font-size="12" text-anchor="middle" fill="var(--gold)">整包一起搬</text>
+        <text x="700" y="209" font-size="13" text-anchor="middle" fill="var(--gold)">一模一樣</text>
+        <defs>
+          <marker id="f1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><polygon points="0,0 10,5 0,10" fill="currentColor" fill-opacity=".6"/></marker>
+          <marker id="f2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><polygon points="0,0 10,5 0,10" fill="var(--gold)"/></marker>
+        </defs>
+      </svg>

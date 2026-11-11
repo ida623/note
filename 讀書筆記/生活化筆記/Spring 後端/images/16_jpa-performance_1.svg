@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 324" aria-label="同樣印出三個部門的人數，三種寫法送出的 SQL 次數：預設延遲載入是 N+1，先查部門清單，再為研發部、業務部、客服部各查一次，共 4 次；批次抓取一次處理 2 個部門，部門清單、研發部加業務部、客服部，共 3 次；JOIN FETCH 或 EntityGraph 一句部門左外部連接員工，共 1 次" width="784" height="324">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="324" fill="#FFFFFF" stroke="none"/>
+  <text x="20" y="34" font-size="13" font-weight="700">預設延遲載入（N+1）</text>
+  <rect x="20" y="44" width="140" height="40" fill="var(--slate-soft)" stroke="var(--slate)"/><text x="90" y="69" font-size="12" text-anchor="middle">SQL 1：部門清單</text>
+  <rect x="180" y="44" width="140" height="40" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="250" y="69" font-size="12" text-anchor="middle">SQL 2：研發部員工</text>
+  <rect x="340" y="44" width="140" height="40" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="410" y="69" font-size="12" text-anchor="middle">SQL 3：業務部員工</text>
+  <rect x="500" y="44" width="140" height="40" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="570" y="69" font-size="12" text-anchor="middle">SQL 4：客服部員工</text>
+  <text x="740" y="69" font-size="14" text-anchor="end" font-weight="700" fill="var(--gold-deep)">4 次</text>
+  <text x="20" y="124" font-size="13" font-weight="700">批次抓取（一次 2 個部門）</text>
+  <rect x="20" y="134" width="140" height="40" fill="var(--slate-soft)" stroke="var(--slate)"/><text x="90" y="159" font-size="12" text-anchor="middle">SQL 1：部門清單</text>
+  <rect x="180" y="134" width="140" height="40" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="250" y="159" font-size="12" text-anchor="middle">SQL 2：研發部＋業務部</text>
+  <rect x="340" y="134" width="140" height="40" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="410" y="159" font-size="12" text-anchor="middle">SQL 3：客服部</text>
+  <text x="740" y="159" font-size="14" text-anchor="end" font-weight="700" fill="var(--gold-deep)">3 次</text>
+  <text x="20" y="214" font-size="13" font-weight="700">JOIN FETCH 或 @EntityGraph</text>
+  <rect x="20" y="224" width="300" height="40" fill="var(--slate-soft)" stroke="var(--slate)"/><text x="170" y="249" font-size="12" text-anchor="middle">SQL 1：部門 left join 員工，一次拿齊</text>
+  <text x="740" y="249" font-size="14" text-anchor="end" font-weight="700" fill="var(--gold-deep)">1 次</text>
+  <text x="380" y="290" font-size="12" text-anchor="middle" fill="var(--slate-deep)">灰藍＝查部門本身；古銅＝為了補員工集合多出來的來回</text>
+</svg>

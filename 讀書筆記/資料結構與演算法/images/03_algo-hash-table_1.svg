@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 254" aria-label="雜湊函式示意：apple、banana、cherry 三個鍵各自算出雜湊碼，再換算成 8 個桶裡的編號；apple 與 cherry 都落在 1 號桶，banana 落在 0 號桶" width="784" height="254">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="254" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="ht-a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs>
+  <rect x="60" y="16" width="120" height="34" rx="6" fill="var(--surface)" stroke="currentColor"/>
+  <text x="120" y="38" font-size="14" text-anchor="middle" class="mono">apple</text>
+  <rect x="320" y="16" width="120" height="34" rx="6" fill="var(--surface)" stroke="currentColor"/>
+  <text x="380" y="38" font-size="14" text-anchor="middle" class="mono">banana</text>
+  <rect x="580" y="16" width="120" height="34" rx="6" fill="var(--surface)" stroke="currentColor"/>
+  <text x="640" y="38" font-size="14" text-anchor="middle" class="mono">cherry</text>
+  <text x="120" y="72" font-size="12" text-anchor="middle" class="mono" opacity=".75">hashCode 93029210</text>
+  <text x="380" y="72" font-size="12" text-anchor="middle" class="mono" opacity=".75">hashCode -1396355227</text>
+  <text x="640" y="72" font-size="12" text-anchor="middle" class="mono" opacity=".75">hashCode -1361513063</text>
+  <text x="120" y="92" font-size="12" text-anchor="middle" fill="var(--gold-deep)">→ 1 號桶</text>
+  <text x="380" y="92" font-size="12" text-anchor="middle" fill="var(--gold-deep)">→ 0 號桶</text>
+  <text x="640" y="92" font-size="12" text-anchor="middle" fill="var(--gold-deep)">→ 1 號桶</text>
+  <line x1="130" y1="100" x2="234" y2="136" stroke="currentColor" stroke-width="1.5" marker-end="url(#ht-a1)"/>
+  <line x1="370" y1="100" x2="190" y2="136" stroke="currentColor" stroke-width="1.5" marker-end="url(#ht-a1)"/>
+  <line x1="630" y1="100" x2="246" y2="136" stroke="currentColor" stroke-width="1.5" marker-end="url(#ht-a1)"/>
+  <text x="146" y="165" font-size="12" text-anchor="end" opacity=".75">8 個桶</text>
+  <rect x="156" y="140" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="212" y="140" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <rect x="268" y="140" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="324" y="140" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="380" y="140" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="436" y="140" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="492" y="140" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="548" y="140" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <g font-size="12" text-anchor="middle" opacity=".6"><text x="184" y="196">0</text><text x="240" y="196">1</text><text x="296" y="196">2</text><text x="352" y="196">3</text><text x="408" y="196">4</text><text x="464" y="196">5</text><text x="520" y="196">6</text><text x="576" y="196">7</text></g>
+  <text x="616" y="160" font-size="12" fill="var(--slate-deep)">apple 與 cherry</text>
+  <text x="616" y="178" font-size="12" fill="var(--slate-deep)">撞在同一個桶</text>
+</svg>

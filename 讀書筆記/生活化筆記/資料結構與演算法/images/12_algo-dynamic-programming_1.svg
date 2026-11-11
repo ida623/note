@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 258" aria-label="費氏數列的子問題相依圖：F5 需要 F4 與 F3，F4 需要 F3 與 F2，依此類推到 F1、F0。F3 同時被 F5 與 F4 需要，F2 同時被 F4 與 F3 需要，F1 同時被 F3 與 F2 需要，這就是重疊子問題" width="784" height="258">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="258" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="dp-a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker><marker id="dp-a1s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="var(--slate)"/></marker></defs>
+  <line x1="110.0" y1="120.0" x2="188.0" y2="120.0" stroke="currentColor" stroke-width="1.5" marker-end="url(#dp-a1)"/>
+  <path d="M90 100 Q 210.0 29.0 330 98" fill="none" stroke="var(--slate)" stroke-width="1.5" marker-end="url(#dp-a1s)"/>
+  <line x1="230.0" y1="120.0" x2="308.0" y2="120.0" stroke="currentColor" stroke-width="1.5" marker-end="url(#dp-a1)"/>
+  <path d="M210 100 Q 330.0 29.0 450 98" fill="none" stroke="var(--slate)" stroke-width="1.5" marker-end="url(#dp-a1s)"/>
+  <line x1="350.0" y1="120.0" x2="428.0" y2="120.0" stroke="currentColor" stroke-width="1.5" marker-end="url(#dp-a1)"/>
+  <path d="M330 100 Q 450.0 29.0 570 98" fill="none" stroke="var(--slate)" stroke-width="1.5" marker-end="url(#dp-a1s)"/>
+  <line x1="470.0" y1="120.0" x2="548.0" y2="120.0" stroke="currentColor" stroke-width="1.5" marker-end="url(#dp-a1)"/>
+  <path d="M450 100 Q 570.0 29.0 690 98" fill="none" stroke="var(--slate)" stroke-width="1.5" marker-end="url(#dp-a1s)"/>
+  <circle cx="90" cy="120" r="20" fill="var(--surface)" stroke="currentColor"/><text x="90" y="125" font-size="13" text-anchor="middle" class="mono">F5</text>
+  <circle cx="210" cy="120" r="20" fill="var(--surface)" stroke="currentColor"/><text x="210" y="125" font-size="13" text-anchor="middle" class="mono">F4</text>
+  <circle cx="330" cy="120" r="20" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="330" y="125" font-size="13" text-anchor="middle" class="mono">F3</text>
+  <circle cx="450" cy="120" r="20" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="450" y="125" font-size="13" text-anchor="middle" class="mono">F2</text>
+  <circle cx="570" cy="120" r="20" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="570" y="125" font-size="13" text-anchor="middle" class="mono">F1</text>
+  <circle cx="690" cy="120" r="20" fill="var(--surface)" stroke="currentColor"/><text x="690" y="125" font-size="13" text-anchor="middle" class="mono">F0</text>
+  <text x="330" y="164" font-size="12" text-anchor="middle" fill="var(--gold-deep)">被 F5、F4 共用</text>
+  <text x="450" y="164" font-size="12" text-anchor="middle" fill="var(--gold-deep)">被 F4、F3 共用</text>
+  <text x="570" y="164" font-size="12" text-anchor="middle" fill="var(--gold-deep)">被 F3、F2 共用</text>
+  <text x="380" y="196" font-size="12" text-anchor="middle">箭頭 Fi → Fj：算 Fi 要用到 Fj。直線是 i − 1，弧線是 i − 2</text>
+  <text x="380" y="218" font-size="12" text-anchor="middle" fill="var(--slate-deep)">同一個子問題被兩個以上的子問題需要＝重疊子問題，存起來就只算一次</text>
+</svg>

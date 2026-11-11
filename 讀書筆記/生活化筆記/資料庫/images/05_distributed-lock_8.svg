@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 354" aria-label="時間軸：A 向主機拿到鎖，資料還沒複製到從機主機就掛了，從機升為新主機後 B 也拿到同一把鎖" width="784" height="354">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="354" fill="#FFFFFF" stroke="none"/>
+        <g font-size="13" fill="currentColor">
+          <text x="10" y="54">A</text>
+          <text x="10" y="106">B</text>
+          <text x="10" y="188">主機</text>
+          <text x="10" y="268">從機</text>
+        </g>
+        <g stroke="currentColor" stroke-opacity=".25">
+          <line x1="72" y1="50" x2="748" y2="50"/>
+          <line x1="72" y1="102" x2="748" y2="102"/>
+          <line x1="72" y1="184" x2="748" y2="184"/>
+          <line x1="72" y1="264" x2="748" y2="264"/>
+        </g>
+
+        <!-- 1 -->
+        <line x1="150" y1="58" x2="150" y2="174" stroke="var(--gold)" stroke-width="2" marker-end="url(#c1)"/>
+        <text x="158" y="122" font-size="12" fill="var(--gold)">① 拿到鎖</text>
+
+        <!-- 2 -->
+        <line x1="300" y1="192" x2="300" y2="256" stroke="var(--danger)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#c2)"/>
+        <line x1="288" y1="216" x2="312" y2="240" stroke="var(--danger)" stroke-width="2"/>
+        <line x1="312" y1="216" x2="288" y2="240" stroke="var(--danger)" stroke-width="2"/>
+        <text x="322" y="228" font-size="12" fill="var(--danger)">② 還沒複製過去</text>
+
+        <!-- 3 -->
+        <line x1="428" y1="170" x2="456" y2="198" stroke="var(--danger)" stroke-width="3"/>
+        <line x1="456" y1="170" x2="428" y2="198" stroke="var(--danger)" stroke-width="3"/>
+        <text x="442" y="152" font-size="12" text-anchor="middle" fill="var(--danger)">③ 主機掛了</text>
+
+        <!-- 4 -->
+        <line x1="560" y1="256" x2="560" y2="194" stroke="currentColor" stroke-width="2" marker-end="url(#c3)"/>
+        <text x="572" y="230" font-size="12">④ 從機升為新主機</text>
+        <text x="572" y="248" font-size="11" opacity=".65">（它從來沒看過那把鎖）</text>
+
+        <!-- 5 -->
+        <line x1="700" y1="110" x2="700" y2="252" stroke="var(--danger)" stroke-width="2" marker-end="url(#c2)"/>
+        <text x="690" y="94" font-size="12" text-anchor="end" fill="var(--danger)">⑤ B 也拿到鎖</text>
+
+        <line x1="72" y1="300" x2="748" y2="300" stroke="currentColor" stroke-opacity=".25"/>
+        <text x="410" y="322" font-size="14" text-anchor="middle" fill="var(--danger)">同一把鎖，兩個人同時拿著</text>
+        <text x="748" y="24" font-size="11" text-anchor="end" opacity=".6">時間 →</text>
+
+        <defs>
+          <marker id="c1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <polygon points="0,0 10,5 0,10" fill="var(--gold)"/>
+          </marker>
+          <marker id="c2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <polygon points="0,0 10,5 0,10" fill="var(--danger)"/>
+          </marker>
+          <marker id="c3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <polygon points="0,0 10,5 0,10" fill="currentColor"/>
+          </marker>
+        </defs>
+      </svg>

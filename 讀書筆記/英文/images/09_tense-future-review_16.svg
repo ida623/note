@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 174 64" aria-label="未來完成進行式的時間軸小圖" width="174" height="64">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="174" height="64" fill="#FFFFFF" stroke="none"/><line x1="4" y1="26" x2="146" y2="26" stroke="currentColor" stroke-opacity=".45" stroke-width="1.5"/><line x1="75" y1="8" x2="75" y2="36" stroke="currentColor" stroke-width="1.5"/><line x1="132" y1="8" x2="132" y2="36" stroke="var(--slate)" stroke-dasharray="3 3"/><rect x="55" y="22" width="77" height="8" rx="2" fill="var(--slate-soft)" stroke="var(--slate)"/><line x1="55" y1="13" x2="128" y2="13" stroke="var(--gold)" stroke-width="2"/><path d="M132 13 L126 9.5 L126 16.5z" fill="var(--gold)"/></svg>

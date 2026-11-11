@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 324" aria-label="原地反轉 A、T、M、0、1：left 從最左邊、right 從最右邊開始，交換兩格後各往中間走一步；第一次交換 A 和 1，第二次交換 T 和 0，left 和 right 碰在中間就停" width="784" height="324">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="324" fill="#FFFFFF" stroke="none"/>
+  <text x="20" y="75" font-size="13">第 1 步</text>
+  <rect x="200" y="50" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="228" y="75" font-size="14" text-anchor="middle" class="mono">A</text>
+  <text x="228" y="104" font-size="12" text-anchor="middle" class="mono" opacity=".6">0</text>
+  <rect x="256" y="50" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="284" y="75" font-size="14" text-anchor="middle" class="mono">T</text>
+  <text x="284" y="104" font-size="12" text-anchor="middle" class="mono" opacity=".6">1</text>
+  <rect x="312" y="50" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="340" y="75" font-size="14" text-anchor="middle" class="mono">M</text>
+  <text x="340" y="104" font-size="12" text-anchor="middle" class="mono" opacity=".6">2</text>
+  <rect x="368" y="50" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="396" y="75" font-size="14" text-anchor="middle" class="mono">0</text>
+  <text x="396" y="104" font-size="12" text-anchor="middle" class="mono" opacity=".6">3</text>
+  <rect x="424" y="50" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="452" y="75" font-size="14" text-anchor="middle" class="mono">1</text>
+  <text x="452" y="104" font-size="12" text-anchor="middle" class="mono" opacity=".6">4</text>
+  <path d="M222 36 L234 36 L228 46 z" fill="var(--gold-deep)"/>
+  <text x="228" y="30" font-size="12" text-anchor="middle" class="mono" fill="var(--gold-deep)">left</text>
+  <path d="M446 36 L458 36 L452 46 z" fill="var(--gold-deep)"/>
+  <text x="452" y="30" font-size="12" text-anchor="middle" class="mono" fill="var(--gold-deep)">right</text>
+  <text x="504" y="75" font-size="13" fill="var(--gold-deep)">交換 A 和 1</text>
+  <text x="20" y="165" font-size="13">第 2 步</text>
+  <rect x="200" y="140" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="228" y="165" font-size="14" text-anchor="middle" class="mono">1</text>
+  <text x="228" y="194" font-size="12" text-anchor="middle" class="mono" opacity=".6">0</text>
+  <rect x="256" y="140" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="284" y="165" font-size="14" text-anchor="middle" class="mono">T</text>
+  <text x="284" y="194" font-size="12" text-anchor="middle" class="mono" opacity=".6">1</text>
+  <rect x="312" y="140" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="340" y="165" font-size="14" text-anchor="middle" class="mono">M</text>
+  <text x="340" y="194" font-size="12" text-anchor="middle" class="mono" opacity=".6">2</text>
+  <rect x="368" y="140" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="396" y="165" font-size="14" text-anchor="middle" class="mono">0</text>
+  <text x="396" y="194" font-size="12" text-anchor="middle" class="mono" opacity=".6">3</text>
+  <rect x="424" y="140" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="452" y="165" font-size="14" text-anchor="middle" class="mono">A</text>
+  <text x="452" y="194" font-size="12" text-anchor="middle" class="mono" opacity=".6">4</text>
+  <rect x="203" y="143" width="50" height="34" fill="var(--slate-soft)" opacity=".7"/>
+  <text x="228" y="165" font-size="14" text-anchor="middle" class="mono">1</text>
+  <rect x="427" y="143" width="50" height="34" fill="var(--slate-soft)" opacity=".7"/>
+  <text x="452" y="165" font-size="14" text-anchor="middle" class="mono">A</text>
+  <path d="M278 126 L290 126 L284 136 z" fill="var(--gold-deep)"/>
+  <text x="284" y="120" font-size="12" text-anchor="middle" class="mono" fill="var(--gold-deep)">left</text>
+  <path d="M390 126 L402 126 L396 136 z" fill="var(--gold-deep)"/>
+  <text x="396" y="120" font-size="12" text-anchor="middle" class="mono" fill="var(--gold-deep)">right</text>
+  <text x="504" y="165" font-size="13" fill="var(--gold-deep)">交換 T 和 0</text>
+  <text x="20" y="255" font-size="13">第 3 步</text>
+  <rect x="200" y="230" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="228" y="255" font-size="14" text-anchor="middle" class="mono">1</text>
+  <text x="228" y="284" font-size="12" text-anchor="middle" class="mono" opacity=".6">0</text>
+  <rect x="256" y="230" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="284" y="255" font-size="14" text-anchor="middle" class="mono">0</text>
+  <text x="284" y="284" font-size="12" text-anchor="middle" class="mono" opacity=".6">1</text>
+  <rect x="312" y="230" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="340" y="255" font-size="14" text-anchor="middle" class="mono">M</text>
+  <text x="340" y="284" font-size="12" text-anchor="middle" class="mono" opacity=".6">2</text>
+  <rect x="368" y="230" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="396" y="255" font-size="14" text-anchor="middle" class="mono">T</text>
+  <text x="396" y="284" font-size="12" text-anchor="middle" class="mono" opacity=".6">3</text>
+  <rect x="424" y="230" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="452" y="255" font-size="14" text-anchor="middle" class="mono">A</text>
+  <text x="452" y="284" font-size="12" text-anchor="middle" class="mono" opacity=".6">4</text>
+  <rect x="203" y="233" width="50" height="34" fill="var(--slate-soft)" opacity=".7"/>
+  <text x="228" y="255" font-size="14" text-anchor="middle" class="mono">1</text>
+  <rect x="259" y="233" width="50" height="34" fill="var(--slate-soft)" opacity=".7"/>
+  <text x="284" y="255" font-size="14" text-anchor="middle" class="mono">0</text>
+  <rect x="371" y="233" width="50" height="34" fill="var(--slate-soft)" opacity=".7"/>
+  <text x="396" y="255" font-size="14" text-anchor="middle" class="mono">T</text>
+  <rect x="427" y="233" width="50" height="34" fill="var(--slate-soft)" opacity=".7"/>
+  <text x="452" y="255" font-size="14" text-anchor="middle" class="mono">A</text>
+  <path d="M334 216 L346 216 L340 226 z" fill="var(--gold-deep)"/>
+  <text x="340" y="210" font-size="12" text-anchor="middle" class="mono" fill="var(--gold-deep)">left = right</text>
+  <text x="504" y="255" font-size="13" fill="var(--gold-deep)">left 不小於 right：停</text>
+</svg>

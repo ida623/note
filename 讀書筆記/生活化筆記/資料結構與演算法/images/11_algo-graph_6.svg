@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 310" aria-label="服務啟動順序的有向無環圖：config 指向 db 與 cache；db 指向 auth 與 account；cache 指向 account；auth 指向 gateway；account 指向 payment；payment 指向 gateway。每個方塊下面標入度：config 0、db 1、cache 1、auth 1、account 2、payment 1、gateway 2" width="784" height="310">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="310" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="gr-a6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs>
+  <line x1="118.9" y1="123.0" x2="198.4" y2="88.2" stroke="currentColor" stroke-width="1.5" marker-end="url(#gr-a6)"/>
+  <line x1="118.9" y1="157.0" x2="198.4" y2="191.8" stroke="currentColor" stroke-width="1.5" marker-end="url(#gr-a6)"/>
+  <line x1="282.0" y1="70.0" x2="375.0" y2="70.0" stroke="currentColor" stroke-width="1.5" marker-end="url(#gr-a6)"/>
+  <line x1="261.9" y1="87.0" x2="395.8" y2="191.2" stroke="currentColor" stroke-width="1.5" marker-end="url(#gr-a6)"/>
+  <line x1="282.0" y1="210.0" x2="375.0" y2="210.0" stroke="currentColor" stroke-width="1.5" marker-end="url(#gr-a6)"/>
+  <line x1="462.0" y1="74.7" x2="645.0" y2="95.0" stroke="currentColor" stroke-width="1.5" marker-end="url(#gr-a6)"/>
+  <line x1="462.0" y1="210.0" x2="535.0" y2="210.0" stroke="currentColor" stroke-width="1.5" marker-end="url(#gr-a6)"/>
+  <line x1="597.0" y1="193.0" x2="670.9" y2="119.1" stroke="currentColor" stroke-width="1.5" marker-end="url(#gr-a6)"/>
+  <rect x="38.0" y="123.0" width="84" height="34" rx="7" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="80" y="145" font-size="13" text-anchor="middle" class="mono">config</text>
+  <text x="80" y="174" font-size="11" text-anchor="middle" fill="var(--slate-deep)">入度 0</text>
+  <rect x="198.0" y="53.0" width="84" height="34" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="240" y="75" font-size="13" text-anchor="middle" class="mono">db</text>
+  <text x="240" y="104" font-size="11" text-anchor="middle" fill="var(--slate-deep)">入度 1</text>
+  <rect x="198.0" y="193.0" width="84" height="34" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="240" y="215" font-size="13" text-anchor="middle" class="mono">cache</text>
+  <text x="240" y="244" font-size="11" text-anchor="middle" fill="var(--slate-deep)">入度 1</text>
+  <rect x="378.0" y="53.0" width="84" height="34" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="420" y="75" font-size="13" text-anchor="middle" class="mono">auth</text>
+  <text x="420" y="104" font-size="11" text-anchor="middle" fill="var(--slate-deep)">入度 1</text>
+  <rect x="378.0" y="193.0" width="84" height="34" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="420" y="215" font-size="13" text-anchor="middle" class="mono">account</text>
+  <text x="420" y="244" font-size="11" text-anchor="middle" fill="var(--slate-deep)">入度 2</text>
+  <rect x="538.0" y="193.0" width="84" height="34" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="580" y="215" font-size="13" text-anchor="middle" class="mono">payment</text>
+  <text x="580" y="244" font-size="11" text-anchor="middle" fill="var(--slate-deep)">入度 1</text>
+  <rect x="648.0" y="83.0" width="84" height="34" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="690" y="105" font-size="13" text-anchor="middle" class="mono">gateway</text>
+  <text x="690" y="134" font-size="11" text-anchor="middle" fill="var(--slate-deep)">入度 2</text>
+  <text x="380" y="270" font-size="12" text-anchor="middle">箭頭 A → B：A 要先啟動，B 才能啟動。入度＝有幾條箭頭指向它</text>
+</svg>

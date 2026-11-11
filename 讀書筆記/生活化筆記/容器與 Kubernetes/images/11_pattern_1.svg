@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 804 324" aria-label="三組對照：Deployment 對應 Pod、Service 對應每台機器的轉發規則、Ingress 對應 Ingress Controller Pod，左邊都是存在檔案室的單子，右邊都是真正在跑的東西" width="804" height="324">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="804" height="324" fill="#FFFFFF" stroke="none"/>
+        <text x="150" y="30" font-size="12.5" text-anchor="middle" fill="var(--slate)" font-weight="700">你寫的單子</text>
+        <text x="150" y="48" font-size="10.5" text-anchor="middle" fill="var(--slate)">存在檔案室，不會跑</text>
+        <text x="580" y="30" font-size="12.5" text-anchor="middle" fill="var(--gold)" font-weight="700">真正在跑的東西</text>
+        <text x="580" y="48" font-size="10.5" text-anchor="middle" fill="var(--gold)">大腦負責讓它符合左邊</text>
+
+        <g fill="none" stroke="var(--slate)" stroke-width="2" stroke-dasharray="6 4">
+          <rect x="30" y="64" width="240" height="60" rx="5"/>
+          <rect x="30" y="140" width="240" height="60" rx="5"/>
+          <rect x="30" y="216" width="240" height="60" rx="5"/>
+        </g>
+        <g font-size="14" text-anchor="middle" fill="var(--slate)">
+          <text x="150" y="90">Deployment</text>
+          <text x="150" y="166">Service</text>
+          <text x="150" y="242">Ingress</text>
+        </g>
+        <g font-size="10.5" text-anchor="middle" fill="var(--slate)">
+          <text x="150" y="110">「我要 3 份，用這個映像檔」</text>
+          <text x="150" y="186">「叫 backend 的，發給這群 Pod」</text>
+          <text x="150" y="262">「/api 給 backend，其他給 frontend」</text>
+        </g>
+
+        <g stroke="currentColor" stroke-opacity=".5" stroke-width="2">
+          <line x1="278" y1="94" x2="332" y2="94" marker-end="url(#v1)"/>
+          <line x1="278" y1="170" x2="332" y2="170" marker-end="url(#v1)"/>
+          <line x1="278" y1="246" x2="332" y2="246" marker-end="url(#v1)"/>
+        </g>
+
+        <g fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2">
+          <rect x="340" y="64" width="410" height="60" rx="5"/>
+          <rect x="340" y="140" width="410" height="60" rx="5"/>
+          <rect x="340" y="216" width="410" height="60" rx="5"/>
+        </g>
+        <g font-size="14" text-anchor="middle" fill="var(--gold)">
+          <text x="545" y="90">worker node 上真的在跑的 Pod</text>
+          <text x="545" y="166">每台機器上真的存在的轉發規則</text>
+          <text x="545" y="242">真的在跑的 Ingress Controller Pod</text>
+        </g>
+        <g font-size="10.5" text-anchor="middle" fill="var(--gold)">
+          <text x="545" y="110">巡邏的負責維持份數</text>
+          <text x="545" y="186">大腦把名單發到每一台</text>
+          <text x="545" y="262">它讀規則表、改自己的設定</text>
+        </g>
+        <defs>
+          <marker id="v1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><polygon points="0,0 10,5 0,10" fill="currentColor" fill-opacity=".5"/></marker>
+        </defs>
+      </svg>

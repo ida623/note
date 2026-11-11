@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 354" aria-label="一台實體機透過 Hypervisor 切成三台虛擬機，每台虛擬機各自背一整套作業系統" width="784" height="354">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="354" fill="#FFFFFF" stroke="none"/>
+        <g fill="none" stroke="currentColor">
+          <rect x="30" y="34" width="222" height="176" rx="5"/>
+          <rect x="269" y="34" width="222" height="176" rx="5"/>
+          <rect x="508" y="34" width="222" height="176" rx="5"/>
+        </g>
+        <g font-size="12" opacity=".6">
+          <text x="44" y="52">虛擬機 1</text><text x="283" y="52">虛擬機 2</text><text x="522" y="52">虛擬機 3</text>
+        </g>
+        <g font-size="15" text-anchor="middle">
+          <text x="141" y="82">你的程式</text><text x="380" y="82">你的程式</text><text x="619" y="82">你的程式</text>
+        </g>
+        <g font-size="13" text-anchor="middle" opacity=".75">
+          <text x="141" y="112">函式庫、環境</text><text x="380" y="112">函式庫、環境</text><text x="619" y="112">函式庫、環境</text>
+        </g>
+        <g fill="var(--slate-soft)" stroke="var(--slate)">
+          <rect x="44" y="128" width="194" height="66" rx="4"/>
+          <rect x="283" y="128" width="194" height="66" rx="4"/>
+          <rect x="522" y="128" width="194" height="66" rx="4"/>
+        </g>
+        <g font-size="14" text-anchor="middle" fill="var(--slate)">
+          <text x="141" y="156">一整套作業系統</text><text x="380" y="156">一整套作業系統</text><text x="619" y="156">一整套作業系統</text>
+        </g>
+        <g font-size="12" text-anchor="middle" fill="var(--slate)" class="mono">
+          <text x="141" y="180">2–10 GB</text><text x="380" y="180">2–10 GB</text><text x="619" y="180">2–10 GB</text>
+        </g>
+        <rect x="30" y="222" width="700" height="42" rx="5" fill="none" stroke="var(--gold)" stroke-width="2"/>
+        <text x="380" y="249" font-size="15" text-anchor="middle" fill="var(--gold)">Hypervisor：負責把一台切成好幾台</text>
+        <rect x="30" y="274" width="700" height="42" rx="5" fill="none" stroke="currentColor"/>
+        <text x="380" y="301" font-size="15" text-anchor="middle">一台實體機器</text>
+      </svg>

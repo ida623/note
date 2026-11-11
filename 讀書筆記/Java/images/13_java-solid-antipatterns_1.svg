@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 294" aria-label="單一職責原則示意：左邊是一個 Account 類別，同時被財務部、營運部、資訊部三個方向的修改要求指著；右邊拆成 InterestPolicy、StatementPrinter、AccountRepository 三個類別，各自只被一個部門指著，Account 留下自己的餘額規則" width="784" height="294">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="294" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="so2-a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="var(--gold)"/></marker></defs>
+  <text x="180" y="26" font-size="13" text-anchor="middle" font-weight="700">重構前：三個部門都來改同一個類別</text>
+  <text x="560" y="26" font-size="13" text-anchor="middle" font-weight="700">重構後：每個類別只對一個部門負責</text>
+  <text x="50" y="74" font-size="12" text-anchor="middle">財務部</text>
+  <text x="50" y="144" font-size="12" text-anchor="middle">營運部</text>
+  <text x="50" y="214" font-size="12" text-anchor="middle">資訊部</text>
+  <line x1="78" y1="70" x2="196" y2="118" stroke="var(--gold)" stroke-width="1.6" marker-end="url(#so2-a1)"/>
+  <line x1="78" y1="140" x2="196" y2="140" stroke="var(--gold)" stroke-width="1.6" marker-end="url(#so2-a1)"/>
+  <line x1="78" y1="210" x2="196" y2="162" stroke="var(--gold)" stroke-width="1.6" marker-end="url(#so2-a1)"/>
+  <rect x="200" y="90" width="140" height="100" rx="8" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="270" y="114" font-size="13" text-anchor="middle" font-weight="700" class="mono">Account</text>
+  <text x="270" y="136" font-size="11" text-anchor="middle" class="mono">monthlyInterest()</text>
+  <text x="270" y="154" font-size="11" text-anchor="middle" class="mono">statement()</text>
+  <text x="270" y="172" font-size="11" text-anchor="middle" class="mono">save()</text>
+  <text x="430" y="74" font-size="12" text-anchor="middle">財務部</text>
+  <text x="430" y="144" font-size="12" text-anchor="middle">營運部</text>
+  <text x="430" y="214" font-size="12" text-anchor="middle">資訊部</text>
+  <line x1="458" y1="70" x2="516" y2="70" stroke="var(--gold)" stroke-width="1.6" marker-end="url(#so2-a1)"/>
+  <line x1="458" y1="140" x2="516" y2="140" stroke="var(--gold)" stroke-width="1.6" marker-end="url(#so2-a1)"/>
+  <line x1="458" y1="210" x2="516" y2="210" stroke="var(--gold)" stroke-width="1.6" marker-end="url(#so2-a1)"/>
+  <rect x="520" y="52" width="170" height="36" rx="8" fill="var(--surface)" stroke="currentColor"/><text x="605" y="75" font-size="12" text-anchor="middle" class="mono">InterestPolicy</text>
+  <rect x="520" y="122" width="170" height="36" rx="8" fill="var(--surface)" stroke="currentColor"/><text x="605" y="145" font-size="12" text-anchor="middle" class="mono">StatementPrinter</text>
+  <rect x="520" y="192" width="170" height="36" rx="8" fill="var(--surface)" stroke="currentColor"/><text x="605" y="215" font-size="12" text-anchor="middle" class="mono">AccountRepository</text>
+  <rect x="610" y="240" width="140" height="26" rx="6" fill="var(--slate-soft)" stroke="var(--slate)"/><text x="680" y="258" font-size="11" text-anchor="middle" class="mono">Account（餘額規則）</text>
+</svg>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 354" aria-label="一棵 8 個節點的二元樹：最上面的 5 是根，沒有孩子的 7、2、13、4 是葉子；左邊標出深度 0 到 3，從根往下數第幾層；虛線框起來的是以 4 為根的子樹；整棵樹的高度是 3" width="784" height="354">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="354" fill="#FFFFFF" stroke="none"/>
+  <rect x="166" y="95" width="260" height="210" rx="10" fill="none" stroke="var(--slate-deep)" stroke-dasharray="6 4"/>
+  <text x="170" y="323" font-size="12" fill="var(--slate-deep)">以 4 為根的子樹（左子樹）</text>
+  <line x1="264" y1="200" x2="200" y2="275" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="392" y1="125" x2="264" y2="200" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="264" y1="200" x2="328" y2="275" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="456" y1="50" x2="392" y2="125" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="584" y1="125" x2="520" y2="200" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="456" y1="50" x2="584" y2="125" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="584" y1="125" x2="648" y2="200" stroke="currentColor" stroke-opacity=".45"/>
+  <circle cx="200" cy="275" r="20" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="200" y="280" font-size="14" text-anchor="middle" class="mono">7</text>
+  <circle cx="264" cy="200" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="264" y="205" font-size="14" text-anchor="middle" class="mono">11</text>
+  <circle cx="328" cy="275" r="20" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="328" y="280" font-size="14" text-anchor="middle" class="mono">2</text>
+  <circle cx="392" cy="125" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="392" y="130" font-size="14" text-anchor="middle" class="mono">4</text>
+  <circle cx="456" cy="50" r="20" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="456" y="55" font-size="14" text-anchor="middle" class="mono">5</text>
+  <circle cx="520" cy="200" r="20" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="520" y="205" font-size="14" text-anchor="middle" class="mono">13</text>
+  <circle cx="584" cy="125" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="584" y="130" font-size="14" text-anchor="middle" class="mono">8</text>
+  <circle cx="648" cy="200" r="20" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="648" y="205" font-size="14" text-anchor="middle" class="mono">4</text>
+  <text x="30" y="55" font-size="13" fill="var(--slate-deep)">深度 0</text>
+  <text x="30" y="130" font-size="13" fill="var(--slate-deep)">深度 1</text>
+  <text x="30" y="205" font-size="13" fill="var(--slate-deep)">深度 2</text>
+  <text x="30" y="280" font-size="13" fill="var(--slate-deep)">深度 3</text>
+  <text x="486" y="42" font-size="13" fill="var(--gold-deep)">根：沒有父節點</text>
+  <text x="676" y="205" font-size="13" fill="var(--slate-deep)">葉：沒有孩子</text>
+  <text x="560" y="290" font-size="13">整棵樹的高度 = 3</text>
+  <text x="560" y="308" font-size="12" opacity=".75">（根到最深的葉子有 3 條邊）</text>
+</svg>

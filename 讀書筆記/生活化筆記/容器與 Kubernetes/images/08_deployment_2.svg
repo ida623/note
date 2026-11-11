@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 234" aria-label="滾動更新：三份服務一次換一份，每個時刻都還有舊版在服務" width="784" height="234">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="234" fill="#FFFFFF" stroke="none"/>
+        <g font-size="12" text-anchor="middle" opacity=".7">
+          <text x="92" y="30">一開始</text><text x="284" y="30">換第一份</text><text x="476" y="30">換第二份</text><text x="668" y="30">換完</text>
+        </g>
+        <g fill="none" stroke="currentColor" stroke-opacity=".65" stroke-width="1.8">
+          <rect x="42" y="48" width="34" height="34" rx="4"/><rect x="84" y="48" width="34" height="34" rx="4"/><rect x="126" y="48" width="34" height="34" rx="4"/>
+        </g>
+        <rect x="234" y="48" width="34" height="34" rx="4" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="1.8"/>
+        <g fill="none" stroke="currentColor" stroke-opacity=".65" stroke-width="1.8">
+          <rect x="276" y="48" width="34" height="34" rx="4"/><rect x="318" y="48" width="34" height="34" rx="4"/>
+        </g>
+        <g fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="1.8">
+          <rect x="426" y="48" width="34" height="34" rx="4"/><rect x="468" y="48" width="34" height="34" rx="4"/>
+        </g>
+        <rect x="510" y="48" width="34" height="34" rx="4" fill="none" stroke="currentColor" stroke-opacity=".65" stroke-width="1.8"/>
+        <g fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="1.8">
+          <rect x="618" y="48" width="34" height="34" rx="4"/><rect x="660" y="48" width="34" height="34" rx="4"/><rect x="702" y="48" width="34" height="34" rx="4"/>
+        </g>
+        <g stroke="currentColor" stroke-opacity=".35">
+          <line x1="176" y1="65" x2="220" y2="65" marker-end="url(#i1)"/>
+          <line x1="368" y1="65" x2="412" y2="65" marker-end="url(#i1)"/>
+          <line x1="560" y1="65" x2="604" y2="65" marker-end="url(#i1)"/>
+        </g>
+        <g font-size="12" text-anchor="middle">
+          <text x="101" y="106" opacity=".7">3 份舊版</text>
+          <text x="293" y="106" fill="var(--gold)">1 新 + 2 舊</text>
+          <text x="485" y="106" fill="var(--gold)">2 新 + 1 舊</text>
+          <text x="677" y="106" fill="var(--gold)">3 份新版</text>
+        </g>
+        <rect x="42" y="126" width="694" height="34" rx="4" fill="none" stroke="var(--gold)" stroke-dasharray="5 4"/>
+        <text x="389" y="148" font-size="13" text-anchor="middle" fill="var(--gold)">從頭到尾都有人在服務，使用者不會看到白畫面</text>
+        <text x="389" y="188" font-size="12.5" text-anchor="middle" opacity=".7">新版有問題？一行指令退回舊版，因為舊映像檔還在倉庫裡</text>
+        <defs>
+          <marker id="i1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><polygon points="0,0 10,5 0,10" fill="currentColor" fill-opacity=".35"/></marker>
+        </defs>
+      </svg>

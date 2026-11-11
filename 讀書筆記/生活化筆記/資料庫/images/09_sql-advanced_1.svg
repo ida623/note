@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 324" aria-label="LEFT JOIN 條件放 ON 與放 WHERE 的差別。左邊：條件寫在 ON，連接時只配對提款紀錄，配不到的帳戶補一列 NULL，最後 6 列都留下。右邊：條件寫在 WHERE，先連接全部交易，再用 WHERE 篩選，補 NULL 的那列因為 tx_type 是 NULL 而被濾掉，只剩有提款的 2 個帳戶" width="784" height="324">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="324" fill="#FFFFFF" stroke="none"/>
+<text x="40" y="28" font-size="13" fill="var(--gold-deep)">條件放 ON：連接時就只配提款</text>
+<text x="400" y="28" font-size="13" fill="var(--slate-deep)">條件放 WHERE：連接完才篩</text>
+<g font-size="12.5" class="mono">
+<rect x="40" y="44" width="300" height="26" rx="5" fill="var(--gold-soft)" stroke="var(--gold)"/><text class="mono" style="white-space:pre" x="52" y="62" fill="var(--gold-deep)">101 ── 提款 tx 4</text>
+<rect x="40" y="76" width="300" height="26" rx="5" fill="var(--gold-soft)" stroke="var(--gold)"/><text class="mono" style="white-space:pre" x="52" y="94" fill="var(--gold-deep)">102 ── 提款 tx 12</text>
+<rect x="40" y="108" width="300" height="26" rx="5" fill="var(--surface)" stroke="currentColor"/><text class="mono" style="white-space:pre" x="52" y="126" fill="currentColor">103 ── NULL（補上）</text>
+<rect x="40" y="140" width="300" height="26" rx="5" fill="var(--surface)" stroke="currentColor"/><text class="mono" style="white-space:pre" x="52" y="158" fill="currentColor">104 ── NULL（補上）</text>
+<rect x="40" y="172" width="300" height="26" rx="5" fill="var(--surface)" stroke="currentColor"/><text class="mono" style="white-space:pre" x="52" y="190" fill="currentColor">105 ── NULL（補上）</text>
+<rect x="40" y="204" width="300" height="26" rx="5" fill="var(--surface)" stroke="currentColor"/><text class="mono" style="white-space:pre" x="52" y="222" fill="currentColor">106 ── NULL（補上）</text>
+<rect x="400" y="44" width="320" height="26" rx="5" fill="var(--slate-soft)" stroke="var(--slate)"/><text class="mono" style="white-space:pre" x="412" y="62" fill="var(--slate-deep)">101 ── 提款 tx 4　　留</text>
+<rect x="400" y="76" width="320" height="26" rx="5" fill="var(--slate-soft)" stroke="var(--slate)"/><text class="mono" style="white-space:pre" x="412" y="94" fill="var(--slate-deep)">102 ── 提款 tx 12　 留</text>
+<rect x="400" y="108" width="320" height="26" rx="5" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="4 3"/><text class="mono" style="white-space:pre" x="412" y="126" fill="currentColor" opacity=".55">101 ── 存款、轉帳 3 列　濾掉</text>
+<rect x="400" y="140" width="320" height="26" rx="5" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="4 3"/><text class="mono" style="white-space:pre" x="412" y="158" fill="currentColor" opacity=".55">103、104、105 的交易　濾掉</text>
+<rect x="400" y="172" width="320" height="26" rx="5" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="4 3"/><text class="mono" style="white-space:pre" x="412" y="190" fill="currentColor" opacity=".55">106 ── NULL：NULL = 'WITHDRAW'？濾掉</text>
+</g>
+<text x="40" y="256" font-size="13" fill="var(--gold-deep)">6 列，沒提款的顯示 0</text>
+<text x="400" y="256" font-size="13" fill="var(--slate-deep)">2 列，LEFT JOIN 等於白寫</text>
+<text x="40" y="286" font-size="12" fill="currentColor" opacity=".6">補 NULL 的列遇到 WHERE 的比較，結果是 UNKNOWN，不是 TRUE，所以被濾掉</text>
+</svg>

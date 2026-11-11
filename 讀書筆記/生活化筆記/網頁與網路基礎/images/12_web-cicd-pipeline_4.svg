@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 316" aria-label="concurrency 的時間線：run A 正在執行；run B 進來時 A 還沒完，B 等待；run C 進來時取代了等待中的 B，B 被取消；A 完成後 C 開始執行" width="784" height="316">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="316" fill="#FFFFFF" stroke="none"/>
+<defs><marker id="ci-m5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs><text x="20" y="30" font-size="12.5" fill="var(--gold-deep)">concurrency 群組 pages，cancel-in-progress: false</text><text x="20" y="80" font-size="13" class="mono">run A</text><rect x="120" y="56" width="300" height="36" rx="8" fill="var(--slate-soft)" stroke="var(--slate)"/><text x="270" y="79" font-size="12" text-anchor="middle">執行中 → 完成</text><text x="20" y="136" font-size="13" class="mono">run B</text><rect x="180" y="112" width="120" height="36" rx="8" fill="none" stroke="currentColor" stroke-dasharray="4 3" stroke-opacity=".5"/><text x="240" y="135" font-size="12" text-anchor="middle" opacity=".45">等待 → 取消</text><text x="20" y="192" font-size="13" class="mono">run C</text><rect x="300" y="168" width="120" height="36" rx="8" fill="var(--surface)" stroke="currentColor"/><text x="360" y="191" font-size="12" text-anchor="middle">等待中</text><rect x="420" y="168" width="120" height="36" rx="8" fill="var(--slate-soft)" stroke="var(--slate)"/><text x="480" y="191" font-size="12" text-anchor="middle">A 完成後執行</text><line x1="180" y1="44" x2="180" y2="232" stroke="var(--gold)" stroke-dasharray="3 3"/><text x="180" y="250" font-size="12" text-anchor="middle" fill="var(--gold-deep)">B 進來</text><line x1="300" y1="44" x2="300" y2="232" stroke="var(--gold)" stroke-dasharray="3 3"/><text x="300" y="250" font-size="12" text-anchor="middle" fill="var(--gold-deep)">C 進來</text><line x1="420" y1="44" x2="420" y2="232" stroke="var(--gold)" stroke-dasharray="3 3"/><text x="420" y="250" font-size="12" text-anchor="middle" fill="var(--gold-deep)">A 完成</text><text x="20" y="278" font-size="12" opacity=".6">同一群組同時最多一個在跑、一個在等。新的進來，等待中的那個被取消；正在跑的不取消（false）</text>
+</svg>

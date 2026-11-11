@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 354" aria-label="任務進來的處理順序：執行緒少於核心數就開新執行緒；否則佇列沒滿就排隊；佇列滿了而執行緒少於最大數就再開新執行緒；都滿了就交給拒絕策略" width="784" height="354">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="354" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="jt-1-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor" fill-opacity=".6"/></marker></defs>
+  <rect x="20" y="20" width="140" height="44" rx="6" fill="var(--surface)" stroke="currentColor"/>
+  <text x="90" y="47" font-size="13" text-anchor="middle" font-weight="700">新任務進來</text>
+  <line x1="160" y1="42" x2="196" y2="42" stroke="currentColor" stroke-opacity=".6" stroke-width="1.5" marker-end="url(#jt-1-arrow)"/>
+  <polygon points="290,12 390,42 290,72 190,42" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="290" y="39" font-size="12" text-anchor="middle">執行緒數</text>
+  <text x="290" y="55" font-size="12" text-anchor="middle">&lt; 核心數？</text>
+  <line x1="390" y1="42" x2="566" y2="42" stroke="currentColor" stroke-opacity=".6" stroke-width="1.5" marker-end="url(#jt-1-arrow)"/>
+  <text x="478" y="35" font-size="11.5" text-anchor="middle">是</text>
+  <rect x="570" y="20" width="170" height="44" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="655" y="47" font-size="12.5" text-anchor="middle">開新執行緒來做</text>
+  <line x1="290" y1="72" x2="290" y2="106" stroke="currentColor" stroke-opacity=".6" stroke-width="1.5" marker-end="url(#jt-1-arrow)"/>
+  <text x="302" y="94" font-size="11.5">否</text>
+  <polygon points="290,110 390,140 290,170 190,140" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="290" y="137" font-size="12" text-anchor="middle">佇列</text>
+  <text x="290" y="153" font-size="12" text-anchor="middle">還放得下？</text>
+  <line x1="390" y1="140" x2="566" y2="140" stroke="currentColor" stroke-opacity=".6" stroke-width="1.5" marker-end="url(#jt-1-arrow)"/>
+  <text x="478" y="133" font-size="11.5" text-anchor="middle">是</text>
+  <rect x="570" y="118" width="170" height="44" rx="6" fill="var(--surface)" stroke="currentColor"/>
+  <text x="655" y="145" font-size="12.5" text-anchor="middle">排進佇列等</text>
+  <line x1="290" y1="170" x2="290" y2="204" stroke="currentColor" stroke-opacity=".6" stroke-width="1.5" marker-end="url(#jt-1-arrow)"/>
+  <text x="302" y="192" font-size="11.5">否</text>
+  <polygon points="290,208 390,238 290,268 190,238" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="290" y="235" font-size="12" text-anchor="middle">執行緒數</text>
+  <text x="290" y="251" font-size="12" text-anchor="middle">&lt; 最大數？</text>
+  <line x1="390" y1="238" x2="566" y2="238" stroke="currentColor" stroke-opacity=".6" stroke-width="1.5" marker-end="url(#jt-1-arrow)"/>
+  <text x="478" y="231" font-size="11.5" text-anchor="middle">是</text>
+  <rect x="570" y="216" width="170" height="44" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="655" y="243" font-size="12.5" text-anchor="middle">再開一條執行緒</text>
+  <line x1="290" y1="268" x2="290" y2="290" stroke="currentColor" stroke-opacity=".6" stroke-width="1.5" marker-end="url(#jt-1-arrow)"/>
+  <text x="302" y="284" font-size="11.5">否</text>
+  <rect x="200" y="292" width="180" height="32" rx="6" fill="var(--surface)" stroke="var(--danger)"/>
+  <text x="290" y="313" font-size="12.5" text-anchor="middle">交給拒絕策略</text>
+  <text x="40" y="150" font-size="11.5" opacity=".75">注意順序：</text>
+  <text x="40" y="168" font-size="11.5" opacity=".75">先排隊，</text>
+  <text x="40" y="186" font-size="11.5" opacity=".75">佇列滿了</text>
+  <text x="40" y="204" font-size="11.5" opacity=".75">才加到最大</text>
+</svg>

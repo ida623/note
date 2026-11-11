@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 324" aria-label="層序走訪：用佇列一層一層由左到右，順序是 50、30、70、20、40、60、80；右邊列出每處理一層時佇列裡有誰" width="784" height="324">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="324" fill="#FFFFFF" stroke="none"/>
+  <line x1="40" y1="73" x2="500" y2="73" stroke="var(--slate)" stroke-dasharray="3 5" opacity=".5"/>
+  <line x1="40" y1="143" x2="500" y2="143" stroke="var(--slate)" stroke-dasharray="3 5" opacity=".5"/>
+  <line x1="40" y1="213" x2="500" y2="213" stroke="var(--slate)" stroke-dasharray="3 5" opacity=".5"/>
+  <line x1="152" y1="115" x2="90" y2="185" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="276" y1="45" x2="152" y2="115" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="152" y1="115" x2="214" y2="185" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="400" y1="115" x2="338" y2="185" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="276" y1="45" x2="400" y2="115" stroke="currentColor" stroke-opacity=".45"/>
+  <line x1="400" y1="115" x2="462" y2="185" stroke="currentColor" stroke-opacity=".45"/>
+  <circle cx="90" cy="185" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="90" y="190" font-size="14" text-anchor="middle" class="mono">20</text>
+  <circle cx="112" cy="167" r="10" fill="var(--gold-deep)"/>
+  <text x="112" y="171" font-size="11" text-anchor="middle" fill="#FFFFFF" class="mono">4</text>
+  <circle cx="152" cy="115" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="152" y="120" font-size="14" text-anchor="middle" class="mono">30</text>
+  <circle cx="174" cy="97" r="10" fill="var(--gold-deep)"/>
+  <text x="174" y="101" font-size="11" text-anchor="middle" fill="#FFFFFF" class="mono">2</text>
+  <circle cx="214" cy="185" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="214" y="190" font-size="14" text-anchor="middle" class="mono">40</text>
+  <circle cx="236" cy="167" r="10" fill="var(--gold-deep)"/>
+  <text x="236" y="171" font-size="11" text-anchor="middle" fill="#FFFFFF" class="mono">5</text>
+  <circle cx="276" cy="45" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="276" y="50" font-size="14" text-anchor="middle" class="mono">50</text>
+  <circle cx="298" cy="27" r="10" fill="var(--gold-deep)"/>
+  <text x="298" y="31" font-size="11" text-anchor="middle" fill="#FFFFFF" class="mono">1</text>
+  <circle cx="338" cy="185" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="338" y="190" font-size="14" text-anchor="middle" class="mono">60</text>
+  <circle cx="360" cy="167" r="10" fill="var(--gold-deep)"/>
+  <text x="360" y="171" font-size="11" text-anchor="middle" fill="#FFFFFF" class="mono">6</text>
+  <circle cx="400" cy="115" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="400" y="120" font-size="14" text-anchor="middle" class="mono">70</text>
+  <circle cx="422" cy="97" r="10" fill="var(--gold-deep)"/>
+  <text x="422" y="101" font-size="11" text-anchor="middle" fill="#FFFFFF" class="mono">3</text>
+  <circle cx="462" cy="185" r="20" fill="var(--surface)" stroke="currentColor"/>
+  <text x="462" y="190" font-size="14" text-anchor="middle" class="mono">80</text>
+  <circle cx="484" cy="167" r="10" fill="var(--gold-deep)"/>
+  <text x="484" y="171" font-size="11" text-anchor="middle" fill="#FFFFFF" class="mono">7</text>
+  <text x="530" y="40" font-size="13" fill="var(--slate-deep)">佇列（左邊是前端）</text>
+  <text x="530" y="70" font-size="12.5">開始</text>
+  <text x="660" y="70" font-size="12.5" class="mono" fill="var(--gold-deep)">50</text>
+  <text x="530" y="104" font-size="12.5">處理 50</text>
+  <text x="660" y="104" font-size="12.5" class="mono" fill="var(--gold-deep)">30 70</text>
+  <text x="530" y="138" font-size="12.5">處理 30</text>
+  <text x="660" y="138" font-size="12.5" class="mono" fill="var(--gold-deep)">70 20 40</text>
+  <text x="530" y="172" font-size="12.5">處理 70</text>
+  <text x="660" y="172" font-size="12.5" class="mono" fill="var(--gold-deep)">20 40 60 80</text>
+  <text x="530" y="206" font-size="12.5">處理 20、40、60、80</text>
+  <text x="660" y="206" font-size="12.5" class="mono" fill="var(--gold-deep)">（空）</text>
+  <text x="280" y="280" font-size="14" text-anchor="middle" class="mono">走訪順序：50 30 70 20 40 60 80</text>
+</svg>

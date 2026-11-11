@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 404 254" aria-label="主從：一台主機負責寫，資料非同步複製到兩台從機" width="404" height="254">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="404" height="254" fill="#FFFFFF" stroke="none"/>
+          <rect x="118" y="24" width="144" height="56" rx="5" fill="none" stroke="var(--gold)" stroke-width="2"/>
+          <text x="190" y="48" font-size="15" text-anchor="middle" fill="var(--gold)">主機</text>
+          <text x="190" y="68" font-size="12" text-anchor="middle" fill="var(--gold)">只有它能寫</text>
+
+          <line x1="150" y1="84" x2="92" y2="126" stroke="currentColor" stroke-opacity=".55" stroke-dasharray="5 4" marker-end="url(#b2)"/>
+          <line x1="230" y1="84" x2="288" y2="126" stroke="currentColor" stroke-opacity=".55" stroke-dasharray="5 4" marker-end="url(#b2)"/>
+          <text x="190" y="112" font-size="12" text-anchor="middle" opacity=".7">非同步複製</text>
+
+          <rect x="24" y="132" width="130" height="52" rx="5" fill="none" stroke="currentColor"/>
+          <text x="89" y="163" font-size="14" text-anchor="middle">從機</text>
+          <rect x="226" y="132" width="130" height="52" rx="5" fill="none" stroke="currentColor"/>
+          <text x="291" y="163" font-size="14" text-anchor="middle">從機</text>
+
+          <text x="190" y="212" font-size="13" text-anchor="middle" fill="var(--danger)">主機掛了，要人工換一台上去</text>
+          <defs>
+            <marker id="b2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <polygon points="0,0 10,5 0,10" fill="currentColor" fill-opacity=".55"/>
+            </marker>
+          </defs>
+        </svg>

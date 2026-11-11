@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 584 174" aria-label="LRU 的雙向串列：虛擬頭 head 的下一個是最久沒用的節點 2，滿了先丟它；虛擬尾 tail 的前一個是最近用過的節點 1；雜湊表的值直接指向節點" width="584" height="174">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="584" height="174" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="hw-a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs>
+  <g font-size="14" text-anchor="middle" fill="currentColor">
+    <rect x="10" y="80" width="80" height="40" rx="6" fill="none" stroke="#5E7A9B" stroke-dasharray="4 3"/><text x="50" y="105">head</text>
+    <rect x="150" y="80" width="80" height="40" rx="6" fill="none" stroke="#B5730F" stroke-width="2"/><text x="190" y="105">2</text>
+    <rect x="290" y="80" width="80" height="40" rx="6" fill="none" stroke="#5E7A9B"/><text x="330" y="105">1</text>
+    <rect x="430" y="80" width="80" height="40" rx="6" fill="none" stroke="#5E7A9B" stroke-dasharray="4 3"/><text x="470" y="105">tail</text>
+    <g stroke="currentColor" fill="none" marker-end="url(#hw-a1)">
+      <path d="M90 93 L148 93"/><path d="M150 107 L92 107"/>
+      <path d="M230 93 L288 93"/><path d="M290 107 L232 107"/>
+      <path d="M370 93 L428 93"/><path d="M430 107 L372 107"/>
+      <path d="M190 40 L190 76"/><path d="M330 40 L330 76"/>
+    </g>
+    <text x="190" y="30" fill="#B5730F">最久沒用：滿了先丟</text>
+    <text x="330" y="30">最近用過</text>
+    <text x="280" y="143" font-size="12">HashMap：鍵 → 節點，找到後直接改前後指標</text>
+  </g>
+</svg>

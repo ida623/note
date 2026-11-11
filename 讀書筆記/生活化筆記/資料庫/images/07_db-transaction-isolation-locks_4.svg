@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 224" aria-label="MVCC 的版本鏈：資料表裡的最新版本是餘額 7000，由交易 2201 寫入，DB_ROLL_PTR 指向 undo log 裡的舊版本餘額 10000。快照較早的讀取看到交易編號太新，就沿著指標找回舊版本" width="784" height="224">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="224" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="tx-9a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs>
+  <rect x="40" y="50" width="250" height="80" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="165.0" y="42" font-size="12" text-anchor="middle" font-weight="700">資料表裡的最新版本</text><text x="54" y="74" font-size="12" text-anchor="start" class="mono">id = 1  balance = 7000</text><text x="54" y="94" font-size="12" text-anchor="start" class="mono">DB_TRX_ID = 2201</text><text x="54" y="114" font-size="12" text-anchor="start" class="mono">DB_ROLL_PTR ─┐</text>
+  <rect x="430" y="50" width="290" height="80" rx="6" fill="var(--slate-soft)" stroke="var(--slate)"/><text x="575.0" y="42" font-size="12" text-anchor="middle" font-weight="700">undo log（還原區段）</text><text x="444" y="74" font-size="12" text-anchor="start" class="mono">舊內容：balance = 10000</text><text x="444" y="94" font-size="12" text-anchor="start" class="mono">DB_TRX_ID = 2150（改它的交易）</text><text x="444" y="114" font-size="12" text-anchor="start" class="mono">再往前的版本 …</text>
+  <path d="M200 110 C 300 110, 330 90, 428 90" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#tx-9a)"/>
+  <text x="380" y="160" font-size="12" text-anchor="middle">交易 2201 把 10000 改成 7000：新值寫進資料列，舊值寫進 undo log</text>
+  <text x="380" y="182" font-size="12" text-anchor="middle" fill="var(--slate-deep)">快照在 2201 提交之前建立的讀取：看到 DB_TRX_ID 太新，沿著 DB_ROLL_PTR 找回 10000</text>
+</svg>

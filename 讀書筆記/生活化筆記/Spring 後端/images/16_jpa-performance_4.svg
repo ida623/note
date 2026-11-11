@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 294" aria-label="12 筆便條、batch_size 設 5：序列主鍵分成 5 筆、5 筆、2 筆三批，送 3 次；IDENTITY 主鍵每筆各送一次，共 12 次；MySQL 沒開 rewriteBatchedStatements 時，Hibernate 雖然送 3 批，伺服器還是執行 12 句 INSERT，開了才變成 3 句" width="784" height="294">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="294" fill="#FFFFFF" stroke="none"/>
+  <text x="20" y="30" font-size="13" font-weight="700">序列主鍵＋batch_size=5</text>
+  <rect x="20" y="40" width="160" height="34" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <rect x="190" y="40" width="160" height="34" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <rect x="360" y="40" width="70" height="34" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <g fill="var(--surface)" stroke="currentColor">
+    <rect x="28" y="48" width="22" height="18"/><rect x="58" y="48" width="22" height="18"/><rect x="88" y="48" width="22" height="18"/><rect x="118" y="48" width="22" height="18"/><rect x="148" y="48" width="22" height="18"/>
+    <rect x="198" y="48" width="22" height="18"/><rect x="228" y="48" width="22" height="18"/><rect x="258" y="48" width="22" height="18"/><rect x="288" y="48" width="22" height="18"/><rect x="318" y="48" width="22" height="18"/>
+    <rect x="368" y="48" width="22" height="18"/><rect x="398" y="48" width="22" height="18"/>
+  </g>
+  <text x="740" y="63" font-size="14" text-anchor="end" font-weight="700" fill="var(--gold-deep)">送 3 次</text>
+  <text x="20" y="114" font-size="13" font-weight="700">IDENTITY 主鍵＋batch_size=5</text>
+  <g fill="var(--surface)" stroke="currentColor">
+    <rect x="20" y="124" width="34" height="34" rx="6"/><rect x="62" y="124" width="34" height="34" rx="6"/><rect x="104" y="124" width="34" height="34" rx="6"/><rect x="146" y="124" width="34" height="34" rx="6"/><rect x="188" y="124" width="34" height="34" rx="6"/><rect x="230" y="124" width="34" height="34" rx="6"/>
+    <rect x="272" y="124" width="34" height="34" rx="6"/><rect x="314" y="124" width="34" height="34" rx="6"/><rect x="356" y="124" width="34" height="34" rx="6"/><rect x="398" y="124" width="34" height="34" rx="6"/><rect x="440" y="124" width="34" height="34" rx="6"/><rect x="482" y="124" width="34" height="34" rx="6"/>
+  </g>
+  <text x="740" y="147" font-size="14" text-anchor="end" font-weight="700" fill="var(--gold-deep)">送 12 次</text>
+  <text x="20" y="198" font-size="13" font-weight="700">MySQL：Hibernate 送 3 批之後</text>
+  <text x="20" y="224" font-size="12">沒開 rewriteBatchedStatements：伺服器實際執行 12 句 INSERT</text>
+  <text x="20" y="246" font-size="12" fill="var(--gold-deep)">開了 rewriteBatchedStatements=true：改寫成 3 句多列 INSERT</text>
+  <text x="740" y="262" font-size="11" text-anchor="end" fill="var(--slate-deep)">古銅框＝一次送出的一批；每個小方格是一筆便條</text>
+</svg>

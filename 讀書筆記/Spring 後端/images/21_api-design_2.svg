@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 274" aria-label="偏移分頁與鍵集分頁的比較：偏移分頁從最新的一筆開始沿著索引讀，前 900,000 列讀了又丟掉，才回後面 20 列，花約 497 毫秒；鍵集分頁用 id &lt; 100001 直接在索引上定位，只讀 20 列，約 0.05 毫秒" width="784" height="274">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="274" fill="#FFFFFF" stroke="none"/>
+  <text x="20" y="30" font-size="14" font-weight="bold">偏移分頁 OFFSET 900000</text>
+  <rect x="20" y="44" width="620" height="34" rx="4" fill="var(--surface)" stroke="currentColor" opacity=".5"/>
+  <text x="330" y="66" font-size="12.5" text-anchor="middle" opacity=".8">讀了又丟掉的 900,000 列</text>
+  <rect x="640" y="44" width="40" height="34" rx="4" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="690" y="66" font-size="12.5">20 列</text>
+  <text x="20" y="102" font-size="12.5" opacity=".85">實際讀 900,020 列，約 497 毫秒</text>
+  <text x="20" y="150" font-size="14" font-weight="bold">鍵集分頁 WHERE id &lt; 100001</text>
+  <rect x="20" y="164" width="620" height="34" rx="4" fill="none" stroke="currentColor" stroke-dasharray="5 4" opacity=".4"/>
+  <text x="330" y="186" font-size="12.5" text-anchor="middle" opacity=".6">不用碰</text>
+  <rect x="640" y="164" width="40" height="34" rx="4" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="690" y="186" font-size="12.5">20 列</text>
+  <text x="20" y="222" font-size="12.5" opacity=".85">靠索引直接定位到 id 100000，只讀 20 列，約 0.05 毫秒</text>
+</svg>

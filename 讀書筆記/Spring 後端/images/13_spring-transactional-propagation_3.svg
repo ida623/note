@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 274" aria-label="UnexpectedRollbackException 怎麼來的：外層與內層都是 REQUIRED，共用一筆交易；內層丟出例外，攔截器把整筆交易標成只能還原；外層 catch 住例外繼續執行，結束時要求提交，交易管理器發現已被標記，改成還原並丟出 UnexpectedRollbackException" width="784" height="274">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="274" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="st-03-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <rect x="20" y="60" width="160" height="70" rx="8" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="100" y="92" font-size="13.5" text-anchor="middle">① 內層丟例外</text>
+  <text x="100" y="110" font-size="11.5" text-anchor="middle" opacity=".75">攔截器：標成只能還原</text>
+  <line x1="180" y1="95" x2="203" y2="95" stroke="currentColor" stroke-width="1.6" marker-end="url(#st-03-arrow)"/>
+  <rect x="205" y="60" width="160" height="70" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="285" y="92" font-size="13.5" text-anchor="middle">② 外層 catch</text>
+  <text x="285" y="110" font-size="11.5" text-anchor="middle" opacity=".75">以為沒事、繼續跑</text>
+  <line x1="365" y1="95" x2="388" y2="95" stroke="currentColor" stroke-width="1.6" marker-end="url(#st-03-arrow)"/>
+  <rect x="390" y="60" width="160" height="70" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="470" y="92" font-size="13.5" text-anchor="middle">③ 外層結束</text>
+  <text x="470" y="110" font-size="11.5" text-anchor="middle" opacity=".75">要求提交</text>
+  <line x1="550" y1="95" x2="573" y2="95" stroke="currentColor" stroke-width="1.6" marker-end="url(#st-03-arrow)"/>
+  <rect x="575" y="60" width="160" height="70" rx="8" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="655" y="92" font-size="13.5" text-anchor="middle">④ 交易管理器</text>
+  <text x="655" y="110" font-size="11.5" text-anchor="middle" opacity=".75">看到標記→改成還原</text>
+  <text x="380" y="40" font-size="13" text-anchor="middle">外層、內層都是 REQUIRED：同一筆實體交易</text>
+  <text x="740" y="160" font-size="12.5" text-anchor="end" fill="var(--danger)">丟出 UnexpectedRollbackException</text>
+  <text x="20" y="205" font-size="12.5" opacity=".85">內層的還原標記是記在「同一筆交易」上的；外層吞掉例外也改不了。</text>
+  <text x="20" y="228" font-size="12.5" opacity=".85">丟例外是為了讓呼叫端知道：你以為提交了，其實還原了。</text>
+</svg>

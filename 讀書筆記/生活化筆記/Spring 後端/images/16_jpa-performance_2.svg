@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 284" aria-label="一次請求的時間軸：請求進來、Controller、服務層交易、回到 Controller 讀員工、寫出 JSON。交易只涵蓋服務層那一段。open-in-view 開著時 EntityManager 從請求進來活到回應寫完，SQL 1 在交易裡、SQL 2 在交易外的 Controller 送出；關掉時 EntityManager 跟著交易結束，回到 Controller 讀員工時丟出 LazyInitializationException" width="784" height="284">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="284" fill="#FFFFFF" stroke="none"/>
+  <text x="70" y="30" font-size="12" text-anchor="middle">請求進來</text>
+  <text x="200" y="30" font-size="12" text-anchor="middle">Controller</text>
+  <text x="380" y="30" font-size="12" text-anchor="middle">服務層方法</text>
+  <text x="560" y="30" font-size="12" text-anchor="middle">回到 Controller 讀員工</text>
+  <text x="700" y="30" font-size="12" text-anchor="middle">寫出 JSON</text>
+  <line x1="40" y1="42" x2="730" y2="42" stroke="currentColor" stroke-opacity=".3"/>
+  <text x="20" y="70" font-size="12" text-anchor="start" font-weight="700">交易</text>
+  <rect x="310" y="56" width="140" height="22" rx="4" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="380" y="72" font-size="11" text-anchor="middle" fill="var(--gold-deep)">@Transactional</text>
+  <text x="20" y="112" font-size="12" text-anchor="start" font-weight="700">open-in-view=true</text>
+  <rect x="40" y="120" width="690" height="22" rx="4" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="200" y="136" font-size="11" text-anchor="middle" fill="var(--slate-deep)">EntityManager 活整個請求</text>
+  <circle cx="380" cy="131" r="6" fill="var(--gold)"/><text x="380" y="160" font-size="11" text-anchor="middle">SQL 1（交易裡）</text>
+  <circle cx="560" cy="131" r="6" fill="var(--gold)"/><text x="560" y="160" font-size="11" text-anchor="middle" fill="var(--gold-deep)">SQL 2（交易外）</text>
+  <text x="20" y="194" font-size="12" text-anchor="start" font-weight="700">open-in-view=false</text>
+  <rect x="310" y="202" width="140" height="22" rx="4" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="300" y="218" font-size="11" text-anchor="end" fill="var(--slate-deep)">EntityManager</text>
+  <circle cx="380" cy="213" r="6" fill="var(--gold)"/>
+  <text x="560" y="218" font-size="12" text-anchor="middle" font-weight="700" fill="var(--gold-deep)">✕ LazyInitializationException</text>
+  <text x="380" y="250" font-size="12" text-anchor="middle">古銅點＝送出 SQL 的時間點</text>
+</svg>

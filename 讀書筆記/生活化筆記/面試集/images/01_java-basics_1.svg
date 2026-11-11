@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 244" aria-label="MVC：使用者的操作交給 Controller，Controller 更新 Model，Model 的資料變化反映到 View，View 呈現給使用者" width="784" height="244">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="244" fill="#FFFFFF" stroke="none"/>
+      <rect x="30" y="80" width="140" height="60" rx="8" fill="#F6E9D2" stroke="#B5730F"/>
+      <text x="100" y="106" font-size="14" font-weight="700" fill="#22242A" text-anchor="middle">使用者</text>
+      <text x="100" y="126" font-size="11.5" fill="#55575E" text-anchor="middle">點按鈕、送表單</text>
+      <line x1="170" y1="95" x2="292" y2="60" stroke="#8A5809" stroke-width="2"/>
+      <polygon points="292,60 281,60 285,68" fill="#8A5809"/>
+      <text x="222" y="62" font-size="11.5" fill="#8A5809" text-anchor="middle">操作</text>
+      <rect x="296" y="30" width="170" height="56" rx="8" fill="#FFFFFF" stroke="#5E7A9B"/>
+      <text x="381" y="53" font-size="14" font-weight="700" fill="#22242A" text-anchor="middle">Controller</text>
+      <text x="381" y="73" font-size="11.5" fill="#55575E" text-anchor="middle">指揮：收請求、叫人做事</text>
+      <line x1="466" y1="58" x2="586" y2="58" stroke="#8B8D94" stroke-width="2"/>
+      <polygon points="586,58 576,53 576,63" fill="#8B8D94"/>
+      <text x="526" y="50" font-size="11.5" fill="#55575E" text-anchor="middle">更新</text>
+      <rect x="590" y="30" width="140" height="56" rx="8" fill="#FFFFFF" stroke="#5E7A9B"/>
+      <text x="660" y="53" font-size="14" font-weight="700" fill="#22242A" text-anchor="middle">Model</text>
+      <text x="660" y="73" font-size="11.5" fill="#55575E" text-anchor="middle">資料與商業邏輯</text>
+      <line x1="655" y1="86" x2="475" y2="160" stroke="#8B8D94" stroke-width="2"/>
+      <polygon points="475,160 486,159 482,151" fill="#8B8D94"/>
+      <text x="585" y="135" font-size="11.5" fill="#55575E" text-anchor="middle">資料變化</text>
+      <rect x="296" y="140" width="170" height="56" rx="8" fill="#FFFFFF" stroke="#5E7A9B"/>
+      <text x="381" y="163" font-size="14" font-weight="700" fill="#22242A" text-anchor="middle">View</text>
+      <text x="381" y="183" font-size="11.5" fill="#55575E" text-anchor="middle">畫面：把資料呈現出來</text>
+      <line x1="296" y1="168" x2="176" y2="128" stroke="#8A5809" stroke-width="2"/>
+      <polygon points="176,128 185,134 187,126" fill="#8A5809"/>
+      <text x="238" y="140" font-size="11.5" fill="#8A5809" text-anchor="middle">呈現</text>
+    </svg>

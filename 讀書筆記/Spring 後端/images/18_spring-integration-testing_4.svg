@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 324" aria-label="6 個測試類別依序執行、共建了 5 個 Spring 容器：AccountControllerTest 建容器 1，不連資料庫；AccountQueryIntegrationTest 建容器 2 並起一個 MySQL；AccountRepositoryTest 建容器 3 加 MySQL；ExtraMockIntegrationTest 多一個 @MockitoBean，建容器 4 加 MySQL；RandomPortTest 換了 webEnvironment，建容器 5 加 MySQL；TransferIntegrationTest 設定跟 AccountQueryIntegrationTest 相同，直接重用容器 2，只花 0.062 秒" width="784" height="324">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="324" fill="#FFFFFF" stroke="none"/>
+<defs><marker id="it-m3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs>
+<text x="40" y="26" font-size="12.5" fill="currentColor" opacity=".7">測試類別（執行順序）</text><text x="400" y="26" font-size="12.5" fill="currentColor" opacity=".7">用到的 Spring 容器</text><text x="652" y="26" font-size="12.5" fill="currentColor" opacity=".7">類別耗時</text>
+<text x="40" y="60" font-size="12.5" class="mono" fill="currentColor">AccountControllerTest</text><rect x="400" y="44" width="226" height="26" rx="6" fill="var(--surface)" stroke="currentColor"/><text x="410" y="62" font-size="12" fill="currentColor">容器 1（@WebMvcTest）新建</text><text x="652" y="61" font-size="12.5" class="mono" fill="currentColor">1.955 s</text>
+<text x="40" y="100" font-size="12.5" class="mono" fill="currentColor">AccountQueryIntegrationTest</text><rect x="400" y="84" width="226" height="26" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="410" y="102" font-size="12" fill="var(--gold-deep)">容器 2＋MySQL 新建</text><text x="652" y="101" font-size="12.5" class="mono" fill="currentColor">11.16 s</text>
+<text x="40" y="140" font-size="12.5" class="mono" fill="currentColor">AccountRepositoryTest</text><rect x="400" y="124" width="226" height="26" rx="6" fill="var(--surface)" stroke="currentColor"/><text x="410" y="142" font-size="12" fill="currentColor">容器 3（@DataJpaTest）＋MySQL</text><text x="652" y="141" font-size="12.5" class="mono" fill="currentColor">8.047 s</text>
+<text x="40" y="180" font-size="12.5" class="mono" fill="currentColor">ExtraMockIntegrationTest</text><rect x="400" y="164" width="226" height="26" rx="6" fill="var(--surface)" stroke="currentColor"/><text x="410" y="182" font-size="12" fill="currentColor">容器 4＋MySQL（多一個替身）</text><text x="652" y="181" font-size="12.5" class="mono" fill="currentColor">8.027 s</text>
+<text x="40" y="220" font-size="12.5" class="mono" fill="currentColor">RandomPortTest</text><rect x="400" y="204" width="226" height="26" rx="6" fill="var(--surface)" stroke="currentColor"/><text x="410" y="222" font-size="12" fill="currentColor">容器 5＋MySQL（RANDOM_PORT）</text><text x="652" y="221" font-size="12.5" class="mono" fill="currentColor">6.356 s</text>
+<text x="40" y="260" font-size="12.5" class="mono" fill="var(--gold-deep)">TransferIntegrationTest</text><path d="M300 254 Q370 254 380 180 Q388 112 398 100" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#it-m3)"/><text x="410" y="262" font-size="12" fill="var(--gold-deep)">重用容器 2，不新建</text><text x="652" y="261" font-size="12.5" class="mono" fill="var(--gold-deep)">0.062 s</text>
+<text x="40" y="290" font-size="12" fill="currentColor" opacity=".6">6 個類別、12 個測試，只建了 5 個 Spring 容器（missCount = 5）、起了 4 個 MySQL</text>
+</svg>

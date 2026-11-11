@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 274" aria-label="GROUP BY 與視窗函式的差別：左邊 GROUP BY account_id 把王小明 4 筆交易併成 1 列 6000、陳小美 3 筆併成 1 列 4000；右邊 SUM OVER (PARTITION BY account_id) 7 列都留著，每列旁邊多一欄自己帳戶的總和" width="784" height="274">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="274" fill="#FFFFFF" stroke="none"/>
+<text x="40" y="28" font-size="13" class="mono" fill="var(--slate-deep)">GROUP BY account_id</text>
+<text x="400" y="28" font-size="13" class="mono" fill="var(--gold-deep)">SUM(amount) OVER (PARTITION BY account_id)</text>
+<g font-size="12.5" class="mono">
+<rect x="40" y="48" width="240" height="30" rx="5" fill="var(--slate-soft)" stroke="var(--slate)"/><text class="mono" style="white-space:pre" x="52" y="68" fill="var(--slate-deep)">101 │ 6000（4 筆併成 1 列）</text>
+<rect x="40" y="86" width="240" height="30" rx="5" fill="var(--slate-soft)" stroke="var(--slate)"/><text class="mono" style="white-space:pre" x="52" y="106" fill="var(--slate-deep)">102 │ 4000（3 筆併成 1 列）</text>
+<rect x="400" y="44" width="320" height="22" rx="4" fill="var(--gold-soft)" stroke="var(--gold)"/><text class="mono" style="white-space:pre" x="410" y="60" fill="var(--gold-deep)">tx 1  101   5000 │ 6000</text>
+<rect x="400" y="70" width="320" height="22" rx="4" fill="var(--gold-soft)" stroke="var(--gold)"/><text class="mono" style="white-space:pre" x="410" y="86" fill="var(--gold-deep)">tx 2  101  -1200 │ 6000</text>
+<rect x="400" y="96" width="320" height="22" rx="4" fill="var(--gold-soft)" stroke="var(--gold)"/><text class="mono" style="white-space:pre" x="410" y="112" fill="var(--gold-deep)">tx 4  101   -800 │ 6000</text>
+<rect x="400" y="122" width="320" height="22" rx="4" fill="var(--gold-soft)" stroke="var(--gold)"/><text class="mono" style="white-space:pre" x="410" y="138" fill="var(--gold-deep)">tx 10 101   3000 │ 6000</text>
+<rect x="400" y="152" width="320" height="22" rx="4" fill="var(--surface)" stroke="currentColor"/><text class="mono" style="white-space:pre" x="410" y="168" fill="currentColor">tx 3  102   1200 │ 4000</text>
+<rect x="400" y="178" width="320" height="22" rx="4" fill="var(--surface)" stroke="currentColor"/><text class="mono" style="white-space:pre" x="410" y="194" fill="currentColor">tx 6  102   3000 │ 4000</text>
+<rect x="400" y="204" width="320" height="22" rx="4" fill="var(--surface)" stroke="currentColor"/><text class="mono" style="white-space:pre" x="410" y="220" fill="currentColor">tx 12 102   -200 │ 4000</text>
+</g>
+<text x="40" y="160" font-size="12.5" fill="currentColor" opacity=".75">2 列：看不到個別交易了</text>
+<text x="40" y="182" font-size="12.5" fill="currentColor" opacity=".75">右邊 7 列：個別交易和整組總和同時在</text>
+</svg>

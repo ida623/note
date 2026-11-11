@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 284" aria-label="3 列 4 欄的二維陣列 grid：列的索引 r 從 0 到 2 寫在左邊，欄的索引 c 從 0 到 3 寫在上面；grid[1][2] 是第 1 列第 2 欄的 4；一列一列走時，外層迴圈跑 r、內層跑 c" width="784" height="284">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="284" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="ar-05-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <text x="228" y="48" font-size="12" text-anchor="middle" class="mono" fill="var(--slate-deep)">c=0</text>
+  <text x="284" y="48" font-size="12" text-anchor="middle" class="mono" fill="var(--slate-deep)">c=1</text>
+  <text x="340" y="48" font-size="12" text-anchor="middle" class="mono" fill="var(--slate-deep)">c=2</text>
+  <text x="396" y="48" font-size="12" text-anchor="middle" class="mono" fill="var(--slate-deep)">c=3</text>
+  <text x="188" y="85" font-size="12" text-anchor="end" class="mono" fill="var(--slate-deep)">r=0</text>
+  <rect x="200" y="60" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="228" y="85" font-size="14" text-anchor="middle" class="mono">5</text>
+  <rect x="256" y="60" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="284" y="85" font-size="14" text-anchor="middle" class="mono">3</text>
+  <rect x="312" y="60" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="340" y="85" font-size="14" text-anchor="middle" class="mono">8</text>
+  <rect x="368" y="60" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="396" y="85" font-size="14" text-anchor="middle" class="mono">6</text>
+  <text x="188" y="125" font-size="12" text-anchor="end" class="mono" fill="var(--slate-deep)">r=1</text>
+  <rect x="200" y="100" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="228" y="125" font-size="14" text-anchor="middle" class="mono">2</text>
+  <rect x="256" y="100" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="284" y="125" font-size="14" text-anchor="middle" class="mono">9</text>
+  <rect x="312" y="100" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="340" y="125" font-size="14" text-anchor="middle" class="mono">4</text>
+  <rect x="368" y="100" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="396" y="125" font-size="14" text-anchor="middle" class="mono">8</text>
+  <text x="188" y="165" font-size="12" text-anchor="end" class="mono" fill="var(--slate-deep)">r=2</text>
+  <rect x="200" y="140" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="228" y="165" font-size="14" text-anchor="middle" class="mono">1</text>
+  <rect x="256" y="140" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="284" y="165" font-size="14" text-anchor="middle" class="mono">0</text>
+  <rect x="312" y="140" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="340" y="165" font-size="14" text-anchor="middle" class="mono">6</text>
+  <rect x="368" y="140" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="396" y="165" font-size="14" text-anchor="middle" class="mono">3</text>
+  <text x="464" y="125" font-size="13" class="mono" fill="var(--gold-deep)">grid[1][2] = 4</text>
+  <text x="464" y="147" font-size="12">先寫列 r、再寫欄 c</text>
+  <line x1="208" y1="94" x2="440" y2="94" stroke="var(--slate)" stroke-width="2" opacity=".55" marker-end="url(#ar-05-arrow)"/>
+  <line x1="208" y1="134" x2="440" y2="134" stroke="var(--slate)" stroke-width="2" opacity=".55" marker-end="url(#ar-05-arrow)"/>
+  <line x1="208" y1="174" x2="440" y2="174" stroke="var(--slate)" stroke-width="2" opacity=".55" marker-end="url(#ar-05-arrow)"/>
+  <text x="200" y="210" font-size="12" opacity=".75">灰藍箭頭：一列一列走（外層 r、內層 c），每格剛好看一次，3 × 4 = 12 格</text>
+</svg>

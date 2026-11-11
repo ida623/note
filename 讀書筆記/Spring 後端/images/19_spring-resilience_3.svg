@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 324" aria-label="重試的時間線：固定指數退避在第一次之後約 0.2、0.6、1.4 秒重送；加了抖動的三輪，重送時間各不相同，散開在範圍內" width="784" height="324">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="324" fill="#FFFFFF" stroke="none"/>
+<line x1="120" y1="250" x2="740" y2="250" stroke="currentColor" stroke-opacity=".5"/>
+<text x="120" y="270" font-size="12" text-anchor="middle" class="mono" opacity=".7">0</text><text x="275" y="270" font-size="12" text-anchor="middle" class="mono" opacity=".7">500</text><text x="430" y="270" font-size="12" text-anchor="middle" class="mono" opacity=".7">1000</text><text x="585" y="270" font-size="12" text-anchor="middle" class="mono" opacity=".7">1500</text><text x="740" y="270" font-size="12" text-anchor="end" class="mono" opacity=".7">2000 ms</text>
+<text x="20" y="54" font-size="12.5">固定退避</text>
+<circle cx="144" cy="50" r="7" fill="var(--gold)"/><circle cx="214" cy="50" r="7" fill="var(--gold)"/><circle cx="339" cy="50" r="7" fill="var(--gold)"/><circle cx="590" cy="50" r="7" fill="var(--gold)"/>
+<text x="20" y="114" font-size="12.5">抖動第 1 輪</text>
+<circle cx="140" cy="110" r="7" fill="var(--slate)"/><circle cx="185" cy="110" r="7" fill="var(--slate)"/><circle cx="300" cy="110" r="7" fill="var(--slate)"/><circle cx="441" cy="110" r="7" fill="var(--slate)"/>
+<text x="20" y="164" font-size="12.5">抖動第 2 輪</text>
+<circle cx="121" cy="160" r="7" fill="var(--slate)"/><circle cx="211" cy="160" r="7" fill="var(--slate)"/><circle cx="327" cy="160" r="7" fill="var(--slate)"/><circle cx="488" cy="160" r="7" fill="var(--slate)"/>
+<text x="20" y="214" font-size="12.5">抖動第 3 輪</text>
+<circle cx="120" cy="210" r="7" fill="var(--slate)"/><circle cx="181" cy="210" r="7" fill="var(--slate)"/><circle cx="350" cy="210" r="7" fill="var(--slate)"/><circle cx="551" cy="210" r="7" fill="var(--slate)"/>
+<text x="20" y="292" font-size="12" opacity=".6">每個點是下游收到一次請求（實跑時間）。固定退避的每個用戶端都在同樣的時間點重送；抖動讓重送散開</text>
+</svg>

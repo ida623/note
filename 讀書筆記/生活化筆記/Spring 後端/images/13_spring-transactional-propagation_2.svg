@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 354" aria-label="三種傳播行為的時間軸：REQUIRED 內外層共用同一筆實體交易、同一條連線；REQUIRES_NEW 執行內層時外層被暫停，內層用第二條連線另開一筆交易，先自己提交或還原；NESTED 仍是同一筆交易，進內層前設一個儲存點，內層失敗只還原到儲存點" width="784" height="354">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="354" fill="#FFFFFF" stroke="none"/>
+  <text x="20" y="65" font-size="14" class="mono" fill="var(--gold-deep)">REQUIRED</text>
+  <rect x="150" y="46" width="570" height="28" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="435" y="65" font-size="12.5" text-anchor="middle">連線 1：外層 ＋ 內層 都在同一筆交易裡</text>
+  <line x1="350" y1="40" x2="350" y2="80" stroke="currentColor" opacity=".5"/><line x1="520" y1="40" x2="520" y2="80" stroke="currentColor" opacity=".5"/>
+  <text x="435" y="100" font-size="11.5" text-anchor="middle" opacity=".75">內層範圍（邏輯上的一段，不是另一筆）</text>
+  <text x="20" y="165" font-size="14" class="mono" fill="var(--gold-deep)">REQUIRES_NEW</text>
+  <rect x="150" y="136" width="200" height="28" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="250" y="155" font-size="12.5" text-anchor="middle">連線 1：外層</text>
+  <rect x="350" y="136" width="170" height="28" rx="6" fill="none" stroke="currentColor" stroke-dasharray="4 4" opacity=".6"/>
+  <text x="435" y="155" font-size="12.5" text-anchor="middle">外層暫停</text>
+  <rect x="520" y="136" width="200" height="28" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="620" y="155" font-size="12.5" text-anchor="middle">連線 1：外層繼續</text>
+  <rect x="350" y="172" width="170" height="28" rx="6" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="435" y="191" font-size="12.5" text-anchor="middle">連線 2：內層另開</text>
+  <text x="530" y="207" font-size="11.5" opacity=".75">內層先自己提交或還原，鎖也先放掉</text>
+  <text x="20" y="275" font-size="14" class="mono" fill="var(--gold-deep)">NESTED</text>
+  <rect x="150" y="256" width="570" height="28" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="435" y="275" font-size="12.5" text-anchor="middle">連線 1：同一筆交易</text>
+  <line x1="350" y1="250" x2="350" y2="292" stroke="var(--danger)" stroke-width="2"/>
+  <text x="350" y="310" font-size="11.5" text-anchor="middle" fill="var(--danger)">儲存點</text>
+  <text x="530" y="310" font-size="11.5" opacity=".75">內層失敗：只還原到儲存點，外層可以繼續</text>
+</svg>

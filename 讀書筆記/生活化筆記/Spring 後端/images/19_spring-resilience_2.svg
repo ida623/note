@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 354" aria-label="斷路器實驗的九次呼叫：第 1、2 次成功，第 3 到 5 次失敗，第 5 次記滿 5 次、失敗率 60% 達門檻，轉成 OPEN；第 6、7 次被擋、下游沒收到；等 2 秒後第 8 次呼叫時轉成 HALF_OPEN，第 8、9 次成功，轉回 CLOSED" width="784" height="354">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="354" fill="#FFFFFF" stroke="none"/>
+<defs><marker id="rs-m2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs>
+<text x="20" y="34" font-size="13">狀態</text>
+<rect x="100" y="16" width="280" height="28" rx="6" fill="var(--surface)" stroke="currentColor"/><text x="240" y="35" font-size="12.5" text-anchor="middle" class="mono">CLOSED</text>
+<rect x="380" y="16" width="112" height="28" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="436" y="35" font-size="12.5" text-anchor="middle" class="mono">OPEN</text>
+<rect x="548" y="16" width="112" height="28" rx="6" fill="var(--slate-soft)" stroke="var(--slate)"/><text x="604" y="35" font-size="12.5" text-anchor="middle" class="mono">HALF_OPEN</text>
+<rect x="660" y="16" width="80" height="28" rx="6" fill="var(--surface)" stroke="currentColor"/><text x="700" y="35" font-size="12.5" text-anchor="middle" class="mono">CLOSED</text>
+<text x="20" y="85" font-size="13">呼叫</text>
+<rect x="100" y="62" width="56" height="40" fill="var(--surface)" stroke="currentColor"/><text x="128" y="87" font-size="14" text-anchor="middle">✓</text>
+<rect x="156" y="62" width="56" height="40" fill="var(--surface)" stroke="currentColor"/><text x="184" y="87" font-size="14" text-anchor="middle">✓</text>
+<rect x="212" y="62" width="56" height="40" fill="var(--surface)" stroke="currentColor"/><text x="240" y="87" font-size="14" text-anchor="middle" fill="var(--danger)">✗</text>
+<rect x="268" y="62" width="56" height="40" fill="var(--surface)" stroke="currentColor"/><text x="296" y="87" font-size="14" text-anchor="middle" fill="var(--danger)">✗</text>
+<rect x="324" y="62" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="352" y="87" font-size="14" text-anchor="middle" fill="var(--danger)">✗</text>
+<rect x="380" y="62" width="56" height="40" fill="none" stroke="currentColor" stroke-opacity=".3" stroke-dasharray="4 3"/><text x="408" y="87" font-size="13" text-anchor="middle" opacity=".6">擋</text>
+<rect x="436" y="62" width="56" height="40" fill="none" stroke="currentColor" stroke-opacity=".3" stroke-dasharray="4 3"/><text x="464" y="87" font-size="13" text-anchor="middle" opacity=".6">擋</text>
+<rect x="548" y="62" width="56" height="40" fill="var(--slate-soft)" stroke="var(--slate)"/><text x="576" y="87" font-size="14" text-anchor="middle">✓</text>
+<rect x="604" y="62" width="56" height="40" fill="var(--slate-soft)" stroke="var(--slate)"/><text x="632" y="87" font-size="14" text-anchor="middle">✓</text>
+<text x="128" y="118" font-size="12" text-anchor="middle" class="mono" opacity=".6">1</text><text x="184" y="118" font-size="12" text-anchor="middle" class="mono" opacity=".6">2</text><text x="240" y="118" font-size="12" text-anchor="middle" class="mono" opacity=".6">3</text><text x="296" y="118" font-size="12" text-anchor="middle" class="mono" opacity=".6">4</text><text x="352" y="118" font-size="12" text-anchor="middle" class="mono" opacity=".6">5</text><text x="408" y="118" font-size="12" text-anchor="middle" class="mono" opacity=".6">6</text><text x="464" y="118" font-size="12" text-anchor="middle" class="mono" opacity=".6">7</text><text x="576" y="118" font-size="12" text-anchor="middle" class="mono" opacity=".6">8</text><text x="632" y="118" font-size="12" text-anchor="middle" class="mono" opacity=".6">9</text>
+<text x="520" y="87" font-size="12" text-anchor="middle" opacity=".7">等 2 秒</text>
+<text x="20" y="160" font-size="13">失敗率</text>
+<text x="128" y="160" font-size="12" text-anchor="middle" class="mono">-1</text><text x="184" y="160" font-size="12" text-anchor="middle" class="mono">-1</text><text x="240" y="160" font-size="12" text-anchor="middle" class="mono">-1</text><text x="296" y="160" font-size="12" text-anchor="middle" class="mono">-1</text><text x="352" y="160" font-size="12" text-anchor="middle" class="mono" fill="var(--gold-deep)">60%</text><text x="576" y="160" font-size="12" text-anchor="middle" class="mono">-1</text><text x="632" y="160" font-size="12" text-anchor="middle" class="mono">-1</text>
+<path d="M352 172 L352 196" stroke="var(--gold-deep)" stroke-width="1.5" marker-end="url(#rs-m2)"/><text x="352" y="214" font-size="12.5" text-anchor="middle" fill="var(--gold-deep)">記滿 5 次，3/5 = 60% ≥ 50%</text>
+<path d="M436 172 L436 236" stroke="currentColor" stroke-opacity=".5" stroke-width="1.5" marker-end="url(#rs-m2)"/><text x="436" y="254" font-size="12.5" text-anchor="middle">直接進回呼，下游沒收到</text>
+<path d="M604 172 L604 196" stroke="var(--slate)" stroke-width="1.5" marker-end="url(#rs-m2)"/><text x="604" y="214" font-size="12.5" text-anchor="middle" fill="var(--slate-deep)">半開放行 2 次，都成功</text>
+<text x="20" y="292" font-size="12" opacity=".6">失敗率 -1 表示「還不能算」：記不滿 minimumNumberOfCalls 時，就算全失敗也不跳開</text>
+<text x="20" y="314" font-size="12" opacity=".6">虛線格＝被斷路器擋下（CallNotPermittedException）；古銅格＝跳開的那一次</text>
+</svg>

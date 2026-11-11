@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 804 340" aria-label="Service 是發到每台機器上的一份轉發表，請求在自己這台機器上就被改寫位址，直接送到另一台的後端 Pod，中間沒有任何 Service 伺服器" width="804" height="340">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="804" height="340" fill="#FFFFFF" stroke="none"/>
+        <rect x="292" y="16" width="196" height="52" rx="5" fill="none" stroke="var(--slate)" stroke-width="2"/>
+        <text x="390" y="38" font-size="13" text-anchor="middle" fill="var(--slate)">大腦</text>
+        <text x="390" y="58" font-size="11" text-anchor="middle" fill="var(--slate)">把名單發給每一台機器</text>
+        <g stroke="var(--slate)" stroke-dasharray="5 4" fill="none">
+          <path d="M330 72 C280 72 250 92 220 108" marker-end="url(#p1)"/>
+          <path d="M450 72 C500 72 530 92 560 108" marker-end="url(#p1)"/>
+        </g>
+        <rect x="16" y="112" width="350" height="150" rx="6" fill="none" stroke="currentColor" stroke-width="2"/>
+        <text x="30" y="132" font-size="11.5" opacity=".65">Node 1</text>
+        <rect x="34" y="142" width="132" height="100" rx="5" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+        <text x="100" y="188" font-size="13" text-anchor="middle" fill="var(--gold)">前端 Pod</text>
+        <text x="100" y="208" font-size="10.5" text-anchor="middle" fill="var(--gold)" class="mono">→ backend</text>
+        <rect x="186" y="142" width="164" height="100" rx="5" fill="var(--slate-soft)" stroke="var(--slate)" stroke-width="2"/>
+        <text x="268" y="164" font-size="11.5" text-anchor="middle" fill="var(--slate)">這台的轉發表</text>
+        <text x="268" y="192" font-size="10.5" text-anchor="middle" fill="var(--slate)" class="mono">backend</text>
+        <text x="268" y="210" font-size="10.5" text-anchor="middle" fill="var(--slate)" class="mono">→ 10.1.4.3</text>
+        <text x="268" y="228" font-size="10.5" text-anchor="middle" fill="var(--slate)" class="mono">→ 10.1.9.8</text>
+        <line x1="172" y1="192" x2="180" y2="192" stroke="var(--gold)" stroke-width="2"/>
+        <path d="M354 192 L414 192" fill="none" stroke="var(--gold)" stroke-width="2.5" marker-end="url(#p2)"/>
+        <text x="384" y="178" font-size="10.5" text-anchor="middle" fill="var(--gold)">直送</text>
+        <rect x="422" y="112" width="342" height="150" rx="6" fill="none" stroke="currentColor" stroke-width="2"/>
+        <text x="436" y="132" font-size="11.5" opacity=".65">Node 2</text>
+        <rect x="440" y="142" width="150" height="100" rx="5" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+        <text x="515" y="188" font-size="13" text-anchor="middle" fill="var(--gold)">後端 Pod</text>
+        <text x="515" y="208" font-size="10.5" text-anchor="middle" fill="var(--gold)" class="mono">10.1.4.3</text>
+        <rect x="602" y="142" width="148" height="100" rx="5" fill="var(--slate-soft)" stroke="var(--slate)" stroke-width="2"/>
+        <text x="676" y="164" font-size="11.5" text-anchor="middle" fill="var(--slate)">這台的轉發表</text>
+        <text x="676" y="192" font-size="10.5" text-anchor="middle" fill="var(--slate)">（同一份）</text>
+        <text x="390" y="292" font-size="13.5" text-anchor="middle" fill="var(--danger)">沒有一台叫 Service 的機器。它是每台機器上都有一份的速撥表。</text>
+        <text x="390" y="312" font-size="12" text-anchor="middle" opacity=".7">所以它不會塞車、也不會因為單獨一台掛掉而全斷</text>
+        <defs>
+          <marker id="p1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><polygon points="0,0 10,5 0,10" fill="var(--slate)"/></marker>
+          <marker id="p2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><polygon points="0,0 10,5 0,10" fill="var(--gold)"/></marker>
+        </defs>
+      </svg>

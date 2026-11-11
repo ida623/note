@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 314" aria-label="陣列與鏈結串列的比較：陣列是連續的五個格子，用索引直接算出位置；鏈結串列的五個節點散在不同位置，每個節點用 next 指向下一個，最後指向 null" width="784" height="314">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="314" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="ll-a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs>
+  <text x="30" y="24" font-size="13" font-weight="700">陣列：連續的格子，用索引直接算位置</text>
+  <rect x="40" y="36" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="68" y="61" font-size="14" text-anchor="middle" class="mono">3</text>
+  <text x="68" y="92" font-size="12" text-anchor="middle" opacity=".6">0</text>
+  <rect x="96" y="36" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="124" y="61" font-size="14" text-anchor="middle" class="mono">1</text>
+  <text x="124" y="92" font-size="12" text-anchor="middle" opacity=".6">1</text>
+  <rect x="152" y="36" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="180" y="61" font-size="14" text-anchor="middle" class="mono">4</text>
+  <text x="180" y="92" font-size="12" text-anchor="middle" opacity=".6">2</text>
+  <rect x="208" y="36" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="236" y="61" font-size="14" text-anchor="middle" class="mono">1</text>
+  <text x="236" y="92" font-size="12" text-anchor="middle" opacity=".6">3</text>
+  <rect x="264" y="36" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="292" y="61" font-size="14" text-anchor="middle" class="mono">5</text>
+  <text x="292" y="92" font-size="12" text-anchor="middle" opacity=".6">4</text>
+  <text x="340" y="61" font-size="12" fill="var(--slate-deep)">arr[3]：起點＋3 格，一步到</text>
+  <text x="30" y="132" font-size="13" font-weight="700">鏈結串列：節點散在各處，靠 next 一個接一個</text>
+  <text x="68" y="214" font-size="12" text-anchor="middle" fill="var(--gold-deep)" class="mono">head</text>
+  <path d="M63 202 L73 202 L68 190z" fill="var(--gold-deep)"/>
+  <rect x="40" y="150" width="56" height="36" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="68" y="173" font-size="14" text-anchor="middle" class="mono">3</text>
+  <line x1="96" y1="168" x2="168" y2="214" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a1)"/>
+  <rect x="170" y="196" width="56" height="36" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="198" y="219" font-size="14" text-anchor="middle" class="mono">1</text>
+  <line x1="226" y1="214" x2="298" y2="168" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a1)"/>
+  <rect x="300" y="150" width="56" height="36" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="328" y="173" font-size="14" text-anchor="middle" class="mono">4</text>
+  <line x1="356" y1="168" x2="428" y2="214" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a1)"/>
+  <rect x="430" y="196" width="56" height="36" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="458" y="219" font-size="14" text-anchor="middle" class="mono">1</text>
+  <line x1="486" y1="214" x2="558" y2="168" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a1)"/>
+  <rect x="560" y="150" width="56" height="36" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="588" y="173" font-size="14" text-anchor="middle" class="mono">5</text>
+  <line x1="616" y1="168" x2="650" y2="168" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a1)"/>
+  <text x="654" y="173" font-size="13" opacity=".55" class="mono">null</text>
+  <text x="430" y="270" font-size="12" fill="var(--slate-deep)">要拿索引 3（第 4 個）：從 head 走 3 步</text>
+</svg>

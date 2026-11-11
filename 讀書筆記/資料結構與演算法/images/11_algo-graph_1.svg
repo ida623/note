@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 304" aria-label="兩種圖：左邊是無向無權的好友關係，A、B、C、D 四個人之間用線相連，沒有方向；右邊是有向有權的轉帳紀錄，甲轉 5,000 元給乙、乙轉 1,200 元給丙、甲轉 300 元給丙，箭頭表示方向、數字是權重" width="784" height="304">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="304" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="gr-a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs>
+  <text x="180" y="24" font-size="13" text-anchor="middle" font-weight="700">無向、無權：好友關係</text>
+  <text x="560" y="24" font-size="13" text-anchor="middle" font-weight="700">有向、有權：轉帳紀錄（元）</text>
+  <line x1="110.0" y1="80.0" x2="250.0" y2="80.0" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="90.0" y1="100.0" x2="90.0" y2="190.0" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="270.0" y1="100.0" x2="270.0" y2="190.0" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="110.0" y1="210.0" x2="250.0" y2="210.0" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="106.2" y1="91.7" x2="253.8" y2="198.3" stroke="currentColor" stroke-width="1.5"/>
+  <circle cx="90" cy="80" r="20" fill="var(--surface)" stroke="currentColor"/><text x="90" y="85" font-size="14" text-anchor="middle" class="mono">A</text>
+  <circle cx="270" cy="80" r="20" fill="var(--surface)" stroke="currentColor"/><text x="270" y="85" font-size="14" text-anchor="middle" class="mono">B</text>
+  <circle cx="90" cy="210" r="20" fill="var(--surface)" stroke="currentColor"/><text x="90" y="215" font-size="14" text-anchor="middle" class="mono">C</text>
+  <circle cx="270" cy="210" r="20" fill="var(--surface)" stroke="currentColor"/><text x="270" y="215" font-size="14" text-anchor="middle" class="mono">D</text>
+  <text x="180" y="262" font-size="12" text-anchor="middle" fill="var(--slate-deep)">邊沒有方向：A 是 B 的好友，B 也是 A 的好友</text>
+  <line x1="470.0" y1="80.0" x2="648.0" y2="80.0" stroke="currentColor" stroke-width="1.5" marker-end="url(#gr-a1)"/>
+  <text x="560.0" y="70.0" font-size="12" text-anchor="middle" fill="var(--gold-deep)" class="mono">5,000</text>
+  <line x1="657.1" y1="95.3" x2="574.2" y2="193.2" stroke="currentColor" stroke-width="1.5" marker-end="url(#gr-a1)"/>
+  <text x="647.0" y="145.0" font-size="12" text-anchor="middle" fill="var(--gold-deep)" class="mono">1,200</text>
+  <line x1="462.9" y1="95.3" x2="545.8" y2="193.2" stroke="currentColor" stroke-width="1.5" marker-end="url(#gr-a1)"/>
+  <text x="475.0" y="145.0" font-size="12" text-anchor="middle" fill="var(--gold-deep)" class="mono">300</text>
+  <circle cx="450" cy="80" r="20" fill="var(--surface)" stroke="currentColor"/><text x="450" y="85" font-size="13" text-anchor="middle" class="mono">甲</text>
+  <circle cx="670" cy="80" r="20" fill="var(--surface)" stroke="currentColor"/><text x="670" y="85" font-size="13" text-anchor="middle" class="mono">乙</text>
+  <circle cx="560" cy="210" r="20" fill="var(--surface)" stroke="currentColor"/><text x="560" y="215" font-size="13" text-anchor="middle" class="mono">丙</text>
+  <text x="560" y="262" font-size="12" text-anchor="middle" fill="var(--slate-deep)">箭頭是方向（誰轉給誰），數字是權重（金額）</text>
+</svg>

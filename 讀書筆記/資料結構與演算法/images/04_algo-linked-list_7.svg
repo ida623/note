@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 304" aria-label="有環的串列：1 到 6 依序相連，6 的 next 接回 3，形成環；3 是環的入口，快慢指標在 5 相遇；從頭到入口 2 步，入口到相遇點 2 步，環長 4" width="784" height="304">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="304" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="ll-a7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs>
+  <rect x="40" y="70" width="56" height="36" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="68" y="93" font-size="14" text-anchor="middle" class="mono">1</text><line x1="96" y1="88" x2="128" y2="88" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a7)"/><rect x="130" y="70" width="56" height="36" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="158" y="93" font-size="14" text-anchor="middle" class="mono">2</text><line x1="186" y1="88" x2="218" y2="88" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a7)"/><rect x="220" y="70" width="56" height="36" rx="7" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="248" y="93" font-size="14" text-anchor="middle" class="mono">3</text><line x1="276" y1="88" x2="308" y2="88" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a7)"/><rect x="310" y="70" width="56" height="36" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="338" y="93" font-size="14" text-anchor="middle" class="mono">4</text><line x1="366" y1="88" x2="398" y2="88" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a7)"/><rect x="400" y="70" width="56" height="36" rx="7" fill="var(--slate-soft)" stroke="var(--slate)"/><text x="428" y="93" font-size="14" text-anchor="middle" class="mono">5</text><line x1="456" y1="88" x2="488" y2="88" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a7)"/><rect x="490" y="70" width="56" height="36" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="518" y="93" font-size="14" text-anchor="middle" class="mono">6</text>
+  <path d="M518 106 C 518 180, 248 180, 248 110" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a7)"/>
+  <text x="380" y="174" font-size="12" text-anchor="middle">6 的 next 接回 3</text>
+  <text x="68" y="56" font-size="12" text-anchor="middle" fill="var(--gold-deep)" class="mono">head</text><path d="M63 61 L73 61 L68 68z" fill="var(--gold-deep)"/>
+  <text x="248" y="40" font-size="12" fill="var(--gold-deep)" text-anchor="middle">環的入口</text>
+  <text x="428" y="40" font-size="12" fill="var(--slate-deep)" text-anchor="middle">slow、fast 相遇</text>
+  <text x="40" y="236" font-size="13">head 到入口 2 步；入口到相遇點 2 步；環長 4。</text>
+  <text x="40" y="260" font-size="13" fill="var(--gold-deep)">相遇後：一個從 head、一個從相遇點，都一次一步，走 2 步在入口 3 會合。</text>
+</svg>

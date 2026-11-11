@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 314" aria-label="鏈結法示意：8 個桶，0 號桶串著 banana、Aa、BB 三個節點，1 號桶串著 apple、cherry，2 號桶只有 kiwi，每條串列最後接 null" width="784" height="314">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="314" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="ht-a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs>
+  <text x="146" y="55" font-size="12" text-anchor="end" opacity=".75">桶陣列</text>
+  <rect x="156" y="30" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="212" y="30" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="268" y="30" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="324" y="30" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="380" y="30" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="436" y="30" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="492" y="30" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <rect x="548" y="30" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <g font-size="12" text-anchor="middle" opacity=".6"><text x="184" y="22">0</text><text x="240" y="22">1</text><text x="296" y="22">2</text><text x="352" y="22">3</text><text x="408" y="22">4</text><text x="464" y="22">5</text><text x="520" y="22">6</text><text x="576" y="22">7</text></g>
+  <g font-size="12" text-anchor="middle" opacity=".55"><text x="352" y="55">null</text><text x="408" y="55">null</text><text x="464" y="55">null</text><text x="520" y="55">null</text><text x="576" y="55">null</text></g>
+  <g stroke="currentColor" stroke-width="1.5"><line x1="184" y1="70" x2="184" y2="100" marker-end="url(#ht-a2)"/><line x1="240" y1="70" x2="240" y2="100" marker-end="url(#ht-a2)"/><line x1="296" y1="70" x2="296" y2="100" marker-end="url(#ht-a2)"/></g>
+  <rect x="159" y="102" width="50" height="28" rx="6" fill="var(--surface)" stroke="currentColor"/><text x="184" y="121" font-size="12" text-anchor="middle" class="mono">banana</text>
+  <rect x="159" y="150" width="50" height="28" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="184" y="169" font-size="12" text-anchor="middle" class="mono">Aa</text>
+  <rect x="159" y="198" width="50" height="28" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="184" y="217" font-size="12" text-anchor="middle" class="mono">BB</text>
+  <text x="184" y="268" font-size="12" text-anchor="middle" opacity=".55">null</text>
+  <rect x="215" y="102" width="50" height="28" rx="6" fill="var(--surface)" stroke="currentColor"/><text x="240" y="121" font-size="12" text-anchor="middle" class="mono">apple</text>
+  <rect x="215" y="150" width="50" height="28" rx="6" fill="var(--surface)" stroke="currentColor"/><text x="240" y="169" font-size="12" text-anchor="middle" class="mono">cherry</text>
+  <text x="240" y="220" font-size="12" text-anchor="middle" opacity=".55">null</text>
+  <rect x="271" y="102" width="50" height="28" rx="6" fill="var(--surface)" stroke="currentColor"/><text x="296" y="121" font-size="12" text-anchor="middle" class="mono">kiwi</text>
+  <text x="296" y="172" font-size="12" text-anchor="middle" opacity=".55">null</text>
+  <g stroke="currentColor" stroke-width="1.5"><line x1="184" y1="130" x2="184" y2="148" marker-end="url(#ht-a2)"/><line x1="184" y1="178" x2="184" y2="196" marker-end="url(#ht-a2)"/><line x1="184" y1="226" x2="184" y2="252" marker-end="url(#ht-a2)"/><line x1="240" y1="130" x2="240" y2="148" marker-end="url(#ht-a2)"/><line x1="240" y1="178" x2="240" y2="204" marker-end="url(#ht-a2)"/><line x1="296" y1="130" x2="296" y2="156" marker-end="url(#ht-a2)"/></g>
+  <text x="380" y="130" font-size="13">依序放入 apple、banana、cherry、kiwi、Aa、BB</text>
+  <text x="380" y="154" font-size="13">新節點接在串列尾端</text>
+  <text x="380" y="190" font-size="13" fill="var(--gold-deep)">Aa 與 BB 雜湊碼完全相同（2112）</text>
+  <text x="380" y="214" font-size="13" fill="var(--gold-deep)">只能靠 equals 分辨</text>
+</svg>

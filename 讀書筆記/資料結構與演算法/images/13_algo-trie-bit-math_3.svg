@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 260" aria-label="-16 的 32 位元表示是 28 個 1 加上 4 個 0。右移 2 位時，&gt;&gt; 在左邊補兩個 1，結果還是負數 -4；&gt;&gt;&gt; 在左邊補兩個 0，結果變成正數 1073741820" width="784" height="260">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="260" fill="#FFFFFF" stroke="none"/>
+  <text x="96" y="50" font-size="12" text-anchor="end" class="mono">x = -16</text>
+  <text x="96" y="110" font-size="12" text-anchor="end" class="mono">x &gt;&gt; 2</text>
+  <text x="96" y="170" font-size="12" text-anchor="end" class="mono">x &gt;&gt;&gt; 2</text>
+  <rect x="106" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="115" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="124" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="133" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="142" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="151" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="160" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="169" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="178" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="187" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="196" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="205" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="214" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="223" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="232" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="241" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="250" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="259" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="268" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="277" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="286" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="295" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="304" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="313" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="322" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="331" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="340" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="349" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="358" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="367" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="376" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="385" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="394" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="403" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="412" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="421" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="430" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="439" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="448" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="457" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="466" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="475" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="484" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="493" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="502" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="511" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="520" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="529" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="538" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="547" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="556" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="565" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="574" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="583" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="592" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="601" y="54" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="610" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="619" y="54" font-size="11" text-anchor="middle" class="mono">0</text>
+  <rect x="628" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="637" y="54" font-size="11" text-anchor="middle" class="mono">0</text>
+  <rect x="646" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="655" y="54" font-size="11" text-anchor="middle" class="mono">0</text>
+  <rect x="664" y="38" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="673" y="54" font-size="11" text-anchor="middle" class="mono">0</text>
+  <rect x="106" y="98" width="18" height="22" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width=".8"/><text x="115" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="124" y="98" width="18" height="22" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width=".8"/><text x="133" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="142" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="151" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="160" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="169" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="178" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="187" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="196" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="205" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="214" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="223" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="232" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="241" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="250" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="259" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="268" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="277" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="286" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="295" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="304" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="313" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="322" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="331" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="340" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="349" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="358" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="367" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="376" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="385" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="394" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="403" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="412" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="421" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="430" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="439" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="448" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="457" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="466" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="475" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="484" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="493" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="502" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="511" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="520" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="529" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="538" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="547" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="556" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="565" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="574" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="583" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="592" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="601" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="610" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="619" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="628" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="637" y="114" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="646" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="655" y="114" font-size="11" text-anchor="middle" class="mono">0</text>
+  <rect x="664" y="98" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="673" y="114" font-size="11" text-anchor="middle" class="mono">0</text>
+  <rect x="106" y="158" width="18" height="22" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width=".8"/><text x="115" y="174" font-size="11" text-anchor="middle" class="mono">0</text>
+  <rect x="124" y="158" width="18" height="22" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width=".8"/><text x="133" y="174" font-size="11" text-anchor="middle" class="mono">0</text>
+  <rect x="142" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="151" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="160" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="169" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="178" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="187" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="196" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="205" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="214" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="223" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="232" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="241" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="250" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="259" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="268" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="277" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="286" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="295" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="304" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="313" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="322" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="331" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="340" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="349" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="358" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="367" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="376" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="385" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="394" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="403" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="412" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="421" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="430" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="439" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="448" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="457" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="466" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="475" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="484" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="493" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="502" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="511" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="520" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="529" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="538" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="547" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="556" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="565" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="574" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="583" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="592" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="601" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="610" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="619" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="628" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="637" y="174" font-size="11" text-anchor="middle" class="mono">1</text>
+  <rect x="646" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="655" y="174" font-size="11" text-anchor="middle" class="mono">0</text>
+  <rect x="664" y="158" width="18" height="22" fill="var(--surface)" stroke="currentColor" stroke-width=".8"/><text x="673" y="174" font-size="11" text-anchor="middle" class="mono">0</text>
+  <text x="682" y="138" font-size="12" text-anchor="end">= -4</text>
+  <text x="682" y="198" font-size="12" text-anchor="end">= 1073741820</text>
+  <text x="394" y="226" font-size="12" text-anchor="middle" fill="var(--slate-deep)">古銅＝右移時從左邊補進來的位</text>
+</svg>

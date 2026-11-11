@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 306" aria-label="虛擬頭節點：在串列 6、6、2、6、5 前面先接一個 dummy 節點，刪掉所有的 6 時前兩個 6 也是「某個節點的下一個」，不用特別處理；刪完是 dummy、2、5，回傳 dummy.next" width="784" height="306">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="306" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="ll-a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs>
+  <text x="30" y="24" font-size="13" font-weight="700">有虛擬頭節點：刪頭跟刪中間寫法一樣</text>
+  <rect x="40" y="58" width="56" height="36" rx="7" fill="var(--surface)" stroke="currentColor" stroke-dasharray="4 3"/><text x="68" y="81" font-size="14" text-anchor="middle" class="mono">0</text><text x="68" y="44" font-size="12" text-anchor="middle" fill="var(--gold-deep)" class="mono">dummy</text><path d="M63 49 L73 49 L68 56z" fill="var(--gold-deep)"/><line x1="96" y1="76" x2="128" y2="76" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a4)"/><rect x="130" y="58" width="56" height="36" rx="7" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="158" y="81" font-size="14" text-anchor="middle" class="mono">6</text><line x1="186" y1="76" x2="218" y2="76" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a4)"/><rect x="220" y="58" width="56" height="36" rx="7" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="248" y="81" font-size="14" text-anchor="middle" class="mono">6</text><line x1="276" y1="76" x2="308" y2="76" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a4)"/><rect x="310" y="58" width="56" height="36" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="338" y="81" font-size="14" text-anchor="middle" class="mono">2</text><line x1="366" y1="76" x2="398" y2="76" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a4)"/><rect x="400" y="58" width="56" height="36" rx="7" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="428" y="81" font-size="14" text-anchor="middle" class="mono">6</text><line x1="456" y1="76" x2="488" y2="76" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a4)"/><rect x="490" y="58" width="56" height="36" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="518" y="81" font-size="14" text-anchor="middle" class="mono">5</text><line x1="546" y1="76" x2="578" y2="76" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a4)"/><text x="580" y="81" font-size="13" opacity=".55" class="mono">null</text>
+  <text x="68" y="114" font-size="12" fill="var(--slate-deep)" text-anchor="middle">虛擬頭節點</text>
+  <text x="30" y="156" font-size="13" font-weight="700">刪掉所有的 6 之後</text>
+  <rect x="40" y="190" width="56" height="36" rx="7" fill="var(--surface)" stroke="currentColor" stroke-dasharray="4 3"/><text x="68" y="213" font-size="14" text-anchor="middle" class="mono">0</text><text x="68" y="176" font-size="12" text-anchor="middle" fill="var(--gold-deep)" class="mono">dummy</text><path d="M63 181 L73 181 L68 188z" fill="var(--gold-deep)"/><line x1="96" y1="208" x2="128" y2="208" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a4)"/><rect x="130" y="190" width="56" height="36" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="158" y="213" font-size="14" text-anchor="middle" class="mono">2</text><line x1="186" y1="208" x2="218" y2="208" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a4)"/><rect x="220" y="190" width="56" height="36" rx="7" fill="var(--surface)" stroke="currentColor"/><text x="248" y="213" font-size="14" text-anchor="middle" class="mono">5</text><line x1="276" y1="208" x2="308" y2="208" stroke="currentColor" stroke-width="1.5" marker-end="url(#ll-a4)"/><text x="310" y="213" font-size="13" opacity=".55" class="mono">null</text>
+  <text x="370" y="212" font-size="12" fill="var(--slate-deep)">回傳 dummy.next，也就是 2</text>
+  <rect x="30" y="252" width="16" height="14" rx="3" fill="var(--gold-soft)" stroke="var(--gold)"/>
+  <text x="54" y="264" font-size="12">要刪的節點</text>
+  <rect x="150" y="252" width="16" height="14" rx="3" fill="var(--surface)" stroke="currentColor" stroke-dasharray="4 3"/>
+  <text x="174" y="264" font-size="12">虛擬頭節點（值隨便填，不算資料）</text>
+</svg>

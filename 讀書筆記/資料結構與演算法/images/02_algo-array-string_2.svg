@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 294" aria-label="在陣列 10、20、30、40 的第 1 格插入 15：先把 40、30、20 從後面開始一格一格往右搬，空出第 1 格再放進 15，總共搬了 3 格" width="784" height="294">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="294" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="ar-02-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <text x="20" y="65" font-size="13">插入前</text>
+  <rect x="150" y="40" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="178" y="65" font-size="14" text-anchor="middle" class="mono">10</text>
+  <text x="178" y="94" font-size="12" text-anchor="middle" class="mono" opacity=".6">0</text>
+  <rect x="206" y="40" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="234" y="65" font-size="14" text-anchor="middle" class="mono">20</text>
+  <text x="234" y="94" font-size="12" text-anchor="middle" class="mono" opacity=".6">1</text>
+  <rect x="262" y="40" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="290" y="65" font-size="14" text-anchor="middle" class="mono">30</text>
+  <text x="290" y="94" font-size="12" text-anchor="middle" class="mono" opacity=".6">2</text>
+  <rect x="318" y="40" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="346" y="65" font-size="14" text-anchor="middle" class="mono">40</text>
+  <text x="346" y="94" font-size="12" text-anchor="middle" class="mono" opacity=".6">3</text>
+  <rect x="374" y="40" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="402" y="94" font-size="12" text-anchor="middle" class="mono" opacity=".6">4</text>
+  <rect x="430" y="40" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="458" y="94" font-size="12" text-anchor="middle" class="mono" opacity=".6">5</text>
+  <path d="M346 96 Q374 128 398 140" fill="none" stroke="currentColor" marker-end="url(#ar-02-arrow)"/>
+  <text x="384" y="118" font-size="12" fill="var(--gold-deep)">第 1 次</text>
+  <path d="M290 96 Q318 128 342 140" fill="none" stroke="currentColor" marker-end="url(#ar-02-arrow)"/>
+  <text x="328" y="118" font-size="12" fill="var(--gold-deep)">第 2 次</text>
+  <path d="M234 96 Q262 128 286 140" fill="none" stroke="currentColor" marker-end="url(#ar-02-arrow)"/>
+  <text x="272" y="118" font-size="12" fill="var(--gold-deep)">第 3 次</text>
+  <text x="20" y="175" font-size="13">插入後</text>
+  <rect x="150" y="150" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="178" y="175" font-size="14" text-anchor="middle" class="mono">10</text>
+  <text x="178" y="204" font-size="12" text-anchor="middle" class="mono" opacity=".6">0</text>
+  <rect x="206" y="150" width="56" height="40" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="234" y="175" font-size="14" text-anchor="middle" class="mono">15</text>
+  <text x="234" y="204" font-size="12" text-anchor="middle" class="mono" opacity=".6">1</text>
+  <rect x="262" y="150" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="290" y="175" font-size="14" text-anchor="middle" class="mono">20</text>
+  <text x="290" y="204" font-size="12" text-anchor="middle" class="mono" opacity=".6">2</text>
+  <rect x="318" y="150" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="346" y="175" font-size="14" text-anchor="middle" class="mono">30</text>
+  <text x="346" y="204" font-size="12" text-anchor="middle" class="mono" opacity=".6">3</text>
+  <rect x="374" y="150" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="402" y="175" font-size="14" text-anchor="middle" class="mono">40</text>
+  <text x="402" y="204" font-size="12" text-anchor="middle" class="mono" opacity=".6">4</text>
+  <rect x="430" y="150" width="56" height="40" fill="var(--surface)" stroke="currentColor"/>
+  <text x="458" y="204" font-size="12" text-anchor="middle" class="mono" opacity=".6">5</text>
+  <text x="506" y="175" font-size="13">15 放進空出來的第 1 格</text>
+  <text x="150" y="240" font-size="12" opacity=".75">插得越前面，要往右搬的越多；插在最前面要搬 n 格：O(n)</text>
+</svg>

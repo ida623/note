@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 274" aria-label="連線池借光的樣子：五條連線全被對帳單的慢查詢佔住，每條要 0.3 秒全表掃描 400 萬列；查餘額與其他對帳單請求在連線池前面排隊，排超過 2 秒就丟 SQLTransientConnectionException" width="784" height="274">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="274" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="pt-a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs>
+  <text x="20" y="24" font-size="13" text-anchor="start" fill="var(--gold-deep)">排隊（waiting=39）</text>
+  <rect x="20" y="40" width="150" height="26" rx="5" fill="var(--surface)" stroke="currentColor"/><text x="95" y="58" font-size="12" text-anchor="middle">查餘額</text>
+  <rect x="20" y="72" width="150" height="26" rx="5" fill="var(--surface)" stroke="currentColor"/><text x="95" y="90" font-size="12" text-anchor="middle">對帳單</text>
+  <rect x="20" y="104" width="150" height="26" rx="5" fill="var(--surface)" stroke="currentColor"/><text x="95" y="122" font-size="12" text-anchor="middle">查餘額</text>
+  <rect x="20" y="136" width="150" height="26" rx="5" fill="var(--surface)" stroke="currentColor"/><text x="95" y="154" font-size="12" text-anchor="middle">對帳單</text>
+  <text x="95" y="182" font-size="12" text-anchor="middle" opacity=".6">……</text>
+  <line x1="174" y1="100" x2="262" y2="100" stroke="currentColor" stroke-width="1.5" marker-end="url(#pt-a2)"/>
+  <text x="218" y="90" font-size="11" text-anchor="middle">最多等 2 秒</text>
+  <rect x="268" y="30" width="200" height="170" rx="10" fill="none" stroke="currentColor" stroke-dasharray="5 4"/>
+  <text x="368" y="22" font-size="13" text-anchor="middle">HikariCP 連線池（5 條）</text>
+  <rect x="284" y="42" width="168" height="26" rx="5" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="368" y="60" font-size="12" text-anchor="middle">對帳單（借出）</text>
+  <rect x="284" y="72" width="168" height="26" rx="5" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="368" y="90" font-size="12" text-anchor="middle">對帳單（借出）</text>
+  <rect x="284" y="102" width="168" height="26" rx="5" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="368" y="120" font-size="12" text-anchor="middle">對帳單（借出）</text>
+  <rect x="284" y="132" width="168" height="26" rx="5" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="368" y="150" font-size="12" text-anchor="middle">對帳單（借出）</text>
+  <rect x="284" y="162" width="168" height="26" rx="5" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="368" y="180" font-size="12" text-anchor="middle">對帳單（借出）</text>
+  <line x1="472" y1="115" x2="560" y2="115" stroke="currentColor" stroke-width="1.5" marker-end="url(#pt-a2)"/>
+  <rect x="566" y="70" width="174" height="90" rx="10" fill="var(--surface)" stroke="currentColor"/>
+  <text x="653" y="96" font-size="13" text-anchor="middle">MySQL</text>
+  <text x="653" y="118" font-size="11" text-anchor="middle">每條 0.3 秒</text>
+  <text x="653" y="136" font-size="11" text-anchor="middle">全表掃描 400 萬列</text>
+  <text x="20" y="226" font-size="12" text-anchor="start" fill="var(--gold-deep)">等超過 2 秒 → SQLTransientConnectionException（total=5, active=5, idle=0, waiting=39）</text>
+</svg>

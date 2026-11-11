@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 314" aria-label="Kubernetes 的 kubelet 定期呼叫兩個探針：/actuator/health/liveness 失敗就重啟容器，所以只放 livenessState，不放外部系統；/actuator/health/readiness 失敗就把 Pod 從 Service 的流量名單拿掉，可以視情況放入核心系統這類檢查" width="784" height="314">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="314" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="sb-04-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+  <rect x="20" y="110" width="130" height="60" rx="8" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="85" y="137" font-size="14" text-anchor="middle">kubelet</text>
+  <text x="85" y="155" font-size="11.5" text-anchor="middle" opacity=".75">定期呼叫</text>
+  <rect x="230" y="30" width="250" height="80" rx="8" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="355" y="67" font-size="13" text-anchor="middle">/actuator/health/liveness</text>
+  <text x="355" y="85" font-size="11.5" text-anchor="middle" opacity=".75">預設只含 livenessState</text>
+  <rect x="230" y="170" width="250" height="80" rx="8" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+  <text x="355" y="207" font-size="13" text-anchor="middle">/actuator/health/readiness</text>
+  <text x="355" y="225" font-size="11.5" text-anchor="middle" opacity=".75">預設只含 readinessState</text>
+  <line x1="150" y1="130" x2="228" y2="75" stroke="currentColor" stroke-width="1.6" marker-end="url(#sb-04-arrow)"/>
+  <line x1="150" y1="150" x2="228" y2="205" stroke="currentColor" stroke-width="1.6" marker-end="url(#sb-04-arrow)"/>
+  <rect x="540" y="30" width="200" height="80" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="640" y="67" font-size="13.5" text-anchor="middle">失敗：重啟容器</text>
+  <text x="640" y="85" font-size="11.5" text-anchor="middle" opacity=".75">不要放資料庫、外部 API</text>
+  <rect x="540" y="170" width="200" height="80" rx="8" fill="var(--surface)" stroke="currentColor"/>
+  <text x="640" y="207" font-size="13.5" text-anchor="middle">失敗：不送流量</text>
+  <text x="640" y="225" font-size="11.5" text-anchor="middle" opacity=".75">外部系統要不要放，自己判斷</text>
+  <line x1="480" y1="70" x2="538" y2="70" stroke="currentColor" stroke-width="1.6" marker-end="url(#sb-04-arrow)"/>
+  <line x1="480" y1="210" x2="538" y2="210" stroke="currentColor" stroke-width="1.6" marker-end="url(#sb-04-arrow)"/>
+  <text x="230" y="278" font-size="12" opacity=".8">回應碼：UP 是 200，DOWN 與 OUT_OF_SERVICE 是 503</text>
+</svg>

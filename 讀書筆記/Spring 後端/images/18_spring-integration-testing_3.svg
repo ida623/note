@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 274" aria-label="RANDOM_PORT 測試的兩條執行緒：測試執行緒開了測試交易，存一筆王小明但還沒提交，接著發 HTTP GET 給伺服器；伺服器執行緒用自己的交易查詢，看不到還沒提交的資料，回 404。測試結束時只還原測試交易，伺服器那邊提交過的寫入不會還原" width="784" height="274">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="274" fill="#FFFFFF" stroke="none"/>
+<defs><marker id="it-m2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="currentColor"/></marker></defs><text x="40" y="40" font-size="13" fill="var(--gold-deep)">測試執行緒</text><rect x="150" y="22" width="570" height="30" rx="6" fill="var(--gold-soft)" stroke="var(--gold)"/><text x="160" y="42" font-size="12.5" fill="var(--gold-deep)">測試交易：INSERT 王小明（還沒提交）</text><text x="600" y="42" font-size="12.5" fill="var(--gold-deep)">結束時還原</text><text x="40" y="170" font-size="13" fill="var(--slate-deep)">伺服器執行緒</text><rect x="300" y="152" width="300" height="30" rx="6" fill="var(--slate-soft)" stroke="var(--slate)"/><text x="310" y="172" font-size="12.5" fill="var(--slate-deep)">自己的交易：SELECT，看不到 → 404</text><line x1="330" y1="56" x2="330" y2="148" stroke="currentColor" stroke-opacity=".7" stroke-width="1.5" marker-end="url(#it-m2)"/><text x="340" y="104" font-size="12.5" class="mono" fill="currentColor">GET /accounts/1</text><line x1="560" y1="148" x2="560" y2="58" stroke="currentColor" stroke-opacity=".7" stroke-width="1.5" marker-end="url(#it-m2)"/><text x="570" y="104" font-size="12.5" class="mono" fill="currentColor">404</text><text x="40" y="226" font-size="12" fill="currentColor" opacity=".6">MOCK 環境的 MockMvc 在測試執行緒裡跑，所以會一起還原；RANDOM_PORT 的伺服器在另一個執行緒，測試交易管不到它</text>
+</svg>

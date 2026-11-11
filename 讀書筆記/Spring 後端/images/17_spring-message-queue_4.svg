@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 784 294" aria-label="兩條時間線。上面是至多一次：讀到訊息、先提交位移、當機，處理沒做到，重啟後從新位移開始，這則訊息丟了。下面是至少一次：讀到訊息、處理完、當機，位移沒提交，重啟後從舊位移再讀一次，這則訊息處理了兩次" width="784" height="294">
+<style>
+svg{--paper:#FFFFFF;--surface:#FFFFFF;--sunk:#F7F9F6;--ink:#233831;--ink2:#5A6B65;--mut:#8A9792;--line:#DEE5DD;
+--gold:#E0805C;--gold-deep:#A9492A;--gold-soft:#F2CEAE;--slate:#5FA58B;--slate-deep:#2F6B57;--slate-soft:#C5E0D7;
+--danger:#D9603A;--ok:#1F8A5B;--ok-soft:#C5E0D7;--mut-deep:#5A6B65;--mint:#A9D9C7;--peach:#F29F80;--amber:#FBC580;
+color:#233831;background:#FFFFFF}
+text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+text:not([fill]){fill:currentColor}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-variant-ligatures:none}
+[fill="#FFFFFF"]{fill:var(--surface)}[fill="#F6E9D2"]{fill:var(--gold-soft)}[fill="#B5730F"]{fill:var(--gold)}
+[fill="#8A5809"]{fill:var(--gold-deep)}[fill="#22242A"]{fill:var(--ink)}[fill="#55575E"]{fill:var(--ink2)}[fill="#8B8D94"]{fill:var(--mut)}
+[stroke="#B5730F"]{stroke:var(--gold)}[stroke="#8A5809"]{stroke:var(--gold-deep)}[stroke="#5E7A9B"]{stroke:var(--slate)}[stroke="#8B8D94"]{stroke:var(--mut)}
+</style>
+<rect x="-12" y="-12" width="784" height="294" fill="#FFFFFF" stroke="none"/>
+  <defs><marker id="mq-4-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+  <text x="20" y="30" font-size="13" fill="var(--gold-deep)">至多一次：先記位移，再處理</text>
+  <line x1="20" y1="80" x2="740" y2="80" stroke="currentColor" stroke-opacity=".35" marker-end="url(#mq-4-arrow)"/>
+  <rect x="40" y="58" width="110" height="44" rx="6" fill="var(--surface)" stroke="currentColor"/>
+  <text x="95" y="85" font-size="13" text-anchor="middle">讀到 t-1</text>
+  <rect x="180" y="58" width="130" height="44" rx="6" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="245" y="85" font-size="13" text-anchor="middle">提交位移</text>
+  <text x="365" y="88" font-size="22" text-anchor="middle" fill="var(--gold-deep)">✕</text>
+  <text x="365" y="122" font-size="12.5" text-anchor="middle">當機</text>
+  <rect x="420" y="58" width="130" height="44" rx="6" fill="none" stroke="currentColor" stroke-dasharray="4 4" opacity=".6"/>
+  <text x="485" y="85" font-size="13" text-anchor="middle" opacity=".6">處理（沒做到）</text>
+  <text x="580" y="78" font-size="13" fill="var(--gold-deep)">重啟從下一則開始</text>
+  <text x="580" y="98" font-size="13" fill="var(--gold-deep)">→ t-1 丟了</text>
+  <text x="20" y="160" font-size="13" fill="var(--slate-deep)">至少一次：先處理，再記位移</text>
+  <line x1="20" y1="210" x2="740" y2="210" stroke="currentColor" stroke-opacity=".35" marker-end="url(#mq-4-arrow)"/>
+  <rect x="40" y="188" width="110" height="44" rx="6" fill="var(--surface)" stroke="currentColor"/>
+  <text x="95" y="215" font-size="13" text-anchor="middle">讀到 t-1</text>
+  <rect x="180" y="188" width="130" height="44" rx="6" fill="var(--slate-soft)" stroke="var(--slate)"/>
+  <text x="245" y="215" font-size="13" text-anchor="middle">處理（扣款）</text>
+  <text x="365" y="218" font-size="22" text-anchor="middle" fill="var(--gold-deep)">✕</text>
+  <text x="365" y="252" font-size="12.5" text-anchor="middle">當機</text>
+  <rect x="420" y="188" width="130" height="44" rx="6" fill="none" stroke="currentColor" stroke-dasharray="4 4" opacity=".6"/>
+  <text x="485" y="215" font-size="13" text-anchor="middle" opacity=".6">提交位移（沒做到）</text>
+  <text x="580" y="208" font-size="13" fill="var(--slate-deep)">重啟從舊位移再讀</text>
+  <text x="580" y="228" font-size="13" fill="var(--slate-deep)">→ t-1 處理兩次</text>
+</svg>
